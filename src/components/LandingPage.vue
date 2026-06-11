@@ -37,14 +37,24 @@ const cards = [
     borderColor: "hover:border-[#7209b7]/60"
   },
   {
-    id: "guide",
-    title: "Items & Hướng Dẫn",
-    subtitle: "Vane & ValhallaMMO",
-    desc: "Tài liệu hướng dẫn chi tiết dành cho member về hệ thống chế tạo cổ điển của Vane và bảng ngọc kỹ năng nâng cấp trang bị của ValhallaMMO.",
-    link: "/guide/",
+    id: "vane",
+    title: "Plugin Vane",
+    subtitle: "QoL, Portal & Trifles",
+    desc: "Hướng dẫn các tiện ích sinh tồn vanilla-like: vật phẩm Vane Trifles, cổng dịch chuyển tự chế, hòm thư chuyển phát và claim vùng đất.",
+    link: "/guide/vane",
     itemId: "slime_bucket",
     badgeColor: "bg-[#55ffff]/10 border-[#55ffff]/30 text-[#55ffff]",
     borderColor: "hover:border-[#55ffff]/60"
+  },
+  {
+    id: "valhalla",
+    title: "ValhallaMMO",
+    subtitle: "RPG Skills & Smithing",
+    desc: "Tổng quan hệ thống RPG: bảng kỹ năng /skills, cấp nghề rèn, phẩm chất trang bị, perk Smithing và lộ trình tăng cấp hiệu quả.",
+    link: "/guide/valhallammo",
+    itemId: "diamond_pickaxe",
+    badgeColor: "bg-[#ffaa00]/10 border-[#ffaa00]/30 text-[#ffaa00]",
+    borderColor: "hover:border-[#ffaa00]/60"
   }
 ]
 
@@ -220,13 +230,13 @@ const handleNav = (link: string) => {
       <!-- Feature Blocks Section -->
       <section id="sections" class="mt-16 sm:mt-24 pt-8 sm:pt-12 border-t border-[#4a3b5c]/30 scroll-mt-20">
         <h2 class="font-outfit font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-3 sm:mb-4">
-          4 Chuyên Mục Tra Cứu Chính
+          Chuyên Mục Chính
         </h2>
           <p class="text-[#b7a9ca] text-xs sm:text-sm center-paragraph max-w-3xl mb-8 sm:mb-12 font-sans">
             Lựa chọn một trong các chuyên mục dưới đây để bắt đầu tìm hiểu về cơ chế và tính năng của máy chủ.
           </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 sm:gap-8">
           <div
             v-for="card in cards"
             :key="card.id"

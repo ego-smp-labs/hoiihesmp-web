@@ -29,14 +29,15 @@ export default defineConfig({
     },
     nav: [
       { text: 'Trang Chủ', link: '/' },
-      { text: 'Wiki Mace', link: '/wiki/mace-exclusive' },
-      { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' },
+      { text: 'Cổ Vật & Vũ Khí', items: [
+        { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
+        { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
+      ]},
       { text: 'Hướng Dẫn', items: [
-        { text: 'Giới Thiệu', link: '/guide/' },
-        { text: 'Cơ Chế Lifesteal', link: '/guide/mechanics#cơ-chế-lifesteal-hút--cướp-tim-sinh-tồn' },
         { text: 'Plugin Vane', link: '/guide/vane' },
-        { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' },
-        { text: 'Cơ Chế Khác', link: '/guide/mechanics' }
+        { text: 'ValhallaMMO', link: '/guide/valhallammo' },
+        { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
+        { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
       ]},
       { text: 'Hỗ Trợ', link: '/support' }
     ],
@@ -46,18 +47,23 @@ export default defineConfig({
           text: 'Tra Cứu Wiki',
           items: [
             { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
-            { text: 'Vũ Khí Custom khác', link: '/wiki/custom-weapons' }
+            { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
           ]
         }
       ],
       '/guide/': [
         {
-          text: 'Hướng Dẫn Member',
+          text: 'Plugin Gameplay',
           items: [
-            { text: 'Giới thiệu chung', link: '/guide/' },
             { text: 'Plugin Vane', link: '/guide/vane' },
-            { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' },
-            { text: 'Cơ Chế & Câu Lệnh', link: '/guide/mechanics' }
+            { text: 'ValhallaMMO', link: '/guide/valhallammo' }
+          ]
+        },
+        {
+          text: 'Sinh Tồn & Lệnh',
+          items: [
+            { text: 'Tổng quan', link: '/guide/' },
+            { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' }
           ]
         }
       ]

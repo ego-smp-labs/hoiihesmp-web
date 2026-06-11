@@ -63,7 +63,12 @@ Trang web sẽ chạy tại địa chỉ: [http://localhost:5173](http://localho
 ```bash
 pnpm run build
 ```
-Thành phẩm HTML/CSS tĩnh sẽ được xuất ra thư mục `.vitepress/dist/` sẵn sàng deploy lên Vercel, Netlify hoặc GitHub Pages.
+Thành phẩm HTML/CSS tĩnh sẽ được xuất ra thư mục `src/.vitepress/dist/` sẵn sàng deploy lên Vercel, Netlify hoặc GitHub Pages.
+
+### 4. Deploy Netlify:
+Repo đã có sẵn `netlify.toml` với cấu hình:
+- **Build command**: `npm run build`
+- **Publish directory**: `src/.vitepress/dist`
 
 ---
 
