@@ -7,6 +7,16 @@ import { playChestSound } from '../utils/audio'
 
 const cards = [
   {
+    id: "lifesteal",
+    title: "Cơ Chế Lifesteal",
+    subtitle: "Hút & Cướp Tim Sinh Tồn",
+    desc: "Chi tiết quy tắc cướp tim khi tiêu diệt đối thủ, trừ tim khi bị hạ gục, cách chế tạo và sử dụng trái tim hồi máu, cùng các câu lệnh rút tim /withdraw hữu ích.",
+    link: "/guide/mechanics#cơ-chế-lifesteal-hút--cướp-tim-sinh-tồn",
+    itemId: "enchanted_golden_apple",
+    badgeColor: "bg-[#e63946]/10 border-[#e63946]/30 text-[#e63946]",
+    borderColor: "hover:border-[#e63946]/60"
+  },
+  {
     id: "mace",
     title: "Mace Độc Quyền",
     subtitle: "Lodestone Forge & 9 Thần Binh",
@@ -28,11 +38,11 @@ const cards = [
   },
   {
     id: "guide",
-    title: "Items Hội Hè & Hướng Dẫn",
+    title: "Items & Hướng Dẫn",
     subtitle: "Học Cách Chơi Vane & ValhallaMMO",
     desc: "Tài liệu hướng dẫn chi tiết dành cho member về hệ thống chế tạo cổ điển của Vane và bảng ngọc kỹ năng nâng cấp trang bị của ValhallaMMO.",
     link: "/guide/",
-    itemId: "enchanted_golden_apple",
+    itemId: "slime_bucket",
     badgeColor: "bg-[#55ffff]/10 border-[#55ffff]/30 text-[#55ffff]",
     borderColor: "hover:border-[#55ffff]/60"
   }
@@ -47,7 +57,7 @@ const handleNav = (link: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-transparent text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans">
+  <div class="landing-page min-h-screen bg-transparent text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans">
 
     <!-- Hero Glow Effects -->
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff55ff]/5 rounded-full blur-[120px] -z-10 animate-pulse" />
@@ -56,9 +66,13 @@ const handleNav = (link: string) => {
     <!-- Navigation Header -->
     <header class="w-full bg-[#100a16]/60 backdrop-blur-md border-b border-[#4a3b5c]/30 py-3 px-4 sm:px-6 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <img src="/server-icon.png" alt="Hội Hè SMP" class="w-8 h-8 sm:w-10 sm:h-10 rounded-none pixelated" />
-          <span class="font-outfit font-black text-sm sm:text-lg tracking-wider bg-gradient-to-r from-[#ff55ff] to-[#55ffff] bg-clip-text text-transparent whitespace-nowrap">
+        <a href="/" class="flex items-center gap-2 sm:gap-3 shrink-0 group">
+          <img
+            src="/mace-icon.png"
+            alt="Hội Hè SMP"
+            class="w-7 h-7 sm:w-9 sm:h-9 rounded-none pixelated transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 drop-shadow-[0_0_8px_rgba(255,85,255,0.3)]"
+          />
+          <span class="font-outfit font-black text-base sm:text-lg tracking-wider whitespace-nowrap bg-gradient-to-r from-[#00aa00] to-[#ffffff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,170,0,0.25)]">
             HỘI HÈ SMP
           </span>
         </a>
@@ -100,22 +114,33 @@ const handleNav = (link: string) => {
 
         <!-- Hero Text Left -->
         <div class="lg:col-span-7 flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
-          <div class="hero-title-animated inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#ff55ff]/15 border-l-4 border-l-[#ff55ff] border-y border-r border-[#ff55ff]/30 text-[10px] sm:text-xs font-bold text-[#ff55ff] tracking-wide w-fit mx-auto lg:mx-0">
-            🕹️ Máy chủ Minecraft: Hội Hè SMP S4
+          <div class="hero-title-animated flex flex-wrap gap-2 justify-center lg:justify-start">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#ff55ff]/15 border-l-4 border-l-[#ff55ff] border-y border-r border-[#ff55ff]/30 text-[10px] sm:text-xs font-bold text-[#ff55ff] tracking-wide w-fit">
+              🕹️ Máy chủ Minecraft: Hội Hè SMP S4
+            </span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#e63946]/15 border-l-4 border-l-[#e63946] border-y border-r border-[#e63946]/30 text-[10px] sm:text-xs font-bold text-[#e63946] tracking-wide w-fit">
+              🩸 Tính năng đặc biệt: Lifesteal cướp tim kịch tính!
+            </span>
           </div>
 
-          <h1 class="hero-title-animated font-outfit font-black text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] text-white tracking-tighter leading-[0.85] select-none">
-            Cẩm Nang<br />
-            <span class="hero-title-gradient bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent inline-block drop-shadow-[0_0_35px_rgba(255,85,255,0.4)]">
-              Cổ Vật
+          <h1 class="hero-title-animated font-outfit font-black text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] text-white tracking-tighter leading-[0.85] select-none flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <span class="bg-gradient-to-r from-[#ffffff] to-[#c084fc] bg-clip-text text-transparent">Cẩm Nang</span><br class="hidden lg:block" />
+            <span class="flex items-center gap-3">
+              <span class="hero-title-gradient bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent inline-block drop-shadow-[0_0_35px_rgba(255,85,255,0.45)]">Cổ Vật</span>
+              <img
+                src="/mace-icon.png"
+                alt="Mace Icon"
+                class="w-12 h-12 sm:w-16 sm:h-16 inline-block rounded-none pixelated transition-transform duration-300 hover:scale-125 hover:rotate-12 drop-shadow-[0_0_15px_rgba(255,85,255,0.5)] animate-float"
+              />
             </span>
           </h1>
 
-          <p class="hero-title-gradient font-outfit font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-[#b7a9ca] via-[#ff55ff] to-[#55ffff] bg-clip-text text-transparent mt-1 select-none">
-            Hội Hè SMP Wiki
+          <p class="hero-subtitle-text font-outfit font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mt-1 select-none">
+            <span class="bg-gradient-to-r from-[#00aa00] to-[#ffffff] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,170,0,0.3)]">Hội Hè SMP</span>
+            <span class="text-white"> Wiki</span>
           </p>
 
-          <p class="hero-subtitle-animated text-[#b7a9ca] text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl ml-auto mr-auto lg:ml-0 lg:mr-0 font-sans">
+          <p class="hero-subtitle-animated text-[#b7a9ca] text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl ml-auto mr-auto lg:ml-0 lg:mr-0 font-sans">
             Hệ thống tài liệu hướng dẫn và tra cứu tính năng dành cho member cụm sinh tồn Hội Hè SMP. Khám phá các cổ vật chế tạo, kỹ năng rèn đúc và hệ thống plugins tùy biến.
           </p>
 
@@ -136,25 +161,24 @@ const handleNav = (link: string) => {
           </div>
         </div>
 
-        <!-- Hero Graphic Right (3D Cube + Server Icon) -->
-        <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[240px] sm:min-h-[300px]">
-          <div class="absolute w-72 h-72 rounded-full border-4 border-dashed border-[#ff55ff]/15 animate-spin -z-10" style="animation-duration: 25s" />
-          <div class="absolute w-52 h-52 rounded-full border-2 border-dashed border-[#55ffff]/15 animate-spin -z-10" style="animation-duration: 12s; animation-direction: reverse;" />
+        <!-- Hero Graphic Right (Floating Mace) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[300px]">
+          <div class="absolute w-80 h-80 rounded-full border-4 border-dashed border-[#ff55ff]/15 animate-spin -z-10" style="animation-duration: 30s" />
+          <div class="absolute w-60 h-60 rounded-full border-2 border-dashed border-[#55ffff]/15 animate-spin -z-10" style="animation-duration: 15s; animation-direction: reverse;" />
+          <div class="absolute w-48 h-48 bg-[#ff55ff]/10 rounded-full blur-[80px] -z-10" />
 
-          <!-- Server Icon -->
-          <img
-            src="/server-icon.png"
-            alt="Hội Hè Lifesteal"
-            class="w-28 h-28 sm:w-36 sm:h-36 rounded-none mb-4 hero-title-animated drop-shadow-[0_0_30px_rgba(255,85,255,0.35)]"
-          />
-
-          <div class="animate-bounce" style="animation-duration: 4s">
-            <ThreeDBlock :size="80" />
+          <!-- Mace Item with floating & hover animations -->
+          <div class="relative group cursor-pointer animate-float">
+            <img
+              src="/mace-icon.png"
+              alt="Mace Exclusive"
+              class="w-44 h-44 sm:w-52 sm:h-52 rounded-none pixelated transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 drop-shadow-[0_0_35px_rgba(255,85,255,0.45)] group-hover:drop-shadow-[0_0_50px_rgba(85,255,255,0.6)]"
+            />
           </div>
 
-          <div class="mt-4 px-4 py-2 rounded-none bg-[#100010]/80 border-2 border-[#2e0066]/70 text-center shadow-lg hover:scale-105 transition-all duration-300 backdrop-blur-sm">
-            <span class="font-vt text-xs sm:text-sm tracking-widest text-[#ff55ff] uppercase block">Hội Hè Lodestone Forge</span>
-            <span class="font-vt text-[10px] sm:text-xs text-[#aaaaaa]">Độc quyền đúc vũ khí custom</span>
+          <div class="mt-8 px-5 py-2.5 rounded-none bg-[#100010]/80 border-2 border-[#ff55ff]/50 text-center shadow-[0_0_15px_rgba(255,85,255,0.15)] hover:border-[#55ffff] hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+            <span class="font-vt text-sm sm:text-base tracking-widest text-[#ff55ff] uppercase block">HỘI HÈ LODESTONE FORGE</span>
+            <span class="font-vt text-xs text-[#55ffff]">Chế tạo vũ khí Mace độc quyền</span>
           </div>
         </div>
 
@@ -196,13 +220,13 @@ const handleNav = (link: string) => {
       <!-- Feature Blocks Section -->
       <section id="sections" class="mt-16 sm:mt-24 pt-8 sm:pt-12 border-t border-[#4a3b5c]/30 scroll-mt-20">
         <h2 class="font-outfit font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-3 sm:mb-4">
-          3 Chuyên Mục Tra Cứu Chính
+          4 Chuyên Mục Tra Cứu Chính
         </h2>
-        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-xl ml-auto mr-auto mb-8 sm:mb-12 font-sans">
-          Lựa chọn một trong các chuyên mục dưới đây để bắt đầu tìm hiểu về cơ chế và tính năng của máy chủ.
-        </p>
+          <p class="text-[#b7a9ca] text-xs sm:text-sm center-paragraph max-w-3xl mb-8 sm:mb-12 font-sans">
+            Lựa chọn một trong các chuyên mục dưới đây để bắt đầu tìm hiểu về cơ chế và tính năng của máy chủ.
+          </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           <div
             v-for="card in cards"
             :key="card.id"
@@ -242,9 +266,9 @@ const handleNav = (link: string) => {
         <h2 class="font-outfit font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-3 sm:mb-4">
           Các câu lệnh thông dụng
         </h2>
-        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-2xl ml-auto mr-auto mb-8 sm:mb-12 font-sans leading-relaxed">
-          Ghi nhớ và sử dụng nhanh các câu lệnh hữu ích này trực tiếp trong quá trình chơi game tại máy chủ.
-        </p>
+          <p class="text-[#b7a9ca] text-xs sm:text-sm center-paragraph max-w-4xl mb-8 sm:mb-12 font-sans leading-relaxed">
+            Ghi nhớ và sử dụng nhanh các câu lệnh hữu ích này trực tiếp trong quá trình chơi game tại máy chủ.
+          </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           <div
@@ -272,7 +296,7 @@ const handleNav = (link: string) => {
     <!-- Footer -->
     <footer class="mt-auto pt-6 sm:pt-8 border-t border-[#4a3b5c]/20 text-center text-[10px] sm:text-xs text-[#7b6299] font-outfit pb-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-1">
-        <p>Hội Hè SMP Wiki &copy; 2026. Sáng lập bởi <a href="/support" class="text-[#ff55ff] hover:underline font-bold">Minazuki</a>.</p>
+        <p>Hội Hè SMP Wiki &copy; 2026. Sáng lập bởi <a href="https://melatonin-dev.xyz" target="_blank" rel="noopener noreferrer" class="text-[#ff55ff] hover:underline font-bold">Melatonin</a>.</p>
         <p>Tham gia ngay cộng đồng <a href="https://discord.gg/As4h3xMDnR" target="_blank" class="text-[#55ffff] hover:underline font-bold">Discord Hội Hè SMP</a> để nhận hỗ trợ.</p>
         <p class="mt-2 text-[9px] sm:text-[10px] opacity-70">Sản phẩm không thuộc bản quyền Mojang Studios.</p>
       </div>

@@ -13,7 +13,7 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=VT323&family=Inter:wght@400;500;600;700&display=swap' }]
   ],
   themeConfig: {
-    logo: '/server-icon.png',
+    logo: '/mace-icon.png',
     search: {
       provider: 'local',
       options: {
@@ -33,6 +33,7 @@ export default defineConfig({
       { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' },
       { text: 'Hướng Dẫn', items: [
         { text: 'Giới Thiệu', link: '/guide/' },
+        { text: 'Cơ Chế Lifesteal', link: '/guide/mechanics#cơ-chế-lifesteal-hút--cướp-tim-sinh-tồn' },
         { text: 'Plugin Vane', link: '/guide/vane' },
         { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' },
         { text: 'Cơ Chế Khác', link: '/guide/mechanics' }

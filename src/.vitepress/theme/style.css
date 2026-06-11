@@ -296,6 +296,81 @@ h1, h2, h3, h4, h5, h6 {
   animation: modal-scale-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ── Floating Animation ── */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Custom site title styling (Green to White gradient) ── */
+.VPNavBarTitle .title {
+  font-size: 0 !important;
+}
+
+.VPNavBarTitle .title .logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin-right: 8px !important;
+}
+
+.VPNavBarTitle:hover .title .logo {
+  transform: scale(1.15) rotate(12deg);
+  filter: drop-shadow(0 0 10px rgba(85, 255, 85, 0.6));
+}
+
+.VPNavBarTitle .title:after {
+  content: "HỘI HÈ SMP WIKI";
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--font-outfit) !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.06em;
+  font-size: 16px !important;
+  background: linear-gradient(to right, #00aa00 20%, #ffffff 80%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 10px rgba(0, 170, 0, 0.25));
+}
+
+/* ── Center Paragraph & General Layout Helpers ── */
+.center-paragraph {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  float: none !important;
+  display: block !important;
+}
+
+/* Fix paragraphs and headings in support page to prevent clashes with .vp-doc unlayered styles */
+.support-page p.center-paragraph {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.support-page h1 {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+  font-weight: 900 !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1024px) {
+  .support-page h1 {
+    font-size: 3rem !important;
+    line-height: 1 !important;
+  }
+}
+
 /* ── Custom scrollbar ── */
 ::-webkit-scrollbar {
   width: 8px;
