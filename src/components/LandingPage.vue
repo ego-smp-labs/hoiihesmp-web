@@ -39,7 +39,7 @@ const cards = [
   {
     id: "guide",
     title: "Items & Hướng Dẫn",
-    subtitle: "Học Cách Chơi Vane & ValhallaMMO",
+    subtitle: "Vane & ValhallaMMO",
     desc: "Tài liệu hướng dẫn chi tiết dành cho member về hệ thống chế tạo cổ điển của Vane và bảng ngọc kỹ năng nâng cấp trang bị của ValhallaMMO.",
     link: "/guide/",
     itemId: "slime_bucket",
@@ -123,9 +123,9 @@ const handleNav = (link: string) => {
             </span>
           </div>
 
-          <h1 class="hero-title-animated font-outfit font-black text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] text-white tracking-tighter leading-[0.85] select-none flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <span class="bg-gradient-to-r from-[#ffffff] to-[#c084fc] bg-clip-text text-transparent">Cẩm Nang</span><br class="hidden lg:block" />
-            <span class="flex items-center gap-3">
+          <h1 class="hero-title-animated font-outfit font-black text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] text-white tracking-tighter select-none block">
+            <span class="block bg-gradient-to-r from-[#ffffff] to-[#c084fc] bg-clip-text text-transparent leading-none">Cẩm Nang</span>
+            <span class="flex items-center gap-3 leading-none mt-2">
               <span class="hero-title-gradient bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent inline-block drop-shadow-[0_0_35px_rgba(255,85,255,0.45)]">Cổ Vật</span>
               <img
                 src="/mace-icon.png"

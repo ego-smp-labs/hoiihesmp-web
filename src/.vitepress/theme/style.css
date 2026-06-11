@@ -150,6 +150,41 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-outfit);
 }
 
+/* ── Fix: Tailwind v4 Cascade Layer vs VitePress Unlayered Reset ──────────
+   VitePress injects unlayered rules like: h1 { font-size: 16px; font-weight: 400 }
+   These WIN over Tailwind v4 utilities inside @layer because unlayered CSS has
+   higher priority than any @layer block.
+   revert-layer below rolls those tag selectors back to the layered cascade,
+   allowing Tailwind utility classes to apply correctly.
+── */
+h1, h2, h3, h4, h5, h6 {
+  font-size: revert-layer;
+  font-weight: revert-layer;
+  line-height: revert-layer;
+  margin: revert-layer;
+}
+
+p {
+  margin: revert-layer;
+}
+
+a {
+  color: revert-layer;
+  text-decoration: revert-layer;
+}
+
+ol, ul {
+  list-style: revert-layer;
+  margin: revert-layer;
+  padding: revert-layer;
+}
+
+img, video {
+  max-width: revert-layer;
+  height: revert-layer;
+  display: revert-layer;
+}
+
 .font-vt {
   font-family: var(--font-vt323);
 }
