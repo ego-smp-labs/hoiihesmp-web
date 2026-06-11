@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hội Hè SMP Wiki & Landing Page
 
-## Getting Started
+Trang chủ và tài liệu tra cứu (Wiki) chính thức dành cho các thành viên trong cụm máy chủ sinh tồn Minecraft **Hội Hè SMP (Season 4)**.
 
-First, run the development server:
+Dự án được xây dựng bằng **VitePress (Vue 3 + TypeScript)** kết hợp **Tailwind CSS v4**, mang lại tốc độ tải trang tĩnh tức thì, tối ưu hóa SEO và hiệu năng hiển thị cực kỳ mượt mà.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ⚡ Các Điểm Nổi Bật Của Dự Án
+
+- **Landing Page Độc Lập**: Thiết kế giao diện trang chủ hoành tráng với 3 khối dẫn trực tiếp sang các chuyên mục:
+  - *Mace Độc Quyền* (Lodestone Forge & 9 Thần Binh)
+  - *Vũ Khí Custom khác* (Kiếm Cổ Nguyền)
+  - *Hướng dẫn plugins* (Vane & ValhallaMMO)
+- **Khối 3D Lodestone**: Khối lập phương 3D xoay mượt mà bằng GPU sử dụng CSS 3D Transforms gốc.
+- **Tối Ưu Hiệu Năng & Tránh Lag**:
+  - Không vẽ SVG lặp DOM phức tạp, sử dụng ảnh PNG chính thức của Minecraft từ jsDelivr CDN (`minecraft-icon-items`).
+  - **Enchanted Glow Mask**: Sử dụng CSS `mask-image` đè lên PNG giúp dải sáng bùa chú chạy dọc thân vật phẩm cực kỳ đẹp mắt.
+  - **Tooltip cải tiến**: Hover chỉ hiển thị tên mặc định (giảm tải DOM). Click để mở **Drawer/Modal trượt** hiển thị lore chi tiết (hoàn hảo cho di động).
+- **Âm thanh Retro (Web Audio API)**: Tự tổng hợp sóng âm Click gỗ (wood click) và Mở rương (chest open) ngay trên trình duyệt mà không cần tải file MP3 ngoài.
+
+---
+
+## 🏗️ Cấu Trúc Dự Án
+
+```text
+├── .vitepress/           # Cấu hình chính của VitePress và Custom Theme
+│   ├── config.ts         # Cấu hình menu điều hướng, sidebar, routing
+│   └── theme/            # Theme CSS v4 và đăng ký components toàn cục
+├── components/           # Các component giao diện Vue 3 + TypeScript
+│   ├── AudioToggle.vue   # Bật/tắt và phát âm thanh retro
+│   ├── CraftingGrid.vue  # Lưới rèn đúc 3x3 tương tác
+│   ├── LandingPage.vue   # Giao diện Trang chủ (Home)
+│   ├── PixelIcon.vue     # Load ảnh PNG CDN và phủ Enchanted Glow
+│   └── ThreeDBlock.vue   # Khối lập phương 3D xoay
+├── data/                 # Cơ sở dữ liệu tĩnh viết bằng TypeScript
+│   ├── pixelMap.ts       # Bản đồ ánh xạ ID vật phẩm sang CDN
+│   └── wikiData.ts       # Database búa, lõi ma pháp, nguyên liệu
+├── guide/                # Các trang Markdown hướng dẫn plugins
+├── wiki/                 # Các trang Markdown tra cứu vũ khí/lõi
+├── utils/                # Các hàm tiện ích (Audio synthesizer)
+└── index.md              # Trang chủ (nhúng LandingPage component)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Khởi Chạy Dự Án
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dự án sử dụng gói quản lý thư viện **pnpm**. Đảm bảo bạn đã cài đặt Node.js (phiên bản v18 trở lên).
 
-## Learn More
+### 1. Cài đặt các thư viện phụ thuộc:
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Khởi động môi trường phát triển (Dev Server):
+```bash
+pnpm dev
+```
+Trang web sẽ chạy tại địa chỉ: [http://localhost:5173](http://localhost:5173)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Biên dịch dự án tĩnh (Production Build):
+```bash
+pnpm run build
+```
+Thành phẩm HTML/CSS tĩnh sẽ được xuất ra thư mục `.vitepress/dist/` sẵn sàng deploy lên Vercel, Netlify hoặc GitHub Pages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📚 Tài Liệu Cho Nhà Phát Triển (Developer docs)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Tài liệu thiết kế kiến trúc và hướng dẫn đóng góp code chi tiết dành cho các lập trình viên nằm trong thư mục `.docs/`:
+- [Kiến Trúc Dự Án & Cách Mở Rộng](file:///.docs/ARCHITECTURE.md)
+- [Quy Trình Phát Triển & Quy Định Code](file:///.docs/DEVELOPMENT_GUIDE.md)
