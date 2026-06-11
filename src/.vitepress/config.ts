@@ -6,6 +6,7 @@ export default defineConfig({
   description: "Cẩm nang hướng dẫn và tra cứu tính năng cụm máy chủ Hội Hè SMP",
   cleanUrls: true,
   ignoreDeadLinks: true,
+  appearance: 'dark',
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
@@ -13,6 +14,19 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: 'https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/block/heavy_core.png',
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: { buttonText: 'Tìm kiếm...', buttonAriaLabel: 'Tìm kiếm' },
+          modal: {
+            noResultsText: 'Không tìm thấy kết quả',
+            resetButtonTitle: 'Xóa từ khóa',
+            footer: { selectText: 'Chọn', navigateText: 'Di chuyển', closeText: 'Đóng' }
+          }
+        }
+      }
+    },
     nav: [
       { text: 'Trang Chủ', link: '/' },
       { text: 'Wiki Mace', link: '/wiki/mace-exclusive' },
@@ -52,9 +66,9 @@ export default defineConfig({
       { icon: 'discord', link: 'https://discord.gg/As4h3xMDnR' }
     ]
   },
-    vite: {
-      plugins: [
-        tailwindcss()
-      ]
-    }
-  })
+  vite: {
+    plugins: [
+      tailwindcss()
+    ]
+  }
+})
