@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable"]
+  },
+  "include": [
+    ".vitepress/**/*",
+    "components/**/*",
+    "data/**/*"
+  ]
+}
