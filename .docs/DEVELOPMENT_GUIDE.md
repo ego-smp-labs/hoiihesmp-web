@@ -28,13 +28,13 @@ pnpm run build
 
 ### Khai báo Kiểu dữ liệu (TypeScript Type Safety)
 - Toàn bộ dữ liệu hoặc logic bổ sung đều phải được viết trong các file `.ts`.
-- Mọi dữ liệu mới thêm vào [data/wikiData.ts](file:///b:/__JAVA__/hoiihesmp-web/data/wikiData.ts) phải tuân thủ nghiêm ngặt các `interface` đã định nghĩa sẵn.
+- Mọi dữ liệu mới thêm vào [src/data/wikiData.ts](file:///b:/__JAVA__/hoiihesmp-web/src/data/wikiData.ts) phải tuân thủ nghiêm ngặt các `interface` đã định nghĩa sẵn.
 - Tránh sử dụng kiểu `any`. Hãy định nghĩa cụ thể kiểu dữ liệu để tăng khả năng tự động hoàn thành (autocomplete) của IDE.
-
+ 
 ### Đặt Tên File & Component (Naming Conventions)
-- **Tên Component Vue**: Sử dụng chuẩn **PascalCase** (ví dụ: `PixelIcon.vue`, `CraftingGrid.vue`).
-- **Tên File Dữ liệu / Script**: Sử dụng chuẩn **camelCase** (ví dụ: `wikiData.ts`, `pixelMap.ts`, `audio.ts`).
-- **Tên Thư mục**: Sử dụng chuẩn viết thường/kết nối bằng gạch ngang (ví dụ: `components/`, `data/`, `.vitepress/`).
+- **Tên Component Vue**: Sử dụng chuẩn **PascalCase** (ví dụ: `PixelIcon.vue`, `CraftingGrid.vue` trong `src/components/`).
+- **Tên File Dữ liệu / Script**: Sử dụng chuẩn **camelCase** (ví dụ: `wikiData.ts`, `pixelMap.ts`, `audio.ts` trong `src/data/` và `src/utils/`).
+- **Tên Thư mục**: Sử dụng chuẩn viết thường/kết nối bằng gạch ngang nằm trong thư mục gốc `src/` (ví dụ: `src/components/`, `src/data/`, `src/.vitepress/`).
 
 ### Viết JSX/HTML trong Vue Template
 - Sử dụng thuộc tính `:` viết tắt cho `v-bind` và `@` viết tắt cho `v-on`.

@@ -407,3 +407,205 @@ export const guideSections: GuideSection[] = [
     content: "Để giải phóng năng lượng phong ấn, thực hiện tổ hợp phím **Sneak (Ngồi) + Left-Click (Click chuột trái)** trúng mục tiêu. Click hụt vào không khí/block có 10% - 50% cơ hội tự kích hoạt **Lời nguyền Phản phệ (Curse Backfire)** rút trực tiếp máu hoặc áp hiệu ứng Slowness/Blindness lên người dùng."
   }
 ];
+
+export const vaneTriflesItems: Weapon[] = [
+  {
+    id: "sickle",
+    name: "Liềm Thu Hoạch",
+    enName: "Sickle",
+    badge: "🌾",
+    colorClass: "border-[#55ff55]",
+    cmd: 3001,
+    singleton: false,
+    desc: "Dụng cụ nông nghiệp chuyên dụng giúp thu hoạch và tự động gieo lại hạt giống ruộng lúa trong bán kính rộng.",
+    tooltip: "&a&lSickle|&7A tool for quick harvesting.||&6⚡ Active — Area Harvest:|&fChuột phải vào ruộng lúa đã chín. Thu hoạch và tự động trồng lại hạt giống trong phạm vi 3x3 khối quanh mục tiêu. Cầm liềm giúp tăng 10% tốc độ gieo hạt.",
+    recipe: {
+      shape: [
+        ["I", "I", ""],
+        ["", "S", ""],
+        ["", "S", ""]
+      ],
+      ingredients: {
+        I: { name: "Thỏi Sắt", itemId: "iron_ingot", tooltip: "&fIron Ingot|&7Thỏi sắt tiêu chuẩn." },
+        S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
+      }
+    }
+  },
+  {
+    id: "file_tool",
+    name: "Giũa Thiết Kế",
+    enName: "Block Connection File",
+    badge: "🔧",
+    colorClass: "border-[#aaaaaa]",
+    cmd: 3002,
+    singleton: false,
+    desc: "Công cụ điều chỉnh kết nối giữa các khối hàng rào, tường đá, kính tấm hoặc xoay hướng hình dạng bậc thang.",
+    tooltip: "&f&lDesign File|&7Tweak block connections.||&6⚡ Active — Connection Tweak:|&fChuột phải vào hàng rào, tường đá, hoặc kính tấm để chủ động đóng/mở hướng kết nối vật lý, giúp xây dựng kiến trúc chi tiết.",
+    recipe: {
+      shape: [
+        ["", "I", ""],
+        ["", "I", ""],
+        ["", "S", ""]
+      ],
+      ingredients: {
+        I: { name: "Thỏi Sắt", itemId: "iron_ingot", tooltip: "&fIron Ingot|&7Thỏi sắt tiêu chuẩn." },
+        S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
+      }
+    }
+  },
+  {
+    id: "trowel",
+    name: "Bay Xây Dựng",
+    enName: "Architect Trowel",
+    badge: "🧱",
+    colorClass: "border-[#ffaa00]",
+    cmd: 3003,
+    singleton: false,
+    desc: "Trợ thủ đắc lực cho các builder, tự động đặt khối ngẫu nhiên từ Hotbar để tạo vân bề mặt kiến trúc tự nhiên.",
+    tooltip: "&6&lArchitect Trowel|&7Build with randomized blocks.||&6⚡ Active — Random Place:|&fChuột phải khi cầm bay. Đặt ngẫu nhiên một khối block từ các ô đang có trên thanh Hotbar của người chơi.",
+    recipe: {
+      shape: [
+        ["", "I", ""],
+        ["", "S", ""],
+        ["", "", ""]
+      ],
+      ingredients: {
+        I: { name: "Thỏi Sắt", itemId: "iron_ingot", tooltip: "&fIron Ingot|&7Thỏi sắt tiêu chuẩn." },
+        S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
+      }
+    }
+  },
+  {
+    id: "north_compass",
+    name: "La Bàn Hướng Bắc",
+    enName: "North Compass",
+    badge: "🧭",
+    colorClass: "border-[#ff5555]",
+    cmd: 3004,
+    singleton: false,
+    desc: "La bàn chỉ hướng Bắc địa lý, giúp thám hiểm định vị phương hướng chính xác thay vì chỉ về điểm Spawn thế giới.",
+    tooltip: "&c&lNorth Compass|&7Points to the true North.||&a⭐ Passive — Navigation:|&fKim la bàn luôn chỉ về hướng Bắc của thế giới, giúp người thám hiểm lập bản đồ hành trình chính xác.",
+    recipe: {
+      shape: [
+        ["", "I", ""],
+        ["I", "C", "I"],
+        ["", "I", ""]
+      ],
+      ingredients: {
+        I: { name: "Thỏi Sắt", itemId: "iron_ingot", tooltip: "&fIron Ingot" },
+        C: { name: "La Bàn", itemId: "compass", tooltip: "&fCompass|&7La bàn thường chỉ về Spawn." }
+      }
+    }
+  },
+  {
+    id: "slime_bucket",
+    name: "Xô Slime Dò Chunk",
+    enName: "Slime Bucket",
+    badge: "🟢",
+    colorClass: "border-[#55ff55]",
+    cmd: 3005,
+    singleton: false,
+    desc: "Xô chứa một chú Slime nhỏ, sẽ bắt đầu nhảy tưng tưng hào hứng khi người chơi đang đứng trong Slime Chunk.",
+    tooltip: "&a&lSlime Bucket|&7Slime chunk detector.||&a⭐ Passive — Chunk Detection:|&fChú slime nhỏ trong xô sẽ nảy lên liên tục khi bạn đi vào Slime Chunk (vùng có khả năng sinh Slime tự nhiên).",
+    recipe: {
+      shape: [
+        ["", "S", ""],
+        ["S", "B", "S"],
+        ["", "S", ""]
+      ],
+      ingredients: {
+        S: { name: "Khối Slime", itemId: "slime_block", tooltip: "&aSlime Block|&7Khối slime nhớt." },
+        B: { name: "Rương", itemId: "chest", tooltip: "&fChest|&7Rương gỗ làm lõi xô." }
+      }
+    }
+  },
+  {
+    id: "backpack",
+    name: "Balo Leo Núi",
+    enName: "Backpack",
+    badge: "🎒",
+    colorClass: "border-[#ff55ff]",
+    cmd: 3006,
+    singleton: false,
+    desc: "Túi đeo lưng tiện dụng giúp mở rộng rương đồ cá nhân khi đi thám hiểm vùng đất mới rộng lớn.",
+    tooltip: "&d&lBackpack|&7Portable worn storage.||&6⚡ Active — Open Pack:|&fCầm trên tay hoặc đeo trên lưng và sử dụng phím tắt để mở kho chứa đồ phụ rộng 27 ô (tương đương rương đơn).",
+    recipe: {
+      shape: [
+        ["L", "C", "L"],
+        ["L", "", "L"],
+        ["L", "L", "L"]
+      ],
+      ingredients: {
+        L: { name: "Da Thuộc", itemId: "leather", tooltip: "&fLeather|&7Da thuộc lấy từ bò." },
+        C: { name: "Rương", itemId: "chest", tooltip: "&fChest|&7Rương chứa đồ gỗ." }
+      }
+    }
+  },
+  {
+    id: "pouch",
+    name: "Túi Đồ Cá Nhân",
+    enName: "Pouch",
+    badge: "👛",
+    colorClass: "border-[#ffaa00]",
+    cmd: 3007,
+    singleton: false,
+    desc: "Giải pháp lưu trữ nhỏ gọn thay thế túi Bundle của Minecraft Vanilla, giúp xếp chồng nhiều vật phẩm số lượng nhỏ.",
+    tooltip: "&6&lPouch|&7Compact pocket bundle.||&6⚡ Active — Bundle Items:|&fChuột phải túi đồ để gom và chứa các vật phẩm số lượng nhỏ vào trong một ô duy nhất để tiết kiệm diện tích túi đồ.",
+    recipe: {
+      shape: [
+        ["L", "S", "L"],
+        ["L", "", "L"],
+        ["", "L", ""]
+      ],
+      ingredients: {
+        L: { name: "Da Thuộc", itemId: "leather", tooltip: "&fLeather|&7Da thuộc." },
+        S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
+      }
+    }
+  },
+  {
+    id: "portal_scroll",
+    name: "Cuộn Giấy Dịch Chuyển",
+    enName: "Portal Scroll",
+    badge: "📜",
+    colorClass: "border-[#55ffff]",
+    cmd: 3008,
+    singleton: false,
+    desc: "Cuộn giấy ma thuật cho phép người dùng vận nội lực dịch chuyển tức thời về giường ngủ cá nhân hoặc Spawn.",
+    tooltip: "&b&lPortal Scroll|&7Teleportation scroll.||&6⚡ Active — Recall:|&fVận sức giữ đứng yên trong 3 giây để dịch chuyển tức thời về giường ngủ cá nhân của bạn hoặc điểm hồi sinh thế giới.",
+    recipe: {
+      shape: [
+        ["P", "E", "P"],
+        ["P", "P", "P"],
+        ["", "", ""]
+      ],
+      ingredients: {
+        P: { name: "Giấy", itemId: "paper", tooltip: "&fPaper|&7Giấy viết thông thường." },
+        E: { name: "Ngọc Ender", itemId: "ender_pearl", tooltip: "&fEnder Pearl|&7Ngọc ngưng tụ dịch chuyển." }
+      }
+    }
+  },
+  {
+    id: "xp_bottle",
+    name: "Chai Đựng EXP",
+    enName: "XP Bottle",
+    badge: "🧪",
+    colorClass: "border-[#ffff55]",
+    cmd: 3009,
+    singleton: false,
+    desc: "Chai thủy tinh đặc biệt giúp người chơi rút và lưu trữ điểm kinh nghiệm tích lũy vào chai để cất giữ an toàn.",
+    tooltip: "&e&lXP Bottle|&7Store experience points.||&6⚡ Active — Store EXP:|&fNgồi (Sneak) + Chuột phải khi cầm chai thủy tinh rỗng để chuyển kinh nghiệm của bản thân thành Chai Kinh Nghiệm.",
+    recipe: {
+      shape: [
+        ["", "G", ""],
+        ["G", "P", "G"],
+        ["", "G", ""]
+      ],
+      ingredients: {
+        G: { name: "Thuốc Độc Bất Kỳ", itemId: "potion", tooltip: "&5Glass Bottle|&7Chai thủy tinh rỗng." },
+        P: { name: "Giấy", itemId: "paper", tooltip: "&fPaper|&7Giấy ghi chép." }
+      }
+    }
+  }
+];
+

@@ -1,23 +1,14 @@
-# Hướng Dẫn Chi Tiết Plugin Vane
+# Hướng Dẫn Plugin Vane & Vật Phẩm QoL
 
-**Vane** là một hệ thống plugin cải tiến trải nghiệm sinh tồn Minecraft (Vanilla-like) vô cùng mạnh mẽ. Plugin này bổ sung nhiều tính năng hữu ích mà không làm mất đi tính chất nguyên bản của game.
+**Vane** là một hệ thống plugin cải tiến trải nghiệm sinh tồn Minecraft (Vanilla-like) vô cùng mạnh mẽ. Plugin này bổ sung nhiều tính năng hữu ích mà không làm mất đi tính chất nguyên bản của trò chơi, đặc biệt là các công cụ hỗ trợ chất lượng cuộc sống (Trifles).
 
 ---
 
-## 🛠 1. Trang Bị & Dụng Cụ Mới (Vane Gear)
+## 🌾 1. Công Cụ & Tiện Ích Mới (Vane Trifles)
 
-Vane bổ sung một số cấp bậc trang bị mới giúp người chơi có nhiều lựa chọn hơn trong giai đoạn đầu và giữa game:
+Dưới đây là cẩm nang tra cứu và tìm kiếm nhanh các vật phẩm tùy biến của **Vane Trifles** đang hoạt động trên máy chủ. Bạn có thể sử dụng ô tìm kiếm để tra nhanh công năng hoặc công thức rèn lưới 3x3 tương ứng:
 
-### Giáp & Công Cụ Bằng Đồng (Copper Gear)
-- **Công thức**: Chế tạo tương tự sắt/vàng nhưng thay bằng **Thỏi Đồng (Copper Ingot)**.
-- **Đặc tính**:
-  - Sức mạnh nằm giữa cấp bậc Đá (Stone) và Sắt (Iron).
-  - Tốc độ khai thác nhanh nhưng độ bền trung bình.
-  - Phù hợp cho giai đoạn khởi đầu khi thỏi sắt còn khan hiếm.
-
-### Móc Kéo Đu Dây (Grappling Hook)
-- **Công thức**: Chế tạo bằng dây chỉ, Breeze Rod và thỏi Netherite hoặc sắt.
-- **Cách dùng**: Cầm trên tay và chuột phải để bắn móc vào block, nhấn tiếp chuột phải để kéo bản thân bay về hướng đó. Cực kỳ cơ động khi di chuyển trong hang động hoặc vùng núi cao.
+<VaneTrifles />
 
 ---
 

@@ -20,7 +20,8 @@ export default defineConfig({
       { text: 'Hướng Dẫn', items: [
         { text: 'Giới Thiệu', link: '/guide/' },
         { text: 'Plugin Vane', link: '/guide/vane' },
-        { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' }
+        { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' },
+        { text: 'Cơ Chế Khác', link: '/guide/mechanics' }
       ]},
       { text: 'Hỗ Trợ', link: '/support' }
     ],
@@ -40,7 +41,8 @@ export default defineConfig({
           items: [
             { text: 'Giới thiệu chung', link: '/guide/' },
             { text: 'Plugin Vane', link: '/guide/vane' },
-            { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' }
+            { text: 'Plugin ValhallaMMO', link: '/guide/valhallammo' },
+            { text: 'Cơ Chế & Câu Lệnh', link: '/guide/mechanics' }
           ]
         }
       ]

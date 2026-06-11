@@ -49,7 +49,31 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   blood_core: { cdnName: "heavy_core", type: "block", displayName: "🩸 Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
   sculk_core: { cdnName: "heavy_core", type: "block", displayName: "💀 Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
   end_core: { cdnName: "heavy_core", type: "block", displayName: "🌀 End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
-  ruined_core: { cdnName: "heavy_core", type: "block", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" }
+  ruined_core: { cdnName: "heavy_core", type: "block", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
+
+  // Vane Trifles Custom Items
+  sickle: { cdnName: "iron_hoe", type: "item", displayName: "Liềm Thu Hoạch" },
+  file_tool: { cdnName: "shears", type: "item", displayName: "Giũa Thiết Kế" },
+  trowel: { cdnName: "brick", type: "item", displayName: "Bay Xây Dựng" },
+  north_compass: { cdnName: "compass", type: "item", displayName: "La Bàn Hướng Bắc" },
+  slime_bucket: { cdnName: "slime_ball", type: "item", displayName: "Xô Slime Dò Chunk" },
+  backpack: { cdnName: "bundle", type: "item", displayName: "Balo Leo Núi" },
+  pouch: { cdnName: "bundle", type: "item", displayName: "Túi Đồ Cá Nhân" },
+  portal_scroll: { cdnName: "map", type: "item", displayName: "Cuộn Giấy Dịch Chuyển" },
+  xp_bottle: { cdnName: "experience_bottle", type: "item", displayName: "Chai Đựng EXP" },
+
+  // Common Crafting Ingredients
+  copper_ingot: { cdnName: "copper_ingot", type: "item", displayName: "Thỏi Đồng" },
+  copper_block: { cdnName: "copper_block", type: "block", displayName: "Khối Đồng" },
+  iron_ingot: { cdnName: "iron_ingot", type: "item", displayName: "Thỏi Sắt" },
+  gold_ingot: { cdnName: "gold_ingot", type: "item", displayName: "Thỏi Vàng" },
+  diamond: { cdnName: "diamond", type: "item", displayName: "Kim Cương" },
+  leather: { cdnName: "leather", type: "item", displayName: "Da Thuộc" },
+  paper: { cdnName: "paper", type: "item", displayName: "Giấy" },
+  chest: { cdnName: "chest", type: "block", displayName: "Rương" },
+  slime_block: { cdnName: "slime_block", type: "block", displayName: "Khối Slime" },
+  iron_bars: { cdnName: "iron_bars", type: "block", displayName: "Hàng Rào Sắt" },
+  compass: { cdnName: "compass", type: "item", displayName: "La Bàn" }
 };
 
 export const getCdnUrl = (itemId: string): string => {

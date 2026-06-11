@@ -10,19 +10,19 @@ Dự án tuân thủ nguyên lý **Clean Architecture** và tách biệt rõ rà
 
 ```text
 [Data Layer]                 [Core Utilities]            [Presentation Layer]
-data/wikiData.ts     ───┐                                 
-data/pixelMap.ts     ───┼──> components/PixelIcon.vue  ──> wiki/mace-exclusive.md
-                        └──> utils/audio.ts           ──> components/LandingPage.vue
+src/data/wikiData.ts ───┐                                 
+src/data/pixelMap.ts ───┼──> src/components/PixelIcon.vue  ──> src/wiki/mace-exclusive.md
+                        └──> src/utils/audio.ts           ──> src/components/LandingPage.vue
 ```
 
 ### Lớp Dữ Liệu (Data Layer)
-- **`data/wikiData.ts`**: Nơi lưu trữ toàn bộ thông tin của Wiki. Dữ liệu được định kiểu rõ ràng bằng TypeScript `interface` (`Weapon`, `Core`, `Material`, `Recipe`, v.v.). Không chứa bất kỳ logic React/Vue nào để đảm bảo tính độc lập.
-- **`data/pixelMap.ts`**: Chứa ánh xạ từ `itemId` (định danh nội bộ của vật phẩm) sang tên file PNG chính thức trên CDN và cấu hình màu sắc ánh tím phù phép (Glow Color).
+- **`src/data/wikiData.ts`**: Nơi lưu trữ toàn bộ thông tin của Wiki. Dữ liệu được định kiểu rõ ràng bằng TypeScript `interface` (`Weapon`, `Core`, `Material`, `Recipe`, v.v.). Không chứa bất kỳ logic React/Vue nào để đảm bảo tính độc lập.
+- **`src/data/pixelMap.ts`**: Chứa ánh xạ từ `itemId` (định danh nội bộ của vật phẩm) sang tên file PNG chính thức trên CDN và cấu hình màu sắc ánh tím phù phép (Glow Color).
 
 ### Lớp Giao Diện (Presentation Layer)
-- **`components/PixelIcon.vue`**: Nhận `itemId`, truy cập `pixelMap.ts` để lấy link CDN của hình ảnh PNG gốc tương ứng từ jsDelivr.
-- **`components/CraftingGrid.vue`**: Nhận cấu trúc công thức `Recipe` từ `wikiData.ts` và render lưới 3x3 chứa các `PixelIcon`. Khi có tương tác chạm (Click/Touch), nó sẽ emit sự kiện lên trang cha để mở Drawer/Modal hiển thị chi tiết vật phẩm.
-- **`components/MinecraftText.vue`**: Phục vụ việc parse mã màu Minecraft (`&a`, `&b`, v.v.) động sang thẻ HTML có style phù hợp.
+- **`src/components/PixelIcon.vue`**: Nhận `itemId`, truy cập `src/data/pixelMap.ts` để lấy link CDN của hình ảnh PNG gốc tương ứng từ jsDelivr.
+- **`src/components/CraftingGrid.vue`**: Nhận cấu trúc công thức `Recipe` từ `src/data/wikiData.ts` và render lưới 3x3 chứa các `PixelIcon`. Khi có tương tác chạm (Click/Touch), nó sẽ emit sự kiện lên trang cha để mở Drawer/Modal hiển thị chi tiết vật phẩm.
+- **`src/components/MinecraftText.vue`**: Phục vụ việc parse mã màu Minecraft (`&a`, `&b`, v.v.) động sang thẻ HTML có style phù hợp.
 
 ---
 
@@ -32,7 +32,7 @@ data/pixelMap.ts     ───┼──> components/PixelIcon.vue  ──> wiki/
 Để thêm một vũ khí mới (ví dụ: Cung Băng Giá - `frost_bow`), hãy làm theo 3 bước sau:
 
 1. **Đăng ký vật phẩm trong CDN Map**:
-   Mở file [data/pixelMap.ts](file:///b:/__JAVA__/hoiihesmp-web/data/pixelMap.ts), thêm định nghĩa cho `frost_bow`:
+   Mở file [src/data/pixelMap.ts](file:///b:/__JAVA__/hoiihesmp-web/src/data/pixelMap.ts), thêm định nghĩa cho `frost_bow`:
    ```typescript
    export const itemAssetMap: Record<string, ItemAsset> = {
      // ...
@@ -45,7 +45,7 @@ data/pixelMap.ts     ───┼──> components/PixelIcon.vue  ──> wiki/
    ```
 
 2. **Thêm dữ liệu vũ khí**:
-   Mở [data/wikiData.ts](file:///b:/__JAVA__/hoiihesmp-web/data/wikiData.ts). Tùy thuộc vào việc vũ khí đó là Mace hay vũ khí thường, thêm vào mảng `maceWeapons` hoặc `customWeapons`:
+   Mở [src/data/wikiData.ts](file:///b:/__JAVA__/hoiihesmp-web/src/data/wikiData.ts). Tùy thuộc vào việc vũ khí đó là Mace hay vũ khí thường, thêm vào mảng `maceWeapons` hoặc `customWeapons`:
    ```typescript
    export const customWeapons: Weapon[] = [
      // ...

@@ -148,7 +148,40 @@ const handleNav = (link: string) => {
         </div>
  
       </div>
- 
+
+      <!-- Discord Large Banner Section -->
+      <section class="mt-20 mc-dark-panel p-8 md:p-10 border-2 border-[#5865F2] bg-[#5865F2]/10 backdrop-blur-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_0_35px_rgba(88,101,242,0.2)] hover:shadow-[0_0_50px_rgba(88,101,242,0.35)] transition-all duration-500">
+        <!-- background glows -->
+        <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#5865F2]/20 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-[#ff55ff]/10 rounded-full blur-[80px] -z-10"></div>
+        
+        <div class="flex-1 flex flex-col gap-3 text-center md:text-left">
+          <span class="text-[10px] uppercase font-black tracking-widest text-[#5865F2] bg-white/10 px-2.5 py-1 w-fit mx-auto md:mx-0 border border-[#5865F2]/40 rounded-none">
+            Cộng đồng Minecraft
+          </span>
+          <h2 class="font-outfit font-black text-2xl md:text-4xl text-white tracking-tight uppercase">
+            Tham gia Discord Hội Hè SMP
+          </h2>
+          <p class="text-xs md:text-sm text-[#b7a9ca] leading-relaxed max-w-xl font-sans">
+            Nơi kết nối các người chơi, đăng ký tham gia máy chủ sinh tồn, giao lưu buôn bán và nhận hỗ trợ từ Ban Quản Trị 24/7. Hàng trăm thành viên đang chờ đón bạn!
+          </p>
+        </div>
+
+        <div class="flex-shrink-0 w-full md:w-auto text-center">
+          <a
+            href="https://discord.gg/As4h3xMDnR"
+            target="_blank"
+            @click="playChestSound"
+            class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white font-outfit text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(88,101,242,0.4)] cursor-pointer w-full md:w-auto border-2 border-white/20"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 127.14 96.36">
+              <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.4-5c.9-.65,1.76-1.35,2.58-2.07a75.48,75.48,0,0,0,75.68,0c.82.72,1.68,1.42,2.58,2.07a68.43,68.43,0,0,1-10.4,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.07,50.12,122.9,27.35,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
+            </svg>
+            Tham Gia Server Ngay
+          </a>
+        </div>
+      </section>
+
       <!-- Feature Blocks Section -->
       <section id="sections" class="mt-24 pt-12 border-t border-[#4a3b5c]/30 scroll-mt-20">
         <h2 class="font-outfit font-black text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-4">
@@ -179,16 +212,47 @@ const handleNav = (link: string) => {
               <h3 class="font-outfit font-black text-xl text-white group-hover:text-[#ff55ff] transition-colors">
                 {{ card.title }}
               </h3>
-              <p class="text-xs text-[#b7a9ca] leading-relaxed">
+              <p class="text-xs text-[#b7a9ca] leading-relaxed font-sans">
                 {{ card.desc }}
               </p>
             </div>
-
+ 
             <!-- Action button -->
             <div class="mt-4 pt-4 border-t border-[#4a3b5c]/30 flex items-center justify-between text-xs font-bold font-outfit uppercase tracking-wider text-[#ff55ff] hover:text-white">
               <span>Khám Phá Chi Tiết</span>
               <span>➔</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Commands Section -->
+      <section class="mt-24 pt-12 border-t border-[#4a3b5c]/30">
+        <h2 class="font-outfit font-black text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-4">
+          Các câu lệnh thông dụng
+        </h2>
+        <p class="text-[#b7a9ca] text-sm text-center max-w-xl mx-auto mb-12 font-sans">
+          Ghi nhớ và sử dụng nhanh các câu lệnh hữu ích này trực tiếp trong quá trình chơi game tại máy chủ.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div
+            v-for="cmd in [
+              { label: '/trade', desc: 'Giao dịch từ xa an toàn với người chơi khác.' },
+              { label: '/grave', desc: 'Xem lại toạ độ các bia mộ khi bị chết.' },
+              { label: '/skills', desc: 'Mở bảng kỹ năng nhập vai RPG ValhallaMMO.' },
+              { label: '/help', desc: 'Trợ giúp toàn tập cơ chế tính năng của server.' },
+              { label: '/teams', desc: 'Quản lý tổ đội đồng đội sinh tồn chung.' }
+            ]"
+            :key="cmd.label"
+            class="mc-dark-panel p-4 flex flex-col gap-2 border-l-4 border-l-[#ff55ff]/70 text-left hover:border-l-[#ff55ff] transition-all"
+          >
+            <span class="font-vt text-lg font-black text-[#ff55ff] tracking-wide block">
+              {{ cmd.label }}
+            </span>
+            <p class="text-[11px] text-[#b7a9ca] leading-relaxed font-sans">
+              {{ cmd.desc }}
+            </p>
           </div>
         </div>
       </section>
