@@ -10,7 +10,7 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   stick: { cdnName: "stick", type: "item", displayName: "Gậy" },
   breeze_rod: { cdnName: "breeze_rod", type: "item", displayName: "Thỏi Gió" },
   netherite_ingot: { cdnName: "netherite_ingot", type: "item", displayName: "Thỏi Netherite" },
-  heavy_core: { cdnName: "heavy_core", type: "block", displayName: "Lõi Nặng" },
+  heavy_core: { cdnName: "heavy_core", type: "item", displayName: "Lõi Nặng" },
   ender_pearl: { cdnName: "ender_pearl", type: "item", displayName: "Ngọc Ender" },
   amethyst_shard: { cdnName: "amethyst_shard", type: "item", displayName: "Mảnh Thạch Anh Tím" },
   enchanted_golden_apple: { cdnName: "golden_apple", type: "item", displayName: "Táo Vàng Phù Phép", glowColor: "rgba(255, 220, 0, 0.4)" },
@@ -44,12 +44,12 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   cursed_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Cổ Nguyền", glowColor: "rgba(114, 9, 183, 0.45)" },
 
   // Custom Cores
-  ego_core: { cdnName: "heavy_core", type: "block", displayName: "🔮 Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
-  soulfire_core: { cdnName: "heavy_core", type: "block", displayName: "🔥 Soulfire Core", glowColor: "rgba(30, 192, 217, 0.4)" },
-  blood_core: { cdnName: "heavy_core", type: "block", displayName: "🩸 Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
-  sculk_core: { cdnName: "heavy_core", type: "block", displayName: "💀 Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
-  end_core: { cdnName: "heavy_core", type: "block", displayName: "🌀 End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
-  ruined_core: { cdnName: "heavy_core", type: "block", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
+  ego_core: { cdnName: "heavy_core", type: "item", displayName: "🔮 Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
+  soulfire_core: { cdnName: "heavy_core", type: "item", displayName: "🔥 Soulfire Core", glowColor: "rgba(30, 192, 217, 0.4)" },
+  blood_core: { cdnName: "heavy_core", type: "item", displayName: "🩸 Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
+  sculk_core: { cdnName: "heavy_core", type: "item", displayName: "💀 Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
+  end_core: { cdnName: "heavy_core", type: "item", displayName: "🌀 End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
+  ruined_core: { cdnName: "heavy_core", type: "item", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
 
   // Vane Trifles Custom Items
   sickle: { cdnName: "iron_hoe", type: "item", displayName: "Liềm Thu Hoạch" },
@@ -70,16 +70,18 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   diamond: { cdnName: "diamond", type: "item", displayName: "Kim Cương" },
   leather: { cdnName: "leather", type: "item", displayName: "Da Thuộc" },
   paper: { cdnName: "paper", type: "item", displayName: "Giấy" },
-  chest: { cdnName: "chest", type: "block", displayName: "Rương" },
+  chest: { cdnName: "https://api.minecraftitems.xyz/api/item/chest", type: "item", displayName: "Rương" },
   slime_block: { cdnName: "slime_block", type: "block", displayName: "Khối Slime" },
   iron_bars: { cdnName: "iron_bars", type: "block", displayName: "Hàng Rào Sắt" },
-  compass: { cdnName: "compass", type: "item", displayName: "La Bàn" }
+  compass: { cdnName: "compass", type: "item", displayName: "La Bàn" },
+  glass_bottle: { cdnName: "glass_bottle", type: "item", displayName: "Chai Thủy Tinh Rỗng" },
+  bucket: { cdnName: "bucket", type: "item", displayName: "Xô Rỗng" }
 };
 
 export const getCdnUrl = (itemId: string): string => {
   const asset = itemAssetMap[itemId];
   if (!asset) {
-    return "https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/block/heavy_core.png";
+    return "https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/item/heavy_core.png";
   }
   
   if (asset.cdnName.startsWith("http://") || asset.cdnName.startsWith("https://")) {

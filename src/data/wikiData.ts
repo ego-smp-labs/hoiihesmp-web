@@ -515,7 +515,7 @@ export const vaneTriflesItems: Weapon[] = [
       ],
       ingredients: {
         S: { name: "Khối Slime", itemId: "slime_block", tooltip: "&aSlime Block|&7Khối slime nhớt." },
-        B: { name: "Rương", itemId: "chest", tooltip: "&fChest|&7Rương gỗ làm lõi xô." }
+        B: { name: "Xô Rỗng", itemId: "bucket", tooltip: "&7Bucket|&7Xô sắt rỗng." }
       }
     }
   },
@@ -602,7 +602,7 @@ export const vaneTriflesItems: Weapon[] = [
         ["", "G", ""]
       ],
       ingredients: {
-        G: { name: "Thuốc Độc Bất Kỳ", itemId: "potion", tooltip: "&5Glass Bottle|&7Chai thủy tinh rỗng." },
+        G: { name: "Chai Thủy Tinh Rỗng", itemId: "glass_bottle", tooltip: "&7Glass Bottle|&7Chai thủy tinh rỗng." },
         P: { name: "Giấy", itemId: "paper", tooltip: "&fPaper|&7Giấy ghi chép." }
       }
     }
