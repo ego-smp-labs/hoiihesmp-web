@@ -62,22 +62,25 @@ const filteredMaterials = computed(() => {
     <!-- Mobile Detail Drawer (Modal) -->
     <div 
       v-if="selectedMobileItem" 
-      class="fixed inset-0 bg-black/70 z-[100] flex items-end justify-center transition-all animate-fade-in" 
+      class="fixed inset-0 bg-black/80 z-[100] flex items-end justify-center transition-all animate-fade-in" 
       @click="selectedMobileItem = null"
     >
       <div 
-        class="w-full max-w-lg bg-[#1c1226] border-t-4 border-[#ff55ff]/50 p-6 rounded-t-2xl max-h-[70vh] overflow-y-auto"
+        class="w-full max-w-lg bg-[#1c1226] border-t-4 border-[#ff55ff] p-6 rounded-none max-h-[75vh] overflow-y-auto shadow-[0_-10px_35px_rgba(255,85,255,0.15)]"
         @click.stopPropagation
       >
-        <div class="w-12 h-1.5 bg-[#4a3b5c] rounded-full mx-auto mb-4" />
+        <div class="flex justify-between items-center mb-4 border-b border-[#4a3b5c]/30 pb-2">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-[#ff55ff]">Chi tiết vật phẩm</span>
+          <button @click="selectedMobileItem = null" class="text-xs text-[#7b6299] hover:text-white uppercase font-bold">Đóng ✕</button>
+        </div>
         
-        <div class="font-vt text-[1.25rem] text-[#aaaaaa] bg-[#100010] border border-[#2e0066] p-4 rounded-lg shadow-inner">
+        <div class="font-vt text-[1.25rem] text-[#aaaaaa] bg-[#0f0a14] border-2 border-[#4a3b5c] p-4 rounded-none shadow-inner">
           <MinecraftText :text="selectedMobileItem" />
         </div>
         
         <button 
           @click="selectedMobileItem = null"
-          class="mt-6 w-full py-3 bg-[#ff55ff]/20 hover:bg-[#ff55ff]/30 border-2 border-[#ff55ff]/50 rounded-lg text-white font-outfit font-bold uppercase tracking-wider text-sm transition-all"
+          class="mt-6 w-full py-3 bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 border-2 border-[#ff55ff] rounded-none text-white font-outfit font-black uppercase tracking-wider text-xs transition-all active:scale-[0.98]"
         >
           Đóng thông tin
         </button>
@@ -102,7 +105,7 @@ const filteredMaterials = computed(() => {
       <div class="relative w-full md:w-80">
         <input
           type="text"
-          class="w-full bg-[#120b1a] border-2 border-[#4a3b5c] rounded-md px-4 py-2.5 text-sm text-white placeholder-[#7b6299] focus:outline-none focus:border-[#ff55ff] focus:ring-1 focus:ring-[#ff55ff] transition-all font-outfit"
+          class="w-full bg-[#120b1a] border-2 border-[#4a3b5c] rounded-none px-4 py-2.5 text-sm text-white placeholder-[#7b6299] focus:outline-none focus:border-[#ff55ff] focus:ring-1 focus:ring-[#ff55ff] transition-all font-outfit"
           placeholder="Tìm kiếm búa, lõi, nguyên liệu..."
           v-model="searchTerm"
         />

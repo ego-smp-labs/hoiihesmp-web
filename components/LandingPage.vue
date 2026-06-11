@@ -47,14 +47,14 @@ const handleNav = (link: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#100a16] text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans">
+  <div class="min-h-screen bg-transparent text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans">
     
     <!-- Hero Glow Effects -->
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff55ff]/5 rounded-full blur-[120px] -z-10 animate-pulse" />
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#55ffff]/5 rounded-full blur-[120px] -z-10" />
 
     <!-- Navigation Header -->
-    <header class="w-full bg-[#100a16]/40 backdrop-blur-md border-b border-[#4a3b5c]/30 py-4 px-6 sticky top-0 z-50">
+    <header class="w-full bg-[#100a16]/60 backdrop-blur-md border-b border-[#4a3b5c]/30 py-4 px-6 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
           <PixelIcon itemId="mace_void" :size="32" :enchanted="true" />
@@ -63,12 +63,30 @@ const handleNav = (link: string) => {
           </span>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 sm:gap-4">
           <AudioToggle />
+          <a
+            href="/support"
+            @click="playChestSound"
+            class="hidden md:inline-flex px-3.5 py-2 rounded border border-[#55ffff]/30 bg-[#55ffff]/5 hover:bg-[#55ffff]/10 text-[#55ffff] font-outfit text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105"
+          >
+            Hỗ Trợ & Sáng Lập
+          </a>
+          <a
+            href="https://discord.gg/As4h3xMDnR"
+            target="_blank"
+            @click="playChestSound"
+            class="px-3.5 py-2 rounded border-2 border-[#5865F2] bg-[#5865F2]/20 hover:bg-[#5865F2]/45 text-white font-outfit text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all duration-300 shadow-[0_0_12px_rgba(88,101,242,0.25)] hover:shadow-[0_0_20px_rgba(88,101,242,0.5)] hover:scale-105 active:scale-95"
+          >
+            <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 127.14 96.36">
+              <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.4-5c.9-.65,1.76-1.35,2.58-2.07a75.48,75.48,0,0,0,75.68,0c.82.72,1.68,1.42,2.58,2.07a68.43,68.43,0,0,1-10.4,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.07,50.12,122.9,27.35,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
+            </svg>
+            <span class="hidden sm:inline">Discord</span>
+          </a>
           <a
             href="/wiki/mace-exclusive"
             @click="playChestSound"
-            class="px-4 py-2 rounded border-2 border-[#ff55ff]/50 bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 text-white font-outfit text-xs font-bold uppercase tracking-wider transition-all hover:scale-105 active:scale-95"
+            class="px-3.5 py-2 rounded border-2 border-[#ff55ff]/50 bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 text-white font-outfit text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95"
           >
             Wiki chính
           </a>
@@ -82,80 +100,80 @@ const handleNav = (link: string) => {
         
         <!-- Hero Text Left -->
         <div class="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff55ff]/10 border border-[#ff55ff]/30 text-xs font-semibold text-[#ff55ff] tracking-wide w-fit mx-auto lg:mx-0">
-            🕹 Máy chủ Minecraft: Hội Hè SMP S4
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-[#ff55ff]/15 border-l-4 border-l-[#ff55ff] border-y border-r border-[#ff55ff]/30 text-xs font-bold text-[#ff55ff] tracking-wide w-fit mx-auto lg:mx-0">
+            🕹️ Máy chủ Minecraft: Hội Hè SMP S4
           </div>
           
-          <h1 class="font-outfit font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15]">
+          <h1 class="font-outfit font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
             Cẩm Nang Cổ Vật<br />
-            <span class="bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent drop-shadow-md">
+            <span class="bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent drop-shadow-lg">
               Hội Hè SMP Wiki
             </span>
           </h1>
           
-          <p class="text-[#b7a9ca] text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <p class="text-[#b7a9ca] text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
             Hệ thống tài liệu hướng dẫn và tra cứu tính năng dành cho member cụm sinh tồn Hội Hè SMP. Khám phá các cổ vật chế tạo, kỹ năng rèn đúc và hệ thống plugins tùy biến.
           </p>
-
+ 
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
             <a
               href="#sections"
-              class="px-6 py-3 rounded-md border-3 border-[#ff55ff] bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 text-white font-outfit text-sm font-black uppercase tracking-wider transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-lg cursor-pointer"
+              class="px-6 py-3 rounded-none border-3 border-[#ff55ff] bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 text-white font-outfit text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,85,255,0.4)] active:scale-95 cursor-pointer"
             >
               Bắt Đầu Khám Phá ↓
             </a>
             <a
               href="/guide/"
               @click="playChestSound"
-              class="px-6 py-3 rounded-md border-3 border-[#4a3b5c] bg-[#20182b] hover:bg-[#4a3b5c]/30 text-[#e0d7ec] font-outfit text-sm font-black uppercase tracking-wider transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              class="px-6 py-3 rounded-none border-3 border-[#4a3b5c]/80 bg-[#20182b]/80 hover:bg-[#4a3b5c]/30 text-[#e0d7ec] font-outfit text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
             >
               Tài Liệu Hướng Dẫn
             </a>
           </div>
         </div>
-
+ 
         <!-- Hero Graphic Right (3D Cube) -->
-        <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[280px]">
+        <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[300px]">
           <div class="absolute w-72 h-72 rounded-full border-4 border-dashed border-[#ff55ff]/15 animate-spin -z-10" style="animation-duration: 25s" />
           <div class="absolute w-52 h-52 rounded-full border-2 border-dashed border-[#55ffff]/15 animate-spin -z-10" style="animation-duration: 12s; animation-direction: reverse;" />
           
           <div class="animate-bounce" style="animation-duration: 4s">
             <ThreeDBlock :size="120" />
           </div>
-
-          <div class="mt-8 px-4 py-2 rounded bg-[#100010] border border-[#2e0066] text-center shadow-lg hover:scale-105 transition-all">
+ 
+          <div class="mt-8 px-5 py-2.5 rounded-none bg-[#100010]/80 border-2 border-[#2e0066]/70 text-center shadow-lg hover:scale-105 transition-all duration-300 backdrop-blur-sm">
             <span class="font-vt text-sm tracking-widest text-[#ff55ff] uppercase block">Hội Hè Lodestone Forge</span>
             <span class="font-vt text-xs text-[#aaaaaa]">Độc quyền đúc vũ khí custom</span>
           </div>
         </div>
-
+ 
       </div>
-
+ 
       <!-- Feature Blocks Section -->
       <section id="sections" class="mt-24 pt-12 border-t border-[#4a3b5c]/30 scroll-mt-20">
         <h2 class="font-outfit font-black text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-4">
           3 Chuyên Mục Tra Cứu Chính
         </h2>
-        <p class="text-[#b7a9ca] text-sm text-center max-w-xl mx-auto mb-12">
+        <p class="text-[#b7a9ca] text-sm text-center max-w-xl mx-auto mb-12 font-sans">
           Lựa chọn một trong các chuyên mục dưới đây để bắt đầu tìm hiểu về cơ chế và tính năng của máy chủ.
         </p>
-
+ 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
             v-for="card in cards"
             :key="card.id"
             @click="handleNav(card.link)"
-            class="mc-dark-panel p-6 flex flex-col gap-5 cursor-pointer hover:-translate-y-1 transition-all"
+            class="mc-dark-panel p-6 flex flex-col gap-5 cursor-pointer"
             :class="card.borderColor"
           >
             <!-- Badge & Icon -->
             <div class="flex items-center justify-between">
-              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border" :class="card.badgeColor">
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded-none border font-outfit" :class="card.badgeColor">
                 {{ card.subtitle }}
               </span>
               <PixelIcon :itemId="card.itemId" :size="48" :enchanted="true" />
             </div>
-
+ 
             <!-- Content -->
             <div class="flex-1 flex flex-col gap-2">
               <h3 class="font-outfit font-black text-xl text-white group-hover:text-[#ff55ff] transition-colors">
@@ -178,9 +196,10 @@ const handleNav = (link: string) => {
 
     <!-- Footer -->
     <footer class="mt-auto pt-8 border-t border-[#4a3b5c]/20 text-center text-xs text-[#7b6299] font-outfit">
-      <div class="max-w-7xl mx-auto px-6">
-        <p>Hội Hè SMP Wiki © 2026. Phát triển cho cộng đồng người chơi.</p>
-        <p class="mt-1 text-[10px] opacity-70">Sản phẩm không thuộc bản quyền Mojang Studios.</p>
+      <div class="max-w-7xl mx-auto px-6 flex flex-col gap-1">
+        <p>Hội Hè SMP Wiki © 2026. Sáng lập bởi <a href="/support" class="text-[#ff55ff] hover:underline font-bold">Minazuki</a>.</p>
+        <p>Tham gia ngay cộng đồng <a href="https://discord.gg/As4h3xMDnR" target="_blank" class="text-[#55ffff] hover:underline font-bold">Discord Hội Hè SMP</a> để nhận hỗ trợ.</p>
+        <p class="mt-2 text-[10px] opacity-70">Sản phẩm không thuộc bản quyền Mojang Studios.</p>
       </div>
     </footer>
 
