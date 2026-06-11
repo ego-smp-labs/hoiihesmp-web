@@ -29,33 +29,35 @@ const filteredWeapons = computed(() => {
 <template>
   <div class="custom-weapons-container font-sans text-[#e0d7ec] bg-grid-pattern relative pb-16">
     
-    <!-- Mobile Detail Drawer (Modal) -->
-    <div 
-      v-if="selectedMobileItem" 
-      class="fixed inset-0 bg-black/80 z-[100] flex items-end justify-center transition-all animate-fade-in" 
-      @click="selectedMobileItem = null"
-    >
+    <!-- Centered Detail Modal -->
+    <Teleport to="body">
       <div 
-        class="w-full max-w-lg bg-[#1c1226] border-t-4 border-[#ff55ff] p-6 rounded-none max-h-[75vh] overflow-y-auto shadow-[0_-10px_35px_rgba(255,85,255,0.15)]"
-        @click.stopPropagation
+        v-if="selectedMobileItem" 
+        class="fixed inset-0 bg-black/85 z-[200] flex items-center justify-center p-4 sm:p-6" 
+        @click="selectedMobileItem = null"
       >
-        <div class="flex justify-between items-center mb-4 border-b border-[#4a3b5c]/30 pb-2">
-          <span class="text-xs uppercase font-extrabold tracking-wider text-[#ff55ff]">Chi tiết vật phẩm</span>
-          <button @click="selectedMobileItem = null" class="text-xs text-[#7b6299] hover:text-white uppercase font-bold">Đóng ✕</button>
-        </div>
-        
-        <div class="font-vt text-[1.25rem] text-[#aaaaaa] bg-[#0f0a14] border-2 border-[#4a3b5c] p-4 rounded-none shadow-inner">
-          <MinecraftText :text="selectedMobileItem" />
-        </div>
-        
-        <button 
-          @click="selectedMobileItem = null"
-          class="mt-6 w-full py-3 bg-[#ff55ff]/10 hover:bg-[#ff55ff]/20 border-2 border-[#ff55ff] rounded-none text-white font-outfit font-black uppercase tracking-wider text-xs transition-all active:scale-[0.98]"
+        <div 
+          class="w-full max-w-md bg-[#1c1226] border-2 border-[#ff55ff] p-5 sm:p-6 rounded-none max-h-[80vh] overflow-y-auto shadow-[0_0_50px_rgba(255,85,255,0.2)] animate-modal-in"
+          @click.stop
         >
-          Đóng thông tin
-        </button>
+          <div class="flex justify-between items-center mb-4 border-b border-[#4a3b5c]/30 pb-3">
+            <span class="text-xs uppercase font-extrabold tracking-wider text-[#ff55ff] font-outfit">Chi Tiết Vật Phẩm</span>
+            <button @click="selectedMobileItem = null" class="w-8 h-8 flex items-center justify-center text-sm text-[#7b6299] hover:text-white hover:bg-white/10 transition-colors font-bold rounded-none">✕</button>
+          </div>
+          
+          <div class="font-vt text-lg sm:text-xl text-[#aaaaaa] bg-[#0f0a14] border-2 border-[#4a3b5c] p-4 rounded-none shadow-inner leading-relaxed">
+            <MinecraftText :text="selectedMobileItem" />
+          </div>
+          
+          <button 
+            @click="selectedMobileItem = null"
+            class="mt-5 w-full py-3 bg-[#ff55ff]/15 hover:bg-[#ff55ff]/25 border-2 border-[#ff55ff] rounded-none text-white font-outfit font-black uppercase tracking-wider text-xs transition-all active:scale-[0.98]"
+          >
+            Đóng
+          </button>
+        </div>
       </div>
-    </div>
+    </Teleport>
 
     <!-- Search & Title Header -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b-2 border-[#4a3b5c] mb-8">

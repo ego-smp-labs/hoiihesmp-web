@@ -10,7 +10,7 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   stick: { cdnName: "stick", type: "item", displayName: "Gậy" },
   breeze_rod: { cdnName: "breeze_rod", type: "item", displayName: "Thỏi Gió" },
   netherite_ingot: { cdnName: "netherite_ingot", type: "item", displayName: "Thỏi Netherite" },
-  heavy_core: { cdnName: "heavy_core", type: "item", displayName: "Lõi Nặng" },
+  heavy_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "Lõi Nặng" },
   ender_pearl: { cdnName: "ender_pearl", type: "item", displayName: "Ngọc Ender" },
   amethyst_shard: { cdnName: "amethyst_shard", type: "item", displayName: "Mảnh Thạch Anh Tím" },
   enchanted_golden_apple: { cdnName: "golden_apple", type: "item", displayName: "Táo Vàng Phù Phép", glowColor: "rgba(255, 220, 0, 0.4)" },
@@ -25,7 +25,7 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   soul_campfire: { cdnName: "soul_campfire", type: "item", displayName: "Lửa Trại Linh Hồn" },
   ghast_tear: { cdnName: "ghast_tear", type: "item", displayName: "Nước Mắt Ghast" },
   zombie_head: { cdnName: "https://minotar.net/avatar/Zombie/64.png", type: "item", displayName: "Đầu Zombie" },
-  magma_block: { cdnName: "magma", type: "block", displayName: "Khối Magma" },
+  magma_block: { cdnName: "https://api.minecraftitems.xyz/api/item/magma_block", type: "item", displayName: "Khối Magma" },
   nether_wart: { cdnName: "nether_wart", type: "item", displayName: "Bướu Địa Ngục" },
   soul_lantern: { cdnName: "soul_lantern", type: "item", displayName: "Đèn Lồng Linh Hồn" },
   redstone_block: { cdnName: "redstone_block", type: "block", displayName: "Khối Đá Đỏ" },
@@ -44,12 +44,12 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   cursed_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Cổ Nguyền", glowColor: "rgba(114, 9, 183, 0.45)" },
 
   // Custom Cores
-  ego_core: { cdnName: "heavy_core", type: "item", displayName: "🔮 Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
-  soulfire_core: { cdnName: "heavy_core", type: "item", displayName: "🔥 Soulfire Core", glowColor: "rgba(30, 192, 217, 0.4)" },
-  blood_core: { cdnName: "heavy_core", type: "item", displayName: "🩸 Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
-  sculk_core: { cdnName: "heavy_core", type: "item", displayName: "💀 Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
-  end_core: { cdnName: "heavy_core", type: "item", displayName: "🌀 End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
-  ruined_core: { cdnName: "heavy_core", type: "item", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
+  ego_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "🔮 Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
+  soulfire_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "🔥 Soulfire Core", glowColor: "rgba(30, 192, 217, 0.4)" },
+  blood_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "🩸 Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
+  sculk_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "💀 Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
+  end_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "🌀 End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
+  ruined_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
 
   // Vane Trifles Custom Items
   sickle: { cdnName: "iron_hoe", type: "item", displayName: "Liềm Thu Hoạch" },

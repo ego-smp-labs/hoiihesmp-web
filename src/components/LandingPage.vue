@@ -104,18 +104,18 @@ const handleNav = (link: string) => {
             🕹️ Máy chủ Minecraft: Hội Hè SMP S4
           </div>
 
-          <h1 class="hero-title-animated font-outfit font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-[0.9]">
+          <h1 class="hero-title-animated font-outfit font-black text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] text-white tracking-tighter leading-[0.85] select-none">
             Cẩm Nang<br />
-            <span class="hero-title-gradient bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent inline-block">
+            <span class="hero-title-gradient bg-gradient-to-r from-[#ff55ff] via-[#e0a6ff] to-[#55ffff] bg-clip-text text-transparent inline-block drop-shadow-[0_0_35px_rgba(255,85,255,0.4)]">
               Cổ Vật
             </span>
           </h1>
 
-          <p class="hero-title-gradient font-outfit font-black text-2xl sm:text-3xl md:text-4xl tracking-tight bg-gradient-to-r from-[#b7a9ca] via-[#ff55ff] to-[#55ffff] bg-clip-text text-transparent">
+          <p class="hero-title-gradient font-outfit font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-[#b7a9ca] via-[#ff55ff] to-[#55ffff] bg-clip-text text-transparent mt-1 select-none">
             Hội Hè SMP Wiki
           </p>
 
-          <p class="hero-subtitle-animated text-[#b7a9ca] text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+          <p class="hero-subtitle-animated text-[#b7a9ca] text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl ml-auto mr-auto lg:ml-0 lg:mr-0 font-sans">
             Hệ thống tài liệu hướng dẫn và tra cứu tính năng dành cho member cụm sinh tồn Hội Hè SMP. Khám phá các cổ vật chế tạo, kỹ năng rèn đúc và hệ thống plugins tùy biến.
           </p>
 
@@ -167,13 +167,13 @@ const handleNav = (link: string) => {
         <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-[#ff55ff]/10 rounded-full blur-[80px] -z-10"></div>
 
         <div class="flex-1 flex flex-col gap-3 text-center md:text-left">
-          <span class="text-[10px] uppercase font-black tracking-widest text-[#5865F2] bg-white/10 px-2.5 py-1 w-fit mx-auto md:mx-0 border border-[#5865F2]/40 rounded-none">
+          <span class="text-[10px] uppercase font-black tracking-widest text-[#5865F2] bg-white/10 px-2.5 py-1 w-fit ml-auto mr-auto md:ml-0 md:mr-0 border border-[#5865F2]/40 rounded-none">
             Cộng đồng Minecraft
           </span>
           <h2 class="font-outfit font-black text-xl sm:text-2xl md:text-4xl text-white tracking-tight uppercase">
             Tham gia Discord Hội Hè SMP
           </h2>
-          <p class="text-xs sm:text-sm text-[#b7a9ca] leading-relaxed max-w-xl mx-auto md:mx-0 font-sans">
+          <p class="text-xs sm:text-sm text-[#b7a9ca] leading-relaxed max-w-xl ml-auto mr-auto md:ml-0 md:mr-0 font-sans">
             Nơi kết nối các người chơi, đăng ký tham gia máy chủ sinh tồn, giao lưu buôn bán và nhận hỗ trợ từ Ban Quản Trị 24/7. Hàng trăm thành viên đang chờ đón bạn!
           </p>
         </div>
@@ -198,7 +198,7 @@ const handleNav = (link: string) => {
         <h2 class="font-outfit font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-3 sm:mb-4">
           3 Chuyên Mục Tra Cứu Chính
         </h2>
-        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-xl mx-auto mb-8 sm:mb-12 font-sans">
+        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-xl ml-auto mr-auto mb-8 sm:mb-12 font-sans">
           Lựa chọn một trong các chuyên mục dưới đây để bắt đầu tìm hiểu về cơ chế và tính năng của máy chủ.
         </p>
 
@@ -242,7 +242,7 @@ const handleNav = (link: string) => {
         <h2 class="font-outfit font-black text-xl sm:text-2xl lg:text-3xl text-white tracking-tight uppercase text-center mb-3 sm:mb-4">
           Các câu lệnh thông dụng
         </h2>
-        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-2xl mx-auto mb-8 sm:mb-12 font-sans leading-relaxed">
+        <p class="text-[#b7a9ca] text-xs sm:text-sm text-center max-w-2xl ml-auto mr-auto mb-8 sm:mb-12 font-sans leading-relaxed">
           Ghi nhớ và sử dụng nhanh các câu lệnh hữu ích này trực tiếp trong quá trình chơi game tại máy chủ.
         </p>
 

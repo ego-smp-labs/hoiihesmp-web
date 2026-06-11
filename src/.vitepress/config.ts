@@ -10,10 +10,10 @@ export default defineConfig({
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=VT323&family=Inter:wght@400;500;600;700&display=swap' }]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=VT323&family=Inter:wght@400;500;600;700&display=swap' }]
   ],
   themeConfig: {
-    logo: 'https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/block/heavy_core.png',
+    logo: '/server-icon.png',
     search: {
       provider: 'local',
       options: {

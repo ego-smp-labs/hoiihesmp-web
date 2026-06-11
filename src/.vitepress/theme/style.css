@@ -2,12 +2,15 @@
 
 @theme {
   --font-vt: "VT323", monospace;
-  --font-outfit: "Outfit", sans-serif;
-  --font-sans: "Inter", sans-serif;
+  --font-outfit: "Outfit", "Be Vietnam Pro", sans-serif;
+  --font-sans: "Inter", "Be Vietnam Pro", sans-serif;
 }
 
 /* ── Force Dark Mode ──────────────────────────────────────────── */
 :root {
+  --vp-layout-max-width: 1680px !important;
+  --vp-sidebar-width: 280px !important;
+
   --vp-c-brand-1: #ff55ff;
   --vp-c-brand-2: #d84cd8;
   --vp-c-brand-3: #b03ab0;
@@ -25,7 +28,7 @@
   --vp-c-border: #4a3b5c;
 
   --font-vt323: "VT323", monospace;
-  --font-outfit: "Outfit", sans-serif;
+  --font-outfit: "Outfit", "Be Vietnam Pro", sans-serif;
 }
 
 /* Override fonts in VitePress config */
@@ -57,6 +60,8 @@ html:not(.dark) {
 /* ── Hide dark/light mode toggle button ── */
 .VPNavBarAppearance,
 .VPSwitchAppearance,
+.VPNavScreenAppearance,
+.VPFlyout,
 .appearance,
 button[class*="VPSwitch"] {
   display: none !important;
@@ -109,28 +114,34 @@ html, body {
 }
 
 .VPDoc .content-container {
-  max-width: 960px !important;
+  max-width: 1200px !important;
 }
 
 @media (min-width: 1440px) {
   .VPDoc .content-container {
-    max-width: 1100px !important;
+    max-width: 1400px !important;
   }
 }
 
 /* ── Fix sidebar width for wider screens ── */
 @media (min-width: 960px) {
   .VPSidebar {
-    width: 272px !important;
+    width: 280px !important;
+  }
+  .VPContent.has-sidebar {
+    padding-left: 280px !important;
   }
   .VPDoc:not(.has-aside) .content-container {
-    max-width: 960px !important;
+    max-width: 1200px !important;
   }
 }
 
 @media (min-width: 1440px) {
   .VPSidebar {
-    width: 300px !important;
+    width: 320px !important;
+  }
+  .VPContent.has-sidebar {
+    padding-left: 320px !important;
   }
 }
 
