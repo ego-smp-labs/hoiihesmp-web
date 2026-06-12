@@ -31,6 +31,10 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   redstone_block: { cdnName: "redstone_block", type: "block", displayName: "Khối Đá Đỏ" },
   potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ" },
   wither_skeleton_skull: { cdnName: "https://minotar.net/avatar/MHF_WSkeleton/64.png", type: "item", displayName: "Đầu Khô Lâu Wither" },
+  glitch_clock: { cdnName: "clock", type: "item", displayName: "Đồng hồ Glitch", glowColor: "rgba(255, 170, 0, 0.45)" },
+  netherite_spear: { cdnName: "trident", type: "item", displayName: "Giáo Netherite" },
+  any_head: { cdnName: "https://minotar.net/avatar/MHF_Skeleton/64.png", type: "item", displayName: "Đầu Bất Kỳ (Any Head)" },
+  any_poison_potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ (Any Poison Potion)" },
 
   // Mace Custom Weapons
   mace_power: { cdnName: "mace", type: "item", displayName: "Búa Quyền Năng", glowColor: "rgba(255, 170, 0, 0.45)" },

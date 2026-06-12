@@ -92,7 +92,7 @@ export const maceWeapons: Weapon[] = [
     cmd: 2003,
     singleton: true,
     desc: "Cổ vật bẻ cong hư vô, thương thảo với tử thần để trao cho người sở hữu cơ hội hồi sinh từ địa ngục.",
-    tooltip: "&d&lAbyssal Void Mace|&7An abyssal mace that devours matter and bargains with fatal End damage.||&6⚡ Active — Mind Detachment:|&fKhi ở trạng thái Abyss State sau hồi sinh, đòn đánh Sneak+Left Click có 50% cơ hội áp bóng tối Darkness và Đóng Băng mục tiêu đứng yên trong 5 giây.||&a⭐ Passive — Abyss Resurrect & Devour:|&f10% cơ hội đòn đánh thường khóa 2 ô Hotbar đối phương trong 5s. Khi chịu sát thương chí mạng từ người (25% cơ hội) hoặc mob (5% cơ hội), cứu mạng người sở hữu (hồi chiêu 10 phút), cấp 10 tim ảo và bật Abyss State 30s. Nếu xung quanh 10m có ai cầm Totem, tăng 50% cơ hội hồi sinh; nếu thành công hồi sinh, tất cả totem cầm trên tay của đối phương gần đó sẽ bị cưỡng ép kích nổ và tiêu hao.||&c☠ Curse — Khô cạn & Nguyền Totem:|&fHồi máu tự nhiên giảm 60%, hiệu quả thuốc hồi máu giảm 35%, thanh đói cạn nhanh +50%. Mang búa chạm nước bị dính Wither II trong 3 giây. Đặc biệt, tự động drop hết Totem trong túi đồ ra ngoài đất và chặn hồi sinh bằng Totem.",
+    tooltip: "&d&lAbyssal Void Mace|&7An abyssal mace that devours matter and bargains with fatal End damage.||&6⚡ Active — Mind Detachment:|&fKhi ở trạng thái Abyss State sau hồi sinh, đòn đánh Sneak+Left Click có 50% cơ hội áp bóng tối Darkness và Đóng Băng mục tiêu đứng yên trong 5 giây.||&a⭐ Passive — Abyss Resurrect & Devour:|&f10% cơ hội đòn đánh thường khóa 2 ô Hotbar đối phương trong 5s. Khi chịu sát thương chí mạng từ người (25% cơ hội) hoặc mob (5% cơ hội), cứu mạng người sở hữu (hồi chiêu 10 phút), cấp 10 tim ảo và bật Abyss State 30s. Nếu xung quanh 10m có ai cầm Totem, tăng 50% cơ hội hồi sinh; nếu thành công hồi sinh, tất cả totem cầm trên tay của đối phương gần đó sẽ bị cưỡng ép kích nổ và tiêu hao.||&c☠ Curse — Khô cạn & Nguyền Totem:|&fHồi máu tự nhiên giảm 60%, hiệu quả thuốc hồi máu giảm 35%, thanh đói cạn nhanh +50%. Mang búa chạm nước bị dính Wither II trong 3 giây. Đặc biệt, nếu mang búa trong người thì không thể dùng Totem (tự động drop hết Totem trong túi đồ ra ngoài đất và chặn hồi sinh bằng Totem).",
     recipe: {
       shape: [
         ["A", "E", "A"],
@@ -121,14 +121,15 @@ export const maceWeapons: Weapon[] = [
     recipe: {
       shape: [
         ["O", "B", "O"],
-        ["O", "W", "O"],
+        ["H", "W", "H"],
         ["O", "V", "O"]
       ],
       ingredients: {
         O: { name: "Obsidian Chaos", itemId: "obsidian_chaos", tooltip: "&5Obsidian Chaos|&7Hắc diện thạch nhiễm năng lượng Creeper nổ." },
         B: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Mỗi 10s rút 1 tim." },
         W: { name: "Wither Rose", itemId: "wither_rose", tooltip: "&0Wither Rose|&7Wither floral decay." },
-        V: { name: "Void Mace", itemId: "mace", tooltip: "&dVoid Mace|&7The abyssal base mace." }
+        V: { name: "Void Mace", itemId: "mace_void", tooltip: "&dVoid Mace|&7The abyssal base mace." },
+        H: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Lost player soul." }
       }
     }
   },
@@ -178,7 +179,7 @@ export const maceWeapons: Weapon[] = [
         O: { name: "Obsidian", itemId: "obsidian", tooltip: "&fObsidian|&7Hard volcanic defense block." },
         S: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Nhận darkness/blindness ngẫu nhiên." },
         E: { name: "End Core", itemId: "end_core", tooltip: "&dEnd Core|&5Bất ổn: &7Random teleport mechanics." },
-        N: { name: "Netherite Block", itemId: "netherite_block", tooltip: "&fNetherite Block|&7Cần 2 thỏi Netherite Block." },
+        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Thỏi Netherite rèn búa." },
         R: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." }
       }
     }
@@ -192,19 +193,19 @@ export const maceWeapons: Weapon[] = [
     cmd: 10005,
     singleton: true,
     desc: "Cổ vật dạng giáo mang dư chấn lòng đất, bắn sóng âm nén phá tan mọi rào cản phòng ngự.",
-    tooltip: "&9&lWarden Spear|&7A deep-dark spear resonating with Warden pressure waves.||&6⚡ Active — Sonic Boom:|&fNgồi + Đánh hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu đầu tiên nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Trả giá người dùng mất 4 HP. Hồi chiêu 35s.||&a⭐ Passive — Quiet step:|&fĐi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP).||&c☠ Curse — Quá tải phản âm:|&fSau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm.",
+    tooltip: "&9&lWarden Spear|&7A deep-dark spear resonating with Warden pressure waves.||&6⚡ Active — Sonic Boom:|&fNgồi + Đánh hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu đầu tiên nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Trả giá người dùng mất 4 HP (không tự tử). Hồi chiêu 35s.||&a⭐ Passive — Quiet step:|&fĐi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP).||&c☠ Curse — Quá tải phản âm:|&fSau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm (không nguyền rủa lộ vị trí).",
     recipe: {
       shape: [
-        ["S", "C", "G"],
-        ["N", "B", "N"],
-        ["G", "E", "S"]
+        ["S", "C", "B"],
+        ["G", "N", "S"],
+        ["N", "E", "G"]
       ],
       ingredients: {
         S: { name: "Sculk Catalyst", itemId: "sculk_catalyst", tooltip: "&fSculk Catalyst|&7Spreads sculk blocks from souls." },
         C: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Blindness/Darkness curse ticker." },
+        B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
         G: { name: "Enchanted Golden Apple", itemId: "enchanted_golden_apple", tooltip: "&dEnchanted Golden Apple|&7Super notch apple." },
         N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard nether alloy." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." },
         E: { name: "Echo Shard", itemId: "echo_shard", tooltip: "&fEcho Shard|&7Ancient recovery material." }
       }
     }
@@ -244,17 +245,18 @@ export const maceWeapons: Weapon[] = [
     cmd: 2003,
     singleton: true,
     desc: "Cổ vật thao túng dòng thời gian, đóng băng vị trí của mục tiêu hoặc chính người dùng nếu ném trượt.",
-    tooltip: "&e&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong dòng thời gian. Giảm vĩnh viễn 15% máu tối đa khi mang theo.",
+    tooltip: "&6&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian trong 2.25 giây. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong 1.25 giây.",
     recipe: {
       shape: [
-        ["", "E", ""],
-        ["", "B", ""],
-        ["", "S", ""]
+        ["S", "G", "T"],
+        ["G", "N", "S"],
+        ["N", "S", "S"]
       ],
       ingredients: {
-        E: { name: "Ender Pearl", itemId: "ender_pearl", tooltip: "&fEnder Pearl|&7Teleportation sphere." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod làm lõi gậy." },
-        S: { name: "Amethyst Shard", itemId: "amethyst_shard", tooltip: "&dAmethyst Shard|&7Purple echo crystal." }
+        T: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
+        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Thỏi Netherite." },
+        G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian." },
+        S: { name: "Khối Slime", itemId: "slime_block", tooltip: "&fSlime Block|&7Khối slime đàn hồi." }
       }
     }
   }
@@ -279,9 +281,9 @@ export const customWeapons: Weapon[] = [
         ["", "S", ""]
       ],
       ingredients: {
-        W: { name: "Wither Skeleton Skull", itemId: "wither_skeleton_skull", tooltip: "&fWither Skeleton Skull|&7Đầu khô lâu héo úa." },
-        P: { name: "Potion (Any)", itemId: "potion", tooltip: "&5Thuốc độc bất kì|&7Yêu cầu thuốc độc (Splash, Lingering hoặc Potion thường)." },
-        S: { name: "Stick", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ chế tạo." }
+        W: { name: "Đầu Bất Kỳ", itemId: "any_head", tooltip: "&fAny Head|&7Bất kỳ đầu sinh vật hoặc đầu người chơi nào." },
+        P: { name: "Thuốc Độc Bất Kỳ", itemId: "any_poison_potion", tooltip: "&5Poison Potion|&7Yêu cầu thuốc độc (Splash, Lingering hoặc Potion thường)." },
+        S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
       }
     }
   }
@@ -329,18 +331,7 @@ export const cores: Core[] = [
     name: "🩸 Blood Core",
     instability: "Mỗi 10 giây khi ở trong túi đồ người sở hữu, có 10% cơ hội gây 2 HP (1 tim) sát thương trực tiếp xuyên giáp.",
     method: "Nghi thức Hiến tế Nether: Thả Đầu Player Bị Vấy Bẩn (Cursed Player Head) trên Crimson Nylium ở Nether, dùng Kiếm Netherite chuột phải kết liễu 1 sinh vật gần đó (80% thành công thành Blood Core, 20% thất bại thành Ruined Core và bị nguyền rủa).",
-    recipe: {
-      shape: [
-        ["", "R", ""],
-        ["P", "H", "P"],
-        ["", "R", ""]
-      ],
-      ingredients: {
-        R: { name: "Redstone Block", itemId: "redstone_block", tooltip: "&cRedstone Block" },
-        P: { name: "Player Head", itemId: "cursed_player_head", tooltip: "&cPlayer Head" },
-        H: { name: "Heavy Core", itemId: "heavy_core", tooltip: "&fHeavy Core" }
-      }
-    }
+    recipe: null
   },
   {
     id: "sculk_core",
@@ -379,6 +370,13 @@ export const materials: Material[] = [
     cmd: 4002,
     desc: "Cái nhìn cuối cùng của Enderman đông kết khi phá hủy Totem.",
     method: "Bị một Enderman đánh chí mạng. Nghi thức sẽ cưỡng chế bỏ qua Totem hồi sinh của bạn (bạn sẽ thực sự chết), đổi lại Challenger's Eye rơi ra trong hòm đồ chết."
+  },
+  {
+    id: "glitch_clock",
+    name: "Đồng hồ Glitch",
+    cmd: 4003,
+    desc: "Chiếc đồng hồ bị lỗi vòng lặp thời gian từ nghịch lý sinh mạng.",
+    method: "Thoát game khi tay đang cầm đồng hồ thông thường và lượng máu của bạn chỉ còn từ 0.5 tim trở xuống (<= 1.0 HP), tỉ lệ thành công là 20%."
   }
 ];
 

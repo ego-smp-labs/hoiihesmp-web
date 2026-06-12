@@ -1,65 +1,102 @@
-# Hướng Dẫn Phát Triển (Development & Contribution Guide)
+# 📝 Hướng Dẫn Quy Trình Phát Triển & Quy Định Viết Code (Development Workflow & Coding Standards)
 
-Tài liệu này hướng dẫn quy trình làm việc, thiết lập môi trường phát triển và các quy định viết mã nguồn (Coding Conventions) của dự án.
+Tài liệu này định nghĩa quy trình làm việc, thiết lập môi trường phát triển cục bộ (local environment), các quy chuẩn viết mã nguồn (Coding Conventions) và quy tắc kiểm thử bắt buộc đối với mọi lập trình viên khi tham gia đóng góp cho dự án **Hội Hè SMP Wiki**.
 
 ---
 
-## 🛠️ 1. Thiết Lập Môi Trường (Setup)
+## 🛠️ 1. Khởi Tạo Môi Trường Cục Bộ (Setup)
 
-Dự án yêu cầu **Node.js (v18+)** và trình quản lý thư viện **pnpm**.
+Dự án sử dụng **Node.js (v18+)** và trình quản lý gói **pnpm** (nhằm tối ưu hóa tốc độ cài đặt và quản lý node_modules dùng chung).
 
 ```bash
-# 1. Clone dự án và truy cập thư mục gốc
+# 1. Clone mã nguồn về máy cục bộ
+git clone https://github.com/nhatthang/hoiihesmp-web.git
 cd hoiihesmp-web
 
-# 2. Cài đặt các gói phụ thuộc
+# 2. Cài đặt các gói phụ thuộc với pnpm
 pnpm install
 
-# 3. Chạy server phát triển (Dev Mode)
+# 3. Chạy Server phát triển (Local Hot-Reload)
 pnpm dev
 
-# 4. Kiểm tra build sản phẩm (Build Production)
+# 4. Biên dịch thử nghiệm (Production-ready build check)
 pnpm run build
 ```
 
----
-
-## 📝 2. Quy Định Viết Code (Coding Conventions)
-
-### Khai báo Kiểu dữ liệu (TypeScript Type Safety)
-- Toàn bộ dữ liệu hoặc logic bổ sung đều phải được viết trong các file `.ts`.
-- Mọi dữ liệu mới thêm vào [src/data/wikiData.ts](file:///b:/__JAVA__/hoiihesmp-web/src/data/wikiData.ts) phải tuân thủ nghiêm ngặt các `interface` đã định nghĩa sẵn.
-- Tránh sử dụng kiểu `any`. Hãy định nghĩa cụ thể kiểu dữ liệu để tăng khả năng tự động hoàn thành (autocomplete) của IDE.
- 
-### Đặt Tên File & Component (Naming Conventions)
-- **Tên Component Vue**: Sử dụng chuẩn **PascalCase** (ví dụ: `PixelIcon.vue`, `CraftingGrid.vue` trong `src/components/`).
-- **Tên File Dữ liệu / Script**: Sử dụng chuẩn **camelCase** (ví dụ: `wikiData.ts`, `pixelMap.ts`, `audio.ts` trong `src/data/` và `src/utils/`).
-- **Tên Thư mục**: Sử dụng chuẩn viết thường/kết nối bằng gạch ngang nằm trong thư mục gốc `src/` (ví dụ: `src/components/`, `src/data/`, `src/.vitepress/`).
-
-### Viết JSX/HTML trong Vue Template
-- Sử dụng thuộc tính `:` viết tắt cho `v-bind` và `@` viết tắt cho `v-on`.
-- Các sự kiện phát ra từ component con phải được khai báo rõ ràng bằng `defineEmits` kèm kiểu dữ liệu truyền đi.
-- **Tránh unescaped entities**: Khi viết text chứa các ký tự đặc biệt như ngoặc kép `"`, dấu nháy đơn `'` hoặc dấu lớn hơn `>`, hãy sử dụng các ký tự thực thể HTML tương ứng (ví dụ: `&ldquo;`, `&rdquo;`, `&apos;`) để tránh lỗi biên dịch.
+Sau khi chạy lệnh `pnpm dev`, dự án sẽ chạy tại địa chỉ mặc định `http://localhost:5173`.
 
 ---
 
-## 🔄 3. Quy Định Commit (Conventional Commits)
+## 📐 2. Quy Định Viết Code (Coding Standards)
 
-Mỗi commit đẩy lên Git cần tuân thủ cấu trúc Conventional Commit để dễ dàng quản lý lịch sử thay đổi:
+Để giữ cho codebase luôn sạch sẽ, dễ bảo trì và tránh các lỗi biên dịch hoặc runtime không đáng có, các lập trình viên cần tuân thủ nghiêm ngặt các quy tắc dưới đây.
+
+### 2.1. Đảm Bảo An Toàn Kiểu Dữ Liệu (TypeScript Type Safety)
+- **Không sử dụng kiểu `any`:** Việc sử dụng `any` làm triệt tiêu sức mạnh kiểm soát lỗi tĩnh của TypeScript. Trong trường hợp dữ liệu phức tạp chưa rõ ràng cấu trúc, hãy khai báo `unknown` hoặc thiết kế một `interface` tương ứng.
+- **Khai báo kiểu tường minh cho Vue Props/Emits:**
+  - Sử dụng `<script setup lang="ts">` kết hợp với cú pháp `defineProps<Props>()` và `defineEmits<Emits>()`.
+  - Luôn cung cấp giá trị mặc định bằng cách dùng hàm `withDefaults` thay vì khai báo tùy chọn.
+
+### 2.2. Quy Tắc Đặt Tên (Naming Conventions)
+- **Vue Components:** Đặt tên theo chuẩn **PascalCase** (ví dụ: `PixelIcon.vue`, `CraftingGrid.vue`). Tên component phải có độ dài tối thiểu 2 từ để tránh xung đột với các thẻ HTML chuẩn.
+- **Scripts & Data Files:** Đặt tên theo chuẩn **camelCase** (ví dụ: `wikiData.ts`, `pixelMap.ts`, `audio.ts`).
+- **Styles & CSS Classes:** Sử dụng CSS utility của Tailwind CSS v4 hoặc viết CSS Modules theo chuẩn **kebab-case** nếu cần custom đặc thù.
+
+### 2.3. Quy Tắc Template & HTML Escaping
+- Tránh viết text thô chứa các ký tự đặc biệt như dấu nháy đơn (`'`), nháy kép (`"`), hoặc dấu lớn/bé (`<`/`>`) trong Vue Template.
+- Hãy dùng các thực thể ký tự HTML tương ứng để tránh lỗi render của parser:
+  - Dùng `&ldquo;` và `&rdquo;` cho dấu ngoặc kép `"`.
+  - Dùng `&apos;` cho dấu nháy đơn `'`.
+  - Dùng `&lt;` và `&gt;` cho dấu so sánh.
+
+---
+
+## 🧱 3. Áp Dụng SOLID & OOP Vào Phát Triển Giao Diện
+
+Chúng ta áp dụng các nguyên lý SOLID kinh điển vào cấu trúc component Vue 3:
+
+1.  **Single Responsibility (SRP):**
+    - Mỗi component Vue chỉ làm đúng một việc hiển thị một phần tử giao diện.
+    - Ví dụ: `PixelIcon.vue` chịu trách nhiệm render ảnh và hiệu ứng lấp lánh; `CraftingGrid.vue` chịu trách nhiệm hiển thị ma trận 3x3 và sự kiện nhấn chuột; logic xử lý phát âm thanh được đưa vào lớp tiện ích riêng `src/utils/audio.ts` chứ không lồng ghép trong component giao diện.
+2.  **Open/Closed (OCP):**
+    - Tránh việc chỉnh sửa cấu trúc bên trong các component lõi để thêm tính năng. Thay vào đó, hãy sử dụng **Vue Slots** hoặc truyền cấu hình thông qua **Props** để mở rộng hành vi của component từ bên ngoài.
+3.  **Interface Segregation (ISP):**
+    - Thiết kế các interface prop gọn nhẹ. Component con không nên nhận vào một object cha khổng lồ chứa hàng chục thuộc tính dư thừa nếu nó chỉ thực sự sử dụng 2 hoặc 3 trường dữ liệu.
+
+---
+
+## 🔄 4. Quy Chuẩn Commit (Conventional Commits)
+
+Dự án áp dụng quy chuẩn Conventional Commit để tự động hóa việc xuất Changelog và quản lý lịch sử Git mạch lạc. Mỗi thông điệp commit phải viết bằng tiếng Anh, tuân thủ cấu trúc sau:
 
 ```text
 type(scope): description
 ```
 
-### Các Loại Type Chấp Nhận:
-- `feat`: Thêm tính năng mới (ví dụ: vũ khí mới, tab mới).
-- `fix`: Sửa lỗi (ví dụ: lỗi layout di động, lỗi âm thanh).
-- `docs`: Thay đổi hoặc thêm mới tài liệu (ví dụ: cập nhật README, viết hướng dẫn).
-- `style`: Định dạng mã nguồn (khoảng trắng, dấu chấm phẩy, không ảnh hưởng logic).
-- `refactor`: Tái cấu trúc mã nguồn (không thêm tính năng hay sửa lỗi).
-- `chore`: Thay đổi quy trình build hoặc các công cụ phụ trợ (như cấu hình npm, gitignore).
+### 4.1. Các loại Type hợp lệ:
+*   `feat`: Thêm tính năng hiển thị hoặc dữ liệu vũ khí mới.
+*   `fix`: Sửa lỗi giao diện, căn chỉnh CSS, lỗi âm thanh hoặc TypeScript.
+*   `docs`: Cập nhật tài liệu kỹ thuật trong `.docs/` hoặc file `README.md`.
+*   `refactor`: Cơ cấu lại mã nguồn, chia nhỏ component (không làm thay đổi tính năng).
+*   `chore`: Thay đổi file cấu hình build, cấu hình npm, hoặc các tác vụ DevOps.
 
-### Ví dụ Hợp Lệ:
-- `feat(wiki): add mace of chaos crafting grid`
-- `fix(audio): bypass ios web audio autoplay restriction`
-- `docs(readme): update build instructions for pnpm`
+### 4.2. Ví dụ cụ thể:
+- `feat(wiki): add glitch clock material and update chronos recipe`
+- `fix(ui): resolve clipping issue on mobile drawer modal`
+- `docs(arch): add data flow diagram and maintenance checklist`
+
+---
+
+## ✅ 5. Quy Trình Kiểm Thử & Chấp Thuận (Verification Check)
+
+Trước khi gửi Pull Request (PR) lên branch chính, lập trình viên bắt buộc phải tự chạy kiểm tra cục bộ:
+
+1.  **Kiểm tra TypeScript & Linter:** Đảm bảo không có bất kỳ cảnh báo đỏ nào của TypeScript compiler trong VS Code/IDE.
+2.  **Kiểm tra Build tĩnh:**
+    ```bash
+    pnpm run build
+    ```
+    Lệnh này chạy trình kiểm tra liên kết chết (dead link check) và biên dịch mã nguồn Vue sang HTML/JS tĩnh. Quá trình build phải hoàn tất với mã thoát `0` (Success).
+3.  **Kiểm thử thủ công (Manual Verification):**
+    - Kiểm tra độ tương thích trên thiết bị di động (Responsive Design).
+    - Kiểm tra âm thanh click và hiệu ứng phù phép (glow) hoạt động bình thường trên cả Safari (iOS), Chrome, và Firefox.
