@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { maceWeapons, cores, materials, forgeSteps, guideSections } from '../data/wikiData'
+import { maceWeapons, spearWeapons, cores, materials, forgeSteps, guideSections } from '../data/wikiData'
 import { getItemDisplayName } from '../data/pixelMap'
 import PixelIcon from './PixelIcon.vue'
 import MinecraftText from './MinecraftText.vue'
@@ -30,6 +30,16 @@ const switchTab = (tabId: string) => {
 const filteredWeapons = computed(() => {
   const term = searchTerm.value.toLowerCase()
   return maceWeapons.filter(w =>
+    w.name.toLowerCase().includes(term) ||
+    w.enName.toLowerCase().includes(term) ||
+    w.desc.toLowerCase().includes(term) ||
+    w.tooltip.toLowerCase().includes(term)
+  )
+})
+
+const filteredSpears = computed(() => {
+  const term = searchTerm.value.toLowerCase()
+  return spearWeapons.filter(w =>
     w.name.toLowerCase().includes(term) ||
     w.enName.toLowerCase().includes(term) ||
     w.desc.toLowerCase().includes(term) ||
@@ -125,7 +135,8 @@ const filteredMaterials = computed(() => {
     <div class="flex flex-wrap gap-2 md:gap-3 mb-8">
       <button
         v-for="tab in [
-          { id: 'weapons', label: '⚔ Búa & Giáo Exclusive' },
+          { id: 'weapons', label: '🔨 Búa Exclusive' },
+          { id: 'spears', label: '🔱 Giáo Exclusive' },
           { id: 'cores', label: '💎 Lõi Ma Pháp' },
           { id: 'materials', label: '✨ Vật Liệu Lò Rèn' },
           { id: 'forge', label: '⚡ Lodestone Forge' },
@@ -206,6 +217,80 @@ const filteredMaterials = computed(() => {
             :recipe="w.recipe"
             :resultName="w.name"
             :resultId="`mace_${w.id}`"
+            :resultTooltip="w.tooltip"
+            @select-item="handleSelectItem"
+          />
+
+          <span class="text-[9px] text-[#7b6299] text-center max-w-[240px] italic">
+            * Nhấp vào các slot trong bảng để xem tên nguyên liệu.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SPEARS SECTION ================= -->
+    <div v-if="activeTab === 'spears'" class="flex flex-col gap-8 animate-fade-in">
+      <div v-if="filteredSpears.length === 0" class="mc-dark-panel p-12 text-center text-[#7b6299] italic">
+        Không tìm thấy giáo nào khớp với từ khóa của bạn.
+      </div>
+      
+      <div
+        v-for="w in filteredSpears"
+        :key="w.id"
+        class="flex flex-col xl:flex-row gap-6 p-6 mc-dark-panel border-l-8 transition-all hover:scale-[1.002]"
+        :class="w.colorClass"
+      >
+        <!-- Info left side -->
+        <div class="flex-1 flex flex-col gap-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="text-3xl animate-pulse">{{ w.badge }}</span>
+            <div>
+              <h3 class="text-xl lg:text-2xl font-black font-outfit text-white">
+                {{ w.name }}
+              </h3>
+              <span class="text-xs font-semibold text-[#b7a9ca] font-outfit block">
+                English: {{ w.enName }}
+              </span>
+            </div>
+            <span class="ml-auto text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border bg-[#00b4d8]/10 border-[#00b4d8]/30 text-[#00b4d8]">
+              Spear Exclusive
+            </span>
+          </div>
+
+          <p class="text-sm text-[#b7a9ca] leading-relaxed italic border-l-2 border-[#4a3b5c] pl-3">
+            &ldquo;{{ w.desc }}&rdquo;
+          </p>
+
+          <!-- Lore Tooltip Box -->
+          <div class="mc-dark-panel-inset p-4 font-vt text-[1.15rem] leading-relaxed glow-purple-pulse relative">
+            <div class="absolute top-1 right-2 text-[9px] text-[#7b6299] uppercase select-none font-sans font-semibold">
+              Lore Tooltip
+            </div>
+            <div class="absolute top-1 left-2 text-[9px] text-[#ff55ff]/70 font-sans uppercase">
+              Chạm vào bất kỳ slot nguyên liệu nào để xem chi tiết
+            </div>
+            <div class="cursor-pointer" @click="handleSelectItem(w.tooltip)">
+              <MinecraftText :text="w.tooltip" />
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-auto pt-2">
+            <span class="font-vt text-xs text-[#9d85c1] bg-[#120b1a] border border-[#4a3b5c] px-3 py-1.5 rounded-sm">
+              Custom Model Data: {{ w.cmd }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Recipe right side -->
+        <div class="xl:w-80 flex flex-col items-center justify-center border-t xl:border-t-0 xl:border-l border-[#4a3b5c] pt-6 xl:pt-0 xl:pl-6 gap-3">
+          <h4 class="text-xs uppercase font-extrabold text-[#7b6299] tracking-wider select-none">
+            Lodestone Crafting Grid
+          </h4>
+          
+          <CraftingGrid
+            :recipe="w.recipe"
+            :resultName="w.name"
+            :resultId="`spear_${w.id}`"
             :resultTooltip="w.tooltip"
             @select-item="handleSelectItem"
           />

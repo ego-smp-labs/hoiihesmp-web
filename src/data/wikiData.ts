@@ -142,7 +142,7 @@ export const maceWeapons: Weapon[] = [
     cmd: 10002,
     singleton: true,
     desc: "Cổ vật ký sinh đói khát, hút cạn từng giọt huyết mạch của kẻ thù để bồi đắp vào máu người sở hữu.",
-    tooltip: "&c&lMace of Vampirism|&7A blood-bound mace that feeds through wounds but gnaws at its wielder.||&6⚡ Active — Blood Siphon:|&fNgồi + Đánh trúng kẻ địch. Hồi lập tức 6 HP. Rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa caster (tối đa +4 HP). Hồi chiêu 75s.||&a⭐ Passive — Lifesteal:|&fMelee thường hồi máu bằng 12% sát thương gây ra (tối đa 2 HP/hit). Dưới 30% HP tăng sát thương gây ra.||&c☠ Curse — Suy kiệt linh hồn:|&fKhi mang búa bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.",
+    tooltip: "&c&lMace of Vampirism|&7A blood-bound mace that feeds through wounds but gnaws at its wielder.||&6⚡ Active — Blood Siphon:|&fNgồi + Đánh trúng kẻ địch. Hồi lập tức 6 HP. Đối với player địch, rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa caster (tối đa +4 HP). Hồi chiêu 75s.||&a⭐ Passive — Lifesteal:|&fMelee thường hồi máu bằng 12% sát thương gây ra (tối đa 2 HP/hit). Dưới 30% HP tăng sát thương gây ra.||&c☠ Curse — Suy kiệt linh hồn:|&fKhi mang búa bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.",
     recipe: {
       shape: [
         ["M", "B", "M"],
@@ -185,6 +185,36 @@ export const maceWeapons: Weapon[] = [
     }
   },
   {
+    id: "soulfire",
+    name: "Búa Hỏa Thiêu Hồn",
+    enName: "Soulfire Pyre Mace",
+    badge: "🔥",
+    colorClass: "border-[#00f5d4]",
+    cmd: 10011,
+    singleton: true,
+    desc: "Lò nung di động tích tụ hỏa nhiệt xanh của địa ngục Nether, thiêu rụi sinh mạng kẻ địch.",
+    tooltip: "&b&lSoulfire Pyre Mace|&7A soul-forged mace wreathed in blue flame and rising spirits.||&6⚡ Active — Soulfire Storm:|&fNgồi + Đánh. Triệu hồi bão lửa xanh lan tỏa bán kính 5 khối trong 5 giây. Kẻ thù trong bão nhận 3 HP sát thương mỗi giây. Trả giá người dùng mất 4 HP. Hồi chiêu 40s.||&a⭐ Passive — Fire Guard & Soul Blaze:|&fKháng hoàn toàn sát thương từ lửa và dung nham. Đòn cận chiến thiêu cháy kẻ địch bằng lửa xanh linh hồn.||&c☠ Curse — Áp lực lửa linh hồn:|&fTăng x2 tốc độ cạn thanh đói (Hunger).",
+    recipe: {
+      shape: [
+        ["F", "C", "F"],
+        ["G", "B", "S"],
+        ["F", "N", "F"]
+      ],
+      ingredients: {
+        F: { name: "Soul Campfire", itemId: "soul_campfire", tooltip: "&bSoul Campfire|&7Spooky blue campfire." },
+        C: { name: "Soulfire Core", itemId: "soulfire_core", tooltip: "&bSoulfire Core|&1Bất ổn: &7Cháy ngẫu nhiên trong người." },
+        G: { name: "Ghast Tear", itemId: "ghast_tear", tooltip: "&fGhast Tear|&7Nether ghost tear." },
+        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." },
+        S: { name: "Zombie Head", itemId: "zombie_head", tooltip: "&fZombie Head|&7Dead creature head." },
+        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard metal alloy." }
+      }
+    }
+  }
+];
+
+// Spear Exclusive Weapons List
+export const spearWeapons: Weapon[] = [
+  {
     id: "sonic",
     name: "Giáo Tiếng Vọng Warden",
     enName: "Warden Spear",
@@ -207,32 +237,6 @@ export const maceWeapons: Weapon[] = [
         G: { name: "Enchanted Golden Apple", itemId: "enchanted_golden_apple", tooltip: "&dEnchanted Golden Apple|&7Super notch apple." },
         N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard nether alloy." },
         E: { name: "Echo Shard", itemId: "echo_shard", tooltip: "&fEcho Shard|&7Ancient recovery material." }
-      }
-    }
-  },
-  {
-    id: "soulfire",
-    name: "Búa Hỏa Thiêu Hồn",
-    enName: "Soulfire Pyre Mace",
-    badge: "🔥",
-    colorClass: "border-[#00f5d4]",
-    cmd: 10011,
-    singleton: true,
-    desc: "Lò nung di động tích tụ hỏa nhiệt xanh của địa ngục Nether, thiêu rụi sinh mạng kẻ địch.",
-    tooltip: "&b&lSoulfire Pyre Mace|&7A soul-forged mace wreathed in blue flame and rising spirits.||&6⚡ Active — Soulfire Storm:|&fNgồi + Đánh. Triệu hồi bão lửa xanh lan tỏa bán kính 5 khối trong 5 giây. Kẻ thù trong bão nhận 3 HP sát thương mỗi giây. Trả giá người dùng mất 4 HP. Hồi chiêu 40s.||&a⭐ Passive — Fire Guard & Soul Blaze:|&fKháng hoàn toàn sát thương từ lửa và dung nham. Đòn cận chiến thiêu cháy kẻ địch bằng lửa xanh linh hồn.||&c☠ Curse — Áp lực lửa linh hồn:|&fTăng x2 tốc độ cạn thanh đói (Hunger). Cầm trong người có 10% tự bốc cháy sau mỗi 30s.",
-    recipe: {
-      shape: [
-        ["F", "C", "F"],
-        ["G", "B", "S"],
-        ["F", "N", "F"]
-      ],
-      ingredients: {
-        F: { name: "Soul Campfire", itemId: "soul_campfire", tooltip: "&bSoul Campfire|&7Spooky blue campfire." },
-        C: { name: "Soulfire Core", itemId: "soulfire_core", tooltip: "&bSoulfire Core|&1Bất ổn: &7Cháy ngẫu nhiên trong người." },
-        G: { name: "Ghast Tear", itemId: "ghast_tear", tooltip: "&fGhast Tear|&7Nether ghost tear." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." },
-        S: { name: "Zombie Head", itemId: "zombie_head", tooltip: "&fZombie Head|&7Dead creature head." },
-        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard metal alloy." }
       }
     }
   },
