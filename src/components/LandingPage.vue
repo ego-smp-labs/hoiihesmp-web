@@ -252,7 +252,7 @@ const handleNav = (link: string) => {
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 sm:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 xl:gap-5">
           <div
             v-for="card in cards"
             :key="card.id"
@@ -261,23 +261,23 @@ const handleNav = (link: string) => {
           >
             <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div class="h-full bg-[#120b1a]/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-8 flex flex-col relative z-10 transition-transform duration-500 group-hover:scale-[0.98]">
+            <div class="h-full bg-[#120b1a]/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-7 xl:p-5 flex flex-col relative z-10 transition-transform duration-500 group-hover:scale-[0.98]">
               <!-- Icon Header -->
-              <div class="flex items-center justify-between mb-6">
-                <span class="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full font-outfit" :class="card.badgeColor">
-                  {{ card.subtitle }}
-                </span>
+              <div class="flex flex-col items-start gap-4 mb-5">
                 <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 ring-1 ring-white/10 transition-all duration-300" :class="card.hoverRing">
                   <PixelIcon :itemId="card.itemId" :size="32" :enchanted="true" class="group-hover:scale-110 transition-transform duration-300" />
                 </div>
+                <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full font-outfit" :class="card.badgeColor">
+                  {{ card.subtitle }}
+                </span>
               </div>
 
               <!-- Content -->
-              <div class="flex-1 flex flex-col gap-3">
-                <h3 class="font-outfit font-black text-xl sm:text-2xl text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#ff55ff] transition-all duration-300">
+              <div class="flex-1 flex flex-col gap-2.5">
+                <h3 class="font-outfit font-black text-lg sm:text-xl xl:text-lg 2xl:text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#ff55ff] transition-all duration-300 leading-tight">
                   {{ card.title }}
                 </h3>
-                <p class="text-xs sm:text-sm text-[#b7a9ca] leading-relaxed font-medium">
+                <p class="text-[11px] sm:text-xs text-[#b7a9ca] leading-relaxed font-medium">
                   {{ card.desc }}
                 </p>
               </div>
