@@ -100,3 +100,8 @@ export const getItemDisplayName = (itemId: string): string => {
   const asset = itemAssetMap[itemId];
   return asset ? asset.displayName : itemId;
 };
+
+// ────────────────────────────────────────────────────────────────
+// Tối ưu hóa Reactivity Vue 3: Đóng băng dữ liệu tĩnh
+// ────────────────────────────────────────────────────────────────
+Object.freeze(itemAssetMap);
