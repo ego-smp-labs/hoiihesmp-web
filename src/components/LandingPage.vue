@@ -57,7 +57,9 @@ const commonCommands = [
   { label: '/grave', desc: 'Xem lại toạ độ các bia mộ khi bị chết.' },
   { label: '/skills', desc: 'Mở bảng kỹ năng nhập vai RPG ValhallaMMO.' },
   { label: '/help', desc: 'Trợ giúp toàn tập cơ chế tính năng của server.' },
-  { label: '/teams', desc: 'Quản lý tổ đội đồng đội sinh tồn chung.' }
+  { label: '/teams', desc: 'Quản lý tổ đội đồng đội sinh tồn chung.' },
+  { label: '/pvp', desc: 'Bật hoặc tắt trạng thái chiến đấu (PvP) của bản thân.' },
+  { label: '/tpa | /tpahere', desc: 'Dịch chuyển. Chờ đứng yên 5s, tiêu hao 5 cấp XP, giới hạn tối đa 500 block.' }
 ]
 </script>
 
@@ -300,7 +302,7 @@ const handleNav = (link: string) => {
           <p class="text-[#b7a9ca] text-sm font-medium">Lưu lại để sử dụng nhanh trong quá trình sinh tồn</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           <div
             v-for="cmd in commonCommands"
             :key="cmd.label"
