@@ -20,7 +20,7 @@ const displayName = computed(() => props.customTitle || getItemDisplayName(props
 const handleImageError = (e: Event) => {
   const img = e.target as HTMLImageElement
   // Fallback icon (barrier block) if CDN fails
-  img.src = 'https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.20.2/assets/minecraft/textures/item/barrier.png'
+  img.src = 'https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/item/barrier.png'
   img.onerror = null // prevent infinite loop if fallback also fails
 }
 

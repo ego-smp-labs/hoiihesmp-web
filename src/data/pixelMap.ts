@@ -8,7 +8,7 @@ export interface ItemAsset {
 export const itemAssetMap: Record<string, ItemAsset> = {
   // Base Items
   stick: { cdnName: "stick", type: "item", displayName: "Gậy" },
-  breeze_rod: { cdnName: "breeze_rod", type: "item", displayName: "Thỏi Gió" },
+  breeze_rod: { cdnName: "https://api.minecraftitems.xyz/api/item/breeze_rod", type: "item", displayName: "Thỏi Gió" },
   netherite_ingot: { cdnName: "netherite_ingot", type: "item", displayName: "Thỏi Netherite" },
   heavy_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "Lõi Nặng" },
   ender_pearl: { cdnName: "ender_pearl", type: "item", displayName: "Ngọc Ender" },
@@ -22,12 +22,12 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   netherite_block: { cdnName: "netherite_block", type: "block", displayName: "Khối Netherite" },
   sculk_catalyst: { cdnName: "sculk_catalyst_side", type: "block", displayName: "Sculk Catalyst" },
   echo_shard: { cdnName: "echo_shard", type: "item", displayName: "Mảnh Tiếng Vọng" },
-  soul_campfire: { cdnName: "soul_campfire", type: "item", displayName: "Lửa Trại Linh Hồn" },
+  soul_campfire: { cdnName: "https://api.minecraftitems.xyz/api/item/soul_campfire", type: "item", displayName: "Lửa Trại Linh Hồn" },
   ghast_tear: { cdnName: "ghast_tear", type: "item", displayName: "Nước Mắt Ghast" },
   zombie_head: { cdnName: "https://minotar.net/avatar/Zombie/64.png", type: "item", displayName: "Đầu Zombie" },
   magma_block: { cdnName: "https://api.minecraftitems.xyz/api/item/magma_block", type: "item", displayName: "Khối Magma" },
   nether_wart: { cdnName: "nether_wart", type: "item", displayName: "Bướu Địa Ngục" },
-  soul_lantern: { cdnName: "soul_lantern", type: "item", displayName: "Đèn Lồng Linh Hồn" },
+  soul_lantern: { cdnName: "https://api.minecraftitems.xyz/api/item/soul_lantern", type: "item", displayName: "Đèn Lồng Linh Hồn" },
   redstone_block: { cdnName: "redstone_block", type: "block", displayName: "Khối Đá Đỏ" },
   potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ" },
   wither_skeleton_skull: { cdnName: "https://minotar.net/avatar/MHF_WSkeleton/64.png", type: "item", displayName: "Đầu Khô Lâu Wither" },
