@@ -129,7 +129,7 @@ const handleNav = (link: string) => {
     </header>
 
     <!-- Main Hero Section -->
-    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full flex flex-col justify-center py-12 sm:py-20 lg:py-28 relative">
+    <main class="flex-1 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full flex flex-col justify-center py-12 sm:py-20 lg:py-28 relative">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
         <!-- Hero Text Left -->
@@ -263,13 +263,13 @@ const handleNav = (link: string) => {
             
             <div class="h-full bg-[#120b1a]/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-7 xl:p-5 flex flex-col relative z-10 transition-transform duration-500 group-hover:scale-[0.98]">
               <!-- Icon Header -->
-              <div class="flex flex-col items-start gap-4 mb-5">
-                <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 ring-1 ring-white/10 transition-all duration-300" :class="card.hoverRing">
-                  <PixelIcon :itemId="card.itemId" :size="32" :enchanted="true" class="group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full font-outfit" :class="card.badgeColor">
+              <div class="flex items-center justify-between gap-2 mb-6">
+                <span class="text-[9px] sm:text-[10px] xl:text-[9px] 2xl:text-[10px] uppercase font-bold tracking-wider px-2.5 py-1.5 rounded-full font-outfit text-left leading-tight" :class="card.badgeColor">
                   {{ card.subtitle }}
                 </span>
+                <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition-all duration-300" :class="card.hoverRing">
+                  <PixelIcon :itemId="card.itemId" :size="24" :enchanted="true" class="group-hover:scale-110 transition-transform duration-300" />
+                </div>
               </div>
 
               <!-- Content -->
