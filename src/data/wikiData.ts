@@ -611,3 +611,15 @@ export const vaneTriflesItems: Weapon[] = [
   }
 ];
 
+// ────────────────────────────────────────────────────────────────
+// Tối ưu hóa Reactivity Vue 3: Đóng băng dữ liệu tĩnh
+// ────────────────────────────────────────────────────────────────
+Object.freeze(colorCodes);
+Object.freeze(maceWeapons);
+Object.freeze(spearWeapons);
+Object.freeze(customWeapons);
+Object.freeze(cores);
+Object.freeze(materials);
+Object.freeze(forgeSteps);
+Object.freeze(guideSections);
+Object.freeze(vaneTriflesItems);

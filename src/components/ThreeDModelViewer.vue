@@ -23,8 +23,12 @@ const isLoading = ref(true)
 const containerRef = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
-onMounted(() => {
+onMounted(async () => {
   isMounted.value = true
+  
+  if (typeof window !== 'undefined' && !customElements.get('model-viewer')) {
+    await import('https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js' /* @vite-ignore */)
+  }
   
   if (containerRef.value) {
     observer = new IntersectionObserver((entries) => {
