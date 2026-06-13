@@ -302,11 +302,11 @@ const handleNav = (link: string) => {
           <p class="text-[#b7a9ca] text-sm font-medium">Lưu lại để sử dụng nhanh trong quá trình sinh tồn</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
           <div
             v-for="cmd in commonCommands"
             :key="cmd.label"
-            class="bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+            class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
           >
             <span class="font-outfit text-lg sm:text-xl font-black text-[#55ffff] tracking-wide block mb-2 drop-shadow-[0_0_8px_rgba(85,255,255,0.3)]">
               {{ cmd.label }}
