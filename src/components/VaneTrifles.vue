@@ -107,36 +107,35 @@ const filteredItems = computed(() => {
       Không tìm thấy công cụ nào phù hợp với từ khóa của bạn.
     </div>
 
-    <!-- Items Grid List -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-8">
+    <!-- Items List -->
+    <div class="flex flex-col gap-8">
       <div
         v-for="item in filteredItems"
         :key="item.id"
-        class="flex flex-col gap-5 p-6 sm:p-8 bg-[#120b1a]/80 backdrop-blur-xl border border-white/10 rounded-3xl transition-all hover:border-white/20 hover:shadow-xl group"
+        class="flex flex-col xl:flex-row gap-8 p-6 sm:p-8 bg-[#120b1a]/80 backdrop-blur-xl border border-white/10 rounded-3xl transition-all hover:border-white/20 hover:shadow-xl group"
       >
-        <!-- Top: Icon + Name + Description -->
-        <div class="flex items-start gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300 shrink-0">
-            <PixelIcon :itemId="item.id" :size="36" :enchanted="false" />
+        <!-- Info left side -->
+        <div class="flex-1 flex flex-col gap-5">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300 shrink-0">
+              <PixelIcon :itemId="item.id" :size="36" :enchanted="false" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xl sm:text-2xl font-black font-outfit text-white leading-tight">
+                {{ item.name }}
+              </h4>
+              <span class="text-[11px] font-semibold text-[#b7a9ca] font-outfit uppercase tracking-wider block mt-1">
+                {{ item.enName }}
+              </span>
+            </div>
           </div>
-          <div class="flex-1 min-w-0">
-            <h4 class="text-xl sm:text-2xl font-black font-outfit text-white leading-tight">
-              {{ item.name }}
-            </h4>
-            <span class="text-[11px] font-semibold text-[#b7a9ca] font-outfit uppercase tracking-wider block mt-1">
-              {{ item.enName }}
-            </span>
-          </div>
-        </div>
 
-        <p class="text-sm text-[#e0d7ec] leading-relaxed italic border-l-4 border-white/10 pl-4 py-1">
-          &ldquo;{{ item.desc }}&rdquo;
-        </p>
+          <p class="text-sm text-[#e0d7ec] leading-relaxed italic border-l-4 border-white/10 pl-4 py-1">
+            &ldquo;{{ item.desc }}&rdquo;
+          </p>
 
-        <!-- Bottom: Lore + Recipe side by side on desktop, stacked on mobile -->
-        <div class="flex flex-col xl:flex-row gap-6 mt-auto">
           <!-- Lore Box Preview -->
-          <div class="flex-1 bg-[#0c0712] border border-white/5 p-5 rounded-2xl font-vt text-[1.15rem] leading-relaxed relative hover:border-white/10 transition-colors min-w-0" @click="handleSelectItem(item.tooltip)">
+          <div class="bg-[#0c0712] border border-white/5 p-5 rounded-2xl font-vt text-[1.15rem] leading-relaxed relative hover:border-white/10 transition-colors mt-auto" @click="handleSelectItem(item.tooltip)">
             <div class="absolute top-3 right-4 text-[9px] text-[#b7a9ca] uppercase select-none font-sans font-bold tracking-wider">
               Lore Tooltip
             </div>
@@ -147,20 +146,23 @@ const filteredItems = computed(() => {
               <MinecraftText :text="item.tooltip" />
             </div>
           </div>
+        </div>
 
-          <!-- Recipe column -->
-          <div class="xl:w-[220px] flex flex-col items-center justify-center border-t xl:border-t-0 xl:border-l border-white/10 pt-6 xl:pt-0 xl:pl-6 gap-3 shrink-0">
-            <span class="text-[10px] uppercase font-black text-[#b7a9ca] tracking-widest select-none bg-white/5 px-3 py-1 rounded-full">Công Thức</span>
-            <div class="transform scale-90 hover:scale-[1.02] transition-transform duration-300">
-              <CraftingGrid
-                :recipe="item.recipe"
-                :resultName="item.name"
-                :resultId="item.id"
-                :resultTooltip="item.tooltip"
-                @select-item="handleSelectItem"
-              />
-            </div>
+        <!-- Recipe right side -->
+        <div class="xl:w-[320px] flex flex-col items-center justify-center border-t xl:border-t-0 xl:border-l border-white/10 pt-8 xl:pt-0 xl:pl-8 gap-4 shrink-0">
+          <span class="text-[10px] uppercase font-black text-[#b7a9ca] tracking-widest select-none bg-white/5 px-4 py-1.5 rounded-full">Công Thức</span>
+          <div class="transform scale-95 sm:scale-100 hover:scale-[1.02] transition-transform duration-300">
+            <CraftingGrid
+              :recipe="item.recipe"
+              :resultName="item.name"
+              :resultId="item.id"
+              :resultTooltip="item.tooltip"
+              @select-item="handleSelectItem"
+            />
           </div>
+          <span class="text-[10px] text-[#7b6299] text-center max-w-[240px] font-medium leading-relaxed">
+            Nhấp vào nguyên liệu trên bảng để hiển thị tên và chi tiết.
+          </span>
         </div>
       </div>
     </div>
