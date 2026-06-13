@@ -8,9 +8,15 @@ export default defineConfig({
   ignoreDeadLinks: true,
   appearance: 'dark',
   head: [
+    ['link', { rel: 'icon', href: '/mace-icon.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=VT323&family=Inter:wght@400;500;600;700&display=swap' }]
+    ['link', { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Outfit:wght@700;900&family=VT323&family=Inter:wght@400;600&display=swap&subset=latin,latin-ext,vietnamese' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Outfit:wght@700;900&family=VT323&family=Inter:wght@400;600&display=swap&subset=latin,latin-ext,vietnamese' }],
+    ['meta', { property: 'og:title', content: 'Hội Hè SMP Wiki' }],
+    ['meta', { property: 'og:description', content: 'Cẩm nang hướng dẫn và tra cứu tính năng cụm máy chủ Hội Hè SMP' }],
+    ['meta', { property: 'og:image', content: '/bg.png' }],
+    ['meta', { property: 'og:type', content: 'website' }]
   ],
   themeConfig: {
     logo: '/mace-icon.png',
@@ -76,6 +82,13 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss()
-    ]
+    ],
+    build: {
+      minify: 'esbuild',
+      cssCodeSplit: true
+    },
+    esbuild: {
+      drop: ['console', 'debugger']
+    }
   }
 })

@@ -6,33 +6,32 @@
   --font-sans: "Inter", "Be Vietnam Pro", sans-serif;
 }
 
-/* ── Force Dark Mode ──────────────────────────────────────────── */
+/* ── Force Dark Mode — Gộp toàn bộ CSS vars vào 1 khối duy nhất ── */
 :root {
   --vp-layout-max-width: 1680px !important;
   --vp-sidebar-width: 280px !important;
 
+  /* Brand colors */
   --vp-c-brand-1: #ff55ff;
   --vp-c-brand-2: #d84cd8;
   --vp-c-brand-3: #b03ab0;
   --vp-c-brand-soft: rgba(255, 85, 255, 0.14);
 
-  /* Semi-transparent background colors to let the background image shine through */
+  /* Semi-transparent backgrounds — cho phép ảnh nền xuyên qua */
   --vp-c-bg: rgba(16, 10, 22, 0.88);
   --vp-c-bg-soft: rgba(32, 24, 43, 0.82);
   --vp-c-bg-alt: rgba(15, 10, 20, 0.9);
 
+  /* Text hierarchy */
   --vp-c-text-1: #e0d7ec;
   --vp-c-text-2: #b7a9ca;
   --vp-c-text-3: #7b6299;
 
   --vp-c-border: #4a3b5c;
 
+  /* Font aliases */
   --font-vt323: "VT323", monospace;
   --font-outfit: "Outfit", "Be Vietnam Pro", sans-serif;
-}
-
-/* Override fonts in VitePress config */
-:root {
   --vp-font-family-base: "Inter", sans-serif;
   --vp-font-family-mono: "VT323", monospace;
 }
@@ -40,21 +39,8 @@
 /* ── Force dark class on html (removes light/dark toggle effect) ── */
 html {
   color-scheme: dark !important;
-}
-
-html.dark,
-html:not(.dark) {
-  --vp-c-bg: rgba(16, 10, 22, 0.88);
-  --vp-c-bg-soft: rgba(32, 24, 43, 0.82);
-  --vp-c-bg-alt: rgba(15, 10, 20, 0.9);
-  --vp-c-text-1: #e0d7ec;
-  --vp-c-text-2: #b7a9ca;
-  --vp-c-text-3: #7b6299;
-  --vp-c-border: #4a3b5c;
-  --vp-c-brand-1: #ff55ff;
-  --vp-c-brand-2: #d84cd8;
-  --vp-c-brand-3: #b03ab0;
-  --vp-c-brand-soft: rgba(255, 85, 255, 0.14);
+  scroll-behavior: smooth;
+  touch-action: manipulation; /* Loại bỏ 300ms click delay trên mobile */
 }
 
 /* ── Hide dark/light mode toggle button ── */
@@ -67,18 +53,25 @@ button[class*="VPSwitch"] {
   display: none !important;
 }
 
-/* ── Smooth Scrolling & Blurred Background ── */
-html {
-  scroll-behavior: smooth;
+html, body {
+  /* Di chuyển background sang lớp GPU giả ::before để giải quyết lag scroll */
+  background: transparent;
 }
 
-html, body {
-  background-image: linear-gradient(to bottom, rgba(16, 10, 22, 0.8), rgba(16, 10, 22, 0.94)), url('/bg.png');
-  background-attachment: fixed;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -999;
+  background-image: linear-gradient(to bottom, rgba(16, 10, 22, 0.8), rgba(16, 10, 22, 0.94)), url('/bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: background 0.5s ease;
+  /* Ép trình duyệt đưa lớp nền vào riêng một GPU Layer */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  pointer-events: none;
 }
 
 /* ── VitePress layout transparencies ── */
@@ -220,7 +213,11 @@ img, video {
   border-color: #44355b #15101c #15101c #44355b;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   position: relative;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Tối ưu: chỉ transition các thuộc tính cần thiết thay vì 'all' */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow;
 }
 
 .mc-dark-panel:hover {
@@ -269,15 +266,10 @@ img, video {
 
 @keyframes hero-glow-text {
   0%, 100% {
-    text-shadow:
-      0 0 12px rgba(255, 85, 255, 0.3),
-      0 0 40px rgba(255, 85, 255, 0.1);
+    filter: drop-shadow(0 0 12px rgba(255, 85, 255, 0.3)) drop-shadow(0 0 40px rgba(255, 85, 255, 0.1));
   }
   50% {
-    text-shadow:
-      0 0 24px rgba(255, 85, 255, 0.5),
-      0 0 60px rgba(255, 85, 255, 0.2),
-      0 0 100px rgba(85, 255, 255, 0.08);
+    filter: drop-shadow(0 0 24px rgba(255, 85, 255, 0.5)) drop-shadow(0 0 60px rgba(255, 85, 255, 0.2)) drop-shadow(0 0 100px rgba(85, 255, 255, 0.08));
   }
 }
 
@@ -304,15 +296,29 @@ img, video {
 /* ── Glow animation ── */
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(255, 85, 255, 0.2), inset 0 0 10px rgba(255, 85, 255, 0.1);
+    opacity: 0.4;
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 85, 255, 0.45), inset 0 0 15px rgba(255, 85, 255, 0.2);
+    opacity: 1;
   }
 }
 
 .glow-purple-pulse {
+  position: relative;
+  /* Đảm bảo element tạo stacking context để z-index -1 hoạt động đúng */
+  isolation: isolate;
+}
+
+.glow-purple-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 20px var(--glow-color, rgba(255, 85, 255, 0.45)), inset 0 0 15px var(--glow-color, rgba(255, 85, 255, 0.2));
   animation: glow-pulse 3s infinite ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+  will-change: opacity;
 }
 
 /* ── Center modal for item detail ── */
@@ -343,6 +349,7 @@ img, video {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ── Custom site title styling (Green to White gradient) ── */
@@ -420,4 +427,22 @@ img, video {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--vp-c-brand-1);
+}
+
+/* ── Mobile & Performance Optimizations ── */
+
+/* Tôn trọng user preference giảm animation hoặc trên thiết bị yếu */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Giảm blur radius trên thiết bị di động để tối ưu FPS khi cuộn */
+@media (max-width: 768px) {
+  .backdrop-blur-xl { backdrop-filter: blur(6px) !important; }
+  .backdrop-blur-2xl { backdrop-filter: blur(8px) !important; }
+  .VPSidebar { backdrop-filter: none !important; }
 }

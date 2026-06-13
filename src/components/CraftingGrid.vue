@@ -41,7 +41,7 @@ const handleSlotClick = (tooltipText: string) => {
           <div
             v-for="(symbol, colIdx) in row"
             :key="`${rowIdx}-${colIdx}`"
-            class="w-11 h-11 border-2 border-t-[#373737] border-l-[#373737] border-r-white border-b-white bg-[#8b8b8b] flex items-center justify-center relative transition-colors"
+            class="w-12 h-12 sm:w-11 sm:h-11 border-2 border-t-[#373737] border-l-[#373737] border-r-white border-b-white bg-[#8b8b8b] flex items-center justify-center relative transition-colors"
             :class="{
               'hover:bg-[#9d9d9d] cursor-pointer': symbol && recipe!.ingredients[symbol],
               'cursor-default': !symbol || !recipe!.ingredients[symbol]

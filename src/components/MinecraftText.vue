@@ -1,3 +1,11 @@
+<script lang="ts">
+export interface StylePart {
+  text: string
+  styles: Record<string, string>
+}
+const parseCache = new Map<string, StylePart[][]>()
+</script>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import { colorCodes } from '../data/wikiData'
@@ -11,17 +19,16 @@ const props = withDefaults(defineProps<Props>(), {
   className: ''
 })
 
-interface StylePart {
-  text: string
-  styles: Record<string, string>
-}
-
 const lines = computed<StylePart[][]>(() => {
   if (!props.text) return []
   
+  if (parseCache.has(props.text)) {
+    return parseCache.get(props.text)!
+  }
+  
   const rawLines = props.text.split('|')
   
-  return rawLines.map(line => {
+  const result = rawLines.map(line => {
     const parts: StylePart[] = []
     let currentText = ""
     let currentStyles: Record<string, string> = {}
@@ -75,6 +82,9 @@ const lines = computed<StylePart[][]>(() => {
     
     return parts
   })
+  
+  parseCache.set(props.text, result)
+  return result
 })
 </script>
 

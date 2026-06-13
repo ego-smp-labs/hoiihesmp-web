@@ -17,6 +17,13 @@ const props = withDefaults(defineProps<Props>(), {
 const imgUrl = computed(() => getCdnUrl(props.itemId))
 const displayName = computed(() => props.customTitle || getItemDisplayName(props.itemId))
 
+const handleImageError = (e: Event) => {
+  const img = e.target as HTMLImageElement
+  // Fallback icon (barrier block) if CDN fails
+  img.src = 'https://cdn.jsdelivr.net/gh/InventivetalentDev/minecraft-assets@1.21/assets/minecraft/textures/item/barrier.png'
+  img.onerror = null // prevent infinite loop if fallback also fails
+}
+
 const shouldEnchant = computed(() => {
   if (props.enchanted) return true
   // Auto-enchant weapons and specific materials/cores
@@ -32,11 +39,29 @@ const customGlowStyle = computed(() => {
   const asset = itemAssetMap[props.itemId];
   if (asset?.glowColor) {
     return {
-      '--glow-color': asset.glowColor,
-      boxShadow: `0 0 12px ${asset.glowColor}`
+      '--glow-color': asset.glowColor
     };
   }
   return {};
+})
+
+// Shimmer gradient động theo glowColor của từng vật phẩm
+const shimmerStyle = computed(() => {
+  const asset = itemAssetMap[props.itemId];
+  const glow = asset?.glowColor || 'rgba(139, 92, 246, 0.6)';
+  return {
+    background: `linear-gradient(135deg, transparent 25%, ${glow} 50%, transparent 75%)`,
+    backgroundSize: '200% 200%',
+    willChange: 'background-position',
+    maskImage: `url(${imgUrl.value})`,
+    webkitMaskImage: `url(${imgUrl.value})`,
+    maskSize: 'contain',
+    webkitMaskSize: 'contain',
+    maskRepeat: 'no-repeat',
+    webkitMaskRepeat: 'no-repeat',
+    maskPosition: 'center',
+    webkitMaskPosition: 'center'
+  };
 })
 </script>
 
@@ -50,25 +75,17 @@ const customGlowStyle = computed(() => {
     <img
       :src="imgUrl"
       :alt="displayName"
+      loading="lazy"
+      @error="handleImageError"
       class="pixelated w-full h-full object-contain max-w-full max-h-full transition-transform duration-200 active:scale-95"
     />
     
     <!-- Custom CSS masked enchanted glow layer -->
+    <!-- Enchanted glow layer — màu shimmer biến thiên theo glowColor của item -->
     <div
       v-if="shouldEnchant"
       class="absolute inset-0 pointer-events-none animate-shimmer mix-blend-color-dodge"
-      :style="{
-        background: 'linear-gradient(135deg, rgba(255, 85, 255, 0) 25%, rgba(139, 92, 246, 0.6) 50%, rgba(255, 85, 255, 0) 75%)',
-        backgroundSize: '200% 200%',
-        maskImage: `url(${imgUrl})`,
-        webkitMaskImage: `url(${imgUrl})`,
-        maskSize: 'contain',
-        webkitMaskSize: 'contain',
-        maskRepeat: 'no-repeat',
-        webkitMaskRepeat: 'no-repeat',
-        maskPosition: 'center',
-        webkitMaskPosition: 'center'
-      }"
+      :style="shimmerStyle"
     />
   </div>
 </template>
