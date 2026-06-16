@@ -23,7 +23,7 @@ const cards = [
   {
     id: "custom",
     title: "Vũ Khí Độc Quyền",
-    subtitle: "Cổ Vật Custom Khác",
+    subtitle: "Vũ Khí Cổ Đại",
     desc: "Nơi tổng hợp thông tin chế tạo các vũ khí custom độc nhất khác của máy chủ, tiêu biểu như Kiếm Cổ Nguyền Cursed Sword mang sức mạnh rải rác linh hồn.",
     link: "/wiki/custom-weapons",
     itemId: "cursed_sword",

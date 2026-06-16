@@ -80,7 +80,7 @@ export const maceWeapons: Weapon[] = [
       ],
       ingredients: {
         H: { name: "Heavy Core", itemId: "heavy_core", tooltip: "&fHeavy Core|&7The core of physical impact." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7A swirling elemental rod." },
+        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x16|&7A swirling elemental rod.", amount: 16 },
         N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard nether metal alloy." }
       }
     }
@@ -105,7 +105,7 @@ export const maceWeapons: Weapon[] = [
         A: { name: "Enchanted Golden Apple", itemId: "enchanted_golden_apple", tooltip: "&dEnchanted Golden Apple|&7Magical shiny fruit." },
         E: { name: "End Core", itemId: "end_core", tooltip: "&dEnd Core|&5Bất ổn: &7Dịch chuyển ngẫu nhiên khi cầm." },
         H: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Đầu người chơi vấy bẩn từ cái chết." },
-        W: { name: "Wither Rose", itemId: "wither_rose", tooltip: "&0Wither Rose|&7Black deadly flower." },
+        W: { name: "Wither Rose", itemId: "wither_rose", tooltip: "&0Wither Rose x16|&7Black deadly flower.", amount: 16 },
         C: { name: "Challenger's Eye", itemId: "challenger_eye", tooltip: "&dChallenger's Eye|&7Enderman critical glance." }
       }
     }
@@ -130,7 +130,7 @@ export const maceWeapons: Weapon[] = [
         O: { name: "Obsidian Chaos", itemId: "obsidian_chaos", tooltip: "&5Obsidian Chaos|&7Hắc diện thạch nhiễm năng lượng Creeper nổ." },
         B: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Mỗi 10s rút 1 tim." },
         W: { name: "Wither Rose", itemId: "wither_rose", tooltip: "&0Wither Rose|&7Wither floral decay." },
-        V: { name: "Void Mace", itemId: "void_mace", tooltip: "&dVoid Mace|&7The abyssal base mace." },
+        V: { name: "Void Core", itemId: "void_core", tooltip: "&dVoid Core|&7Lõi hư vô ngưng tụ phiêu diệt." },
         H: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Lost player soul." }
       }
     }
@@ -172,17 +172,15 @@ export const maceWeapons: Weapon[] = [
     tooltip: "&b&lSingularity Gravity Mace|&7A collapsed-star mace that bends weight, falling, and enemy position.||&6⚡ Active — Singularity Well:|&fNgồi + Đánh hướng nhìn (tối đa 10 khối). Mở hố đen hút toàn bộ sinh vật sống trong 8 khối về tâm, áp dụng Slowness III trong 3 giây. Sau 3s hố sụp đổ gây sát thương diện rộng 2 HP + 1.5 HP/mục tiêu (tối đa 15 HP). Hồi chiêu 60s.||&a⭐ Passive — Gravity Anchor:|&fGiảm 70% sát thương rơi tự do. Đòn cận chiến thường hút nhẹ kẻ địch về phía người sở hữu trong tầm 2.5m.||&c☠ Curse — Khối lượng nặng:|&fMang búa nhận Slowness I và cạn thanh đói x2. Nếu hố active hút từ 4 mục tiêu trở lên, người sở hữu chịu phản lực dính Mining Fatigue II trong 12s và tổn hao 3 HP.",
     recipe: {
       shape: [
-        ["C", "O", "C"],
-        ["S", "E", "S"],
-        ["N", "R", "N"]
+        ["A", "B", "A"],
+        ["", "C", ""],
+        ["", "D", ""]
       ],
       ingredients: {
-        C: { name: "Obsidian Chaos", itemId: "obsidian_chaos", tooltip: "&5Obsidian Chaos|&7Chaotic unstable obsidian block." },
-        O: { name: "Obsidian", itemId: "obsidian", tooltip: "&fObsidian|&7Hard volcanic defense block." },
-        S: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Nhận darkness/blindness ngẫu nhiên." },
-        E: { name: "End Core", itemId: "end_core", tooltip: "&dEnd Core|&5Bất ổn: &7Random teleport mechanics." },
-        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Thỏi Netherite rèn búa." },
-        R: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." }
+        A: { name: "Obsidian", itemId: "obsidian", tooltip: "&fObsidian x64|&7Tảng đá cứng nhất thiên nhiên.", amount: 64 },
+        B: { name: "Netherite Block", itemId: "netherite_block", tooltip: "&fNetherite Block|&7Khối vật chất nặng nhất địa ngục." },
+        C: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Nhận darkness/blindness ngẫu nhiên." },
+        D: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x16|&7Gậy gió.", amount: 16 }
       }
     }
   },
@@ -203,10 +201,10 @@ export const maceWeapons: Weapon[] = [
         ["F", "N", "F"]
       ],
       ingredients: {
-        F: { name: "Soul Campfire", itemId: "soul_campfire", tooltip: "&bSoul Campfire|&7Spooky blue campfire." },
+        F: { name: "Soul Campfire", itemId: "soul_campfire", tooltip: "&bSoul Campfire x64|&7Spooky blue campfire.", amount: 64 },
         C: { name: "Soulfire Core", itemId: "soulfire_core", tooltip: "&bSoulfire Core|&1Bất ổn: &7Cháy ngẫu nhiên trong người." },
         G: { name: "Ghast Tear", itemId: "ghast_tear", tooltip: "&fGhast Tear|&7Nether ghost tear." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod|&7Wind rod." },
+        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x16|&7Wind rod.", amount: 16 },
         S: { name: "Zombie Head", itemId: "zombie_head", tooltip: "&fZombie Head|&7Dead creature head." },
         N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard metal alloy." }
       }
@@ -254,15 +252,15 @@ export const spearWeapons: Weapon[] = [
     tooltip: "&6&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian trong 2.25 giây. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong 1.25 giây.",
     recipe: {
       shape: [
-        ["S", "G", "T"],
-        ["G", "N", "S"],
-        ["N", "S", "S"]
+        ["G", "T", "G"],
+        ["D", "S", "D"],
+        ["S", "S", "S"]
       ],
       ingredients: {
         T: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
-        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Thỏi Netherite.", amount: 16 },
         G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian." },
-        S: { name: "Khối Slime", itemId: "slime_block", tooltip: "&fSlime Block|&7Khối slime đàn hồi.", amount: 64 }
+        D: { name: "Kim Cương", itemId: "diamond", tooltip: "&bDiamond x16|&7Kim cương bảo an.", amount: 16 },
+        S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball|&7Viên slime đàn hồi." }
       }
     }
   }
