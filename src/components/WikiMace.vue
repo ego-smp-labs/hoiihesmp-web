@@ -95,6 +95,13 @@ const getWeaponItemId = (weapon: any, tab: string) => {
   }
   return weapon.id
 }
+
+const formatMarkdown = (text: string) => {
+  if (!text) return ''
+  let html = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>')
+  html = html.replace(/\*(.*?)\*/g, '<em class="text-white/95 font-medium">$1</em>')
+  return html
+}
 const searchTerm = ref("")
 const selectedMobileItem = ref<string | null>(null) // Mobile details Drawer
 const activeCoreRecipe = ref<string | null>(null) // Core ID recipe view
@@ -381,7 +388,7 @@ const filteredMaterials = computed(() => {
             <CraftingGrid
               :recipe="w.recipe"
               :resultName="w.name"
-              :resultId="`mace_${w.id}`"
+              :resultId="getWeaponItemId(w, activeTab)"
               :resultTooltip="w.tooltip"
               @select-item="handleSelectItem"
             />
@@ -458,7 +465,7 @@ const filteredMaterials = computed(() => {
             <CraftingGrid
               :recipe="w.recipe"
               :resultName="w.name"
-              :resultId="`spear_${w.id}`"
+              :resultId="getWeaponItemId(w, activeTab)"
               :resultTooltip="w.tooltip"
               @select-item="handleSelectItem"
             />
@@ -508,18 +515,14 @@ const filteredMaterials = computed(() => {
               <span class="font-black text-[10px] sm:text-[11px] text-[#ff5555] uppercase tracking-widest block mb-2 font-outfit">
                 ☠ Lời Nguyền Bất Ổn
               </span>
-              <p class="text-[#e0d7ec] leading-relaxed text-xs sm:text-sm font-medium">
-                {{ c.instability }}
-              </p>
+              <p class="text-[#e0d7ec] leading-relaxed text-xs sm:text-sm font-medium whitespace-pre-wrap" v-html="formatMarkdown(c.instability)"></p>
             </div>
 
             <div class="bg-white/5 rounded-2xl p-5 border border-white/5">
               <span class="font-black text-[10px] sm:text-[11px] text-[#55ffff] uppercase tracking-widest block mb-2 font-outfit">
                 🛠 Phương Thức Thu Thập
               </span>
-              <p class="text-[#e0d7ec] leading-relaxed text-xs sm:text-sm font-medium">
-                {{ c.method }}
-              </p>
+              <p class="text-[#e0d7ec] leading-relaxed text-xs sm:text-sm font-medium whitespace-pre-wrap" v-html="formatMarkdown(c.method)"></p>
             </div>
 
             <!-- Recipe Toggle -->
@@ -583,9 +586,7 @@ const filteredMaterials = computed(() => {
               <span class="text-[10px] uppercase font-black text-[#ffaa00] tracking-widest block mb-1.5 font-outfit">
                 ☘ Thu thập
               </span>
-              <span class="text-xs sm:text-sm text-[#e0d7ec] leading-relaxed block font-medium">
-                {{ m.method }}
-              </span>
+              <span class="text-xs sm:text-sm text-[#e0d7ec] leading-relaxed block font-medium whitespace-pre-wrap" v-html="formatMarkdown(m.method)"></span>
             </div>
           </div>
         </div>
@@ -602,7 +603,7 @@ const filteredMaterials = computed(() => {
           Nghi Thức Lò Rèn Lodestone
         </h3>
         <p class="text-sm sm:text-base leading-relaxed text-[#b7a9ca] font-medium">
-          Do năng lượng khổng lồ, vũ khí cổ vật Mace yêu cầu quá trình khởi động **Lodestone Forge** theo 5 bước chuyển dịch không gian:
+          Do năng lượng khổng lồ, vũ khí cổ vật Mace yêu cầu quá trình khởi động <strong class="text-white font-bold">Lodestone Forge</strong> theo 5 bước chuyển dịch không gian:
         </p>
       </div>
 
@@ -655,9 +656,7 @@ const filteredMaterials = computed(() => {
           </h3>
         </div>
         
-        <p class="text-sm text-[#b7a9ca] leading-relaxed whitespace-pre-wrap font-medium">
-          {{ sect.content }}
-        </p>
+        <p class="text-sm text-[#b7a9ca] leading-relaxed whitespace-pre-wrap font-medium" v-html="formatMarkdown(sect.content)"></p>
       </div>
     </div>
 

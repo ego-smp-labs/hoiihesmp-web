@@ -147,16 +147,16 @@ export const maceWeapons: Weapon[] = [
     tooltip: "&c&lMace of Vampirism|&7A blood-bound mace that feeds through wounds but gnaws at its wielder.||&6⚡ Active — Blood Siphon:|&fNgồi + Đánh trúng kẻ địch. Hồi lập tức 6 HP. Đối với player địch, rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa caster (tối đa +4 HP). Hồi chiêu 75s.||&a⭐ Passive — Lifesteal:|&fMelee thường hồi máu bằng 12% sát thương gây ra (tối đa 2 HP/hit). Dưới 30% HP tăng sát thương gây ra.||&c☠ Curse — Suy kiệt linh hồn:|&fKhi mang búa bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.",
     recipe: {
       shape: [
-        ["M", "B", "M"],
-        ["N", "S", "N"],
-        ["M", "W", "M"]
+        ["N", "H", "N"],
+        ["B", "S", "B"],
+        ["N", "W", "N"]
       ],
       ingredients: {
-        M: { name: "Magma Block", itemId: "magma_block", tooltip: "&fMagma Block|&7Volcanic heat element.", amount: 64 },
-        B: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Every 10s triggers 2 HP self-damage." },
-        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Premium hell forging alloy." },
+        N: { name: "Magma Block", itemId: "magma_block", tooltip: "&fMagma Block|&7Volcanic heat element.", amount: 64 },
+        H: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Every 10s triggers 2 HP self-damage." },
+        B: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Premium hell forging alloy." },
         S: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Lost player soul." },
-        W: { name: "Nether Wart", itemId: "nether_wart", tooltip: "&fNether Wart|&7Alchemical red fungus." }
+        W: { name: "Nether Wart", itemId: "nether_wart", tooltip: "&fNether Wart x16|&7Alchemical red fungus.", amount: 16 }
       }
     }
   },
@@ -203,7 +203,7 @@ export const maceWeapons: Weapon[] = [
       ingredients: {
         F: { name: "Soul Campfire", itemId: "soul_campfire", tooltip: "&bSoul Campfire x64|&7Spooky blue campfire.", amount: 64 },
         C: { name: "Soulfire Core", itemId: "soulfire_core", tooltip: "&bSoulfire Core|&1Bất ổn: &7Cháy ngẫu nhiên trong người." },
-        G: { name: "Ghast Tear", itemId: "ghast_tear", tooltip: "&fGhast Tear|&7Nether ghost tear." },
+        G: { name: "Ghast Tear", itemId: "ghast_tear", tooltip: "&fGhast Tear x16|&7Nether ghost tear.", amount: 16 },
         B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x16|&7Wind rod.", amount: 16 },
         S: { name: "Zombie Head", itemId: "zombie_head", tooltip: "&fZombie Head|&7Dead creature head." },
         N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard metal alloy." }
@@ -252,15 +252,15 @@ export const spearWeapons: Weapon[] = [
     tooltip: "&6&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian trong 2.25 giây. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong 1.25 giây.",
     recipe: {
       shape: [
-        ["G", "B", "G"],
-        ["D", "S", "D"],
-        ["G", "S", "G"]
+        ["S", "B", "S"],
+        ["D", "G", "D"],
+        ["S", "G", "S"]
       ],
       ingredients: {
         B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
-        G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian." },
+        S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball x64|&7Viên slime đàn hồi.", amount: 64 },
         D: { name: "Kim Cương", itemId: "diamond", tooltip: "&bDiamond x16|&7Kim cương bảo an.", amount: 16 },
-        S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball|&7Viên slime đàn hồi." }
+        G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian.", amount: 1 }
       }
     }
   }
@@ -381,6 +381,13 @@ export const materials: Material[] = [
     cmd: 4003,
     desc: "Chiếc đồng hồ bị lỗi vòng lặp thời gian từ nghịch lý sinh mạng.",
     method: "Thoát game khi tay đang cầm đồng hồ thông thường và lượng máu của bạn chỉ còn từ 0.5 tim trở xuống (<= 1.0 HP), tỉ lệ thành công là 20%."
+  },
+  {
+    id: "cursed_player_head",
+    name: "Cursed Player Head",
+    cmd: 4002,
+    desc: "Đầu người chơi đã trở thành nơi trú ngụ của những linh hồn oán hận.",
+    method: "Nghi thức tàn sát tại Nether (Địa Ngục):\n1. Cầm đầu người chơi thông thường (PLAYER_HEAD) ở tay chính hoặc tay phụ.\n2. Tiêu diệt liên tiếp 15 quái vật (mobs) trong Nether (mỗi mạng cách nhau tối đa 30 giây).\n3. Khi đạt đủ combo 15 mạng, đầu người chơi sẽ bị tiêu thụ và sét đánh xuống chuyển hóa thành Cursed Player Head."
   }
 ];
 
