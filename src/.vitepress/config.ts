@@ -40,9 +40,13 @@ export default defineConfig({
         { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
       ]},
       { text: 'Cổ Vật & Vũ Khí', items: [
-        { text: 'Cổ vật Mace', link: '/wiki/mace-exclusive' },
-        { text: 'Cổ vật Spear', link: '/wiki/spear-exclusive' },
-        { text: 'Vũ khí cổ đại', link: '/wiki/custom-weapons' }
+        { text: 'Búa Exclusive', link: '/wiki/mace-exclusive' },
+        { text: 'Giáo Exclusive', link: '/wiki/spear-exclusive' },
+        { text: 'Lõi Ma Pháp', link: '/wiki/cores' },
+        { text: 'Vật Liệu Lò Rèn', link: '/wiki/materials' },
+        { text: 'Lodestone Forge', link: '/wiki/forge' },
+        { text: 'Hướng Dẫn Chế Tạo', link: '/wiki/guide' },
+        { text: 'Vũ Khí Cổ Đại', link: '/wiki/custom-weapons' }
       ]},
       { text: 'Plugin Gameplay', items: [
         { text: 'Plugin Vane', link: '/guide/vane' },
@@ -52,29 +56,34 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: '🏠 Tổng Quan',
+        text: 'Tổng Quan',
         items: [
           { text: 'Quay Về Trang Chủ', link: '/' },
           { text: 'Hỗ Trợ & Luật Lệ', link: '/support' }
         ]
       },
       {
-        text: '🩸 Hướng Dẫn Cơ Bản',
+        text: 'Hướng Dẫn Cơ Bản',
         items: [
           { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
           { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
         ]
       },
       {
-        text: '⚔️ Cổ Vật & Vũ Khí',
+        text: 'Cổ Vật & Vũ Khí',
+        collapsed: false,
         items: [
-          { text: 'Cổ vật Mace', link: '/wiki/mace-exclusive' },
-          { text: 'Cổ vật Spear', link: '/wiki/spear-exclusive' },
-          { text: 'Vũ khí cổ đại', link: '/wiki/custom-weapons' }
+          { text: 'Búa Exclusive', link: '/wiki/mace-exclusive' },
+          { text: 'Giáo Exclusive', link: '/wiki/spear-exclusive' },
+          { text: 'Lõi Ma Pháp', link: '/wiki/cores' },
+          { text: 'Vật Liệu Lò Rèn', link: '/wiki/materials' },
+          { text: 'Lodestone Forge', link: '/wiki/forge' },
+          { text: 'Hướng Dẫn Chế Tạo', link: '/wiki/guide' },
+          { text: 'Vũ Khí Cổ Đại', link: '/wiki/custom-weapons' }
         ]
       },
       {
-        text: '🧩 Plugin Gameplay',
+        text: 'Plugin Gameplay',
         items: [
           { text: 'Plugin Vane', link: '/guide/vane' },
           { text: 'ValhallaMMO', link: '/guide/valhallammo' }

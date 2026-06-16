@@ -296,7 +296,7 @@ export const customWeapons: Weapon[] = [
 export const cores: Core[] = [
   {
     id: "ego_core",
-    name: "🔮 Ego Core",
+    name: "Ego Core",
     instability: "Người sở hữu không thể nhặt ngọc kinh nghiệm (XP), và khi tấn công mục tiêu ở độ cao bằng hoặc cao hơn bản thân sẽ bị nhận phản phệ từ 1-2 tim sát thương (báo qua Action Bar).",
     method: "Chế tạo bằng Bàn Chế Tạo thường (Lõi Heavy Core ở giữa, 4 thỏi Netherite Ingot và 4 bông hoa Wither Rose xung quanh).",
     recipe: {
@@ -314,7 +314,7 @@ export const cores: Core[] = [
   },
   {
     id: "soulfire_core",
-    name: "🔥 Soulfire Core",
+    name: "Soulfire Core",
     instability: "Cầm trong túi đồ cứ sau mỗi 30 giây sẽ có 10% cơ hội bị bùng cháy trong 5 giây, kèm theo tiếng cảnh báo (tink) và hiện Action Bar.",
     method: "Chế tạo bằng Bàn Chế Tạo (Heavy Core ở giữa, xen kẽ 4 Soul Lantern và 4 Magma Block).",
     recipe: {
@@ -332,28 +332,28 @@ export const cores: Core[] = [
   },
   {
     id: "blood_core",
-    name: "🩸 Blood Core",
+    name: "Blood Core",
     instability: "Mỗi 10 giây khi ở trong túi đồ người sở hữu, có 10% cơ hội gây 2 HP (1 tim) sát thương trực tiếp xuyên giáp.",
     method: "Nghi thức Hiến tế Nether:\n1. Thả Đầu Player Bị Vấy Bẩn (Cursed Player Head) trên cỏ địa ngục đỏ Crimson Nylium ở Nether.\n2. Cầm Kiếm Netherite chuột phải vào đối tượng hiến tế (Piglin/Piglin Brute/Người chơi) gần khối (bán kính 6).\n3. Sét đánh xuống mục tiêu chịu sát thương, biến đổi Đầu Player thành Blood Core (80% tỉ lệ thành công).\n4. Có 20% tỉ lệ thất bại: rơi ra Ruined Core và người thực hiện bị dính Trạng thái Nguyền rủa (Craft Lockout 15 phút).",
     recipe: null
   },
   {
     id: "sculk_core",
-    name: "💀 Sculk Core",
+    name: "Sculk Core",
     instability: "Chỉ cần để trong túi đồ, cứ mỗi 10s có 19% cơ hội nhận bóng tối Darkness/Blindness trong 29 giây.",
     method: "Nghi thức Sóng Âm Trầm Tích:\nThả một vật phẩm Heavy Core được đặt trên một khối Sculk Catalyst.\nTiêu diệt một Warden gần đó (bán kính 5.0 khối) để Lõi hấp thụ chấn động và biến thành Sculk Core.",
     recipe: null
   },
   {
     id: "end_core",
-    name: "🌀 End Core",
+    name: "End Core",
     instability: "Mỗi 60 giây có 10% cơ hội tự động dịch chuyển người sở hữu ngẫu nhiên đến vùng an toàn lân cận.",
     method: "Nghi thức Khe Nứt Không Gian:\nNém một vật phẩm Heavy Core bay trực tiếp xuyên qua luồng cổng End Portal đang hoạt động.\nCó 20% cơ hội biến đổi thành End Core và 80% cơ hội hỏng thành Ruined Core đồng thời người ném bị dính Trạng thái Nguyền rủa (Craft Lockout 15 phút).",
     recipe: null
   },
   {
     id: "ruined_core",
-    name: "💀 Ruined Core",
+    name: "Ruined Core",
     instability: "Lõi phế tích sụp đổ từ nghi thức rèn thất bại. Không thể dùng chế tạo các loại búa Mace, nhưng là vật liệu chính để rèn Kiếm Cổ Nguyền (Cursed Sword).",
     method: "Có 80% cơ hội nhận được khi rèn thất bại/nghi thức thất bại lõi End Core hoặc Blood Core.",
     recipe: null

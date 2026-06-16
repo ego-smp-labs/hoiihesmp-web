@@ -64,8 +64,19 @@ Dự án hoàn toàn không sử dụng các file `.mp3` hay `.wav` bên ngoài.
 - **Âm thanh Mở rương**: Sử dụng hai bộ tạo sóng tam giác (`triangle`) chạy lệch nhau `0.04s` để giả lập tiếng kêu lách cách cơ học của khớp gỗ và tiếng cọ xát bản lề rương.
 
 ### 2.3. Tối ưu Layout & Blocky UI
-- Thiết kế giao diện lấy cảm hứng trực tiếp từ phong cách khối vuông (Grid & Voxels) của Minecraft.
 - Hạn chế tối đa các góc bo tròn phức tạp (`rounded-none`). Việc này không những tạo ra cảm giác hoài cổ (retro) chân thực, mà còn giúp trình duyệt vẽ các khối phẳng cực nhanh, giảm tải các phép tính chống răng cưa (anti-aliasing) trên viền bo góc.
+
+### 2.4. Phân Bổ Tầng Trang & Sidebar Reorganization (Page Hierarchy & Emojis)
+Để tối ưu hóa trải nghiệm người dùng và tránh xung đột điều hướng, toàn bộ hệ thống tab cũ của component `WikiMace.vue` đã được lôi ra thành các trang con độc lập được quản lý bởi VitePress sidebar:
+*   **Búa Exclusive**: `/wiki/mace-exclusive` (kích hoạt `weapons`)
+*   **Giáo Exclusive**: `/wiki/spear-exclusive` (kích hoạt `spears`)
+*   **Lõi Ma Pháp**: `/wiki/cores` (kích hoạt `cores`)
+*   **Vật Liệu Lò Rèn**: `/wiki/materials` (kích hoạt `materials`)
+*   **Lò Rèn Lodestone**: `/wiki/forge` (kích hoạt `forge`)
+*   **Hướng Dẫn Chế Tạo**: `/wiki/guide` (kích hoạt `guide`)
+
+Các trang con này truyền prop `defaultTab` tương ứng vào `<WikiMace>` để kích hoạt trực tiếp tab đó. Menu tab điều hướng cũ phía trên cùng đã được ẩn đi, giúp giao diện trực quan và đồng bộ hoàn toàn với thanh định vị chính của VitePress.
+Đồng thời, toàn bộ các emoji tiêu đề (như `🔊` trên Warden Spear) đã bị loại bỏ hoàn toàn, thay thế bằng các icon vật phẩm Minecraft chất lượng cao qua `<PixelIcon>` để giữ tính chuyên nghiệp của hệ thống.
 
 ---
 

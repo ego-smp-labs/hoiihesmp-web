@@ -74,8 +74,8 @@ const filteredWeapons = computed(() => {
     <!-- Search & Title Header -->
     <div class="flex flex-col lg:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 mb-8 pt-4">
       <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-4 md:gap-6">
-        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-sm animate-float">
-          ⚔
+        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-sm animate-float">
+          <PixelIcon itemId="cursed_sword" :size="48" />
         </div>
         <div>
           <h2 class="font-outfit font-black text-2xl lg:text-3xl text-white tracking-tight uppercase">
@@ -119,8 +119,8 @@ const filteredWeapons = computed(() => {
         <!-- Info left side -->
         <div class="flex-1 flex flex-col gap-5">
           <div class="flex flex-wrap items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300">
-              {{ w.badge }}
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 animate-float">
+              <PixelIcon :itemId="w.id" :size="48" />
             </div>
             <div class="flex-1">
               <h3 class="text-2xl lg:text-3xl font-black font-outfit text-white tracking-tight">

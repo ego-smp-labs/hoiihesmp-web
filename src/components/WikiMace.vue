@@ -24,6 +24,77 @@ const props = defineProps<{
 }>()
 
 const activeTab = ref(props.defaultTab || "weapons") // weapons, cores, materials, forge, guide
+
+const headerInfo = computed(() => {
+  switch (activeTab.value) {
+    case 'weapons':
+      return {
+        title: 'Búa Exclusive',
+        subtitle: 'Tra cứu công thức rèn đúc và sức mạnh búa cổ vật',
+        icon: 'mace_power'
+      }
+    case 'spears':
+      return {
+        title: 'Giáo Exclusive',
+        subtitle: 'Tra cứu công thức rèn đúc và sức mạnh giáo cổ vật',
+        icon: 'warden_spear'
+      }
+    case 'cores':
+      return {
+        title: 'Lõi Ma Pháp',
+        subtitle: 'Thông tin và nghi thức thu thập các lõi ma thuật bất ổn',
+        icon: 'ego_core'
+      }
+    case 'materials':
+      return {
+        title: 'Vật Liệu Lò Rèn',
+        subtitle: 'Các dị nguyên liệu cực hiếm phục vụ đúc rèn',
+        icon: 'obsidian_chaos'
+      }
+    case 'forge':
+      return {
+        title: 'Lò Rèn Lodestone',
+        subtitle: 'Quy trình kích hoạt lò rèn ma thuật Lodestone',
+        icon: 'soul_campfire'
+      }
+    case 'guide':
+      return {
+        title: 'Hướng Dẫn Chế Tạo',
+        subtitle: 'Cẩm nang quy tắc rèn đúc, cường hóa và giới hạn',
+        icon: 'papyrus_scroll'
+      }
+    default:
+      return {
+        title: 'Mace Exclusive Wiki',
+        subtitle: 'Tra cứu công thức rèn đúc và sức mạnh cổ vật',
+        icon: 'heavy_core'
+      }
+  }
+})
+
+const searchPlaceholder = computed(() => {
+  switch (activeTab.value) {
+    case 'weapons':
+      return 'Tìm kiếm búa cổ vật...'
+    case 'spears':
+      return 'Tìm kiếm giáo cổ vật...'
+    case 'cores':
+      return 'Tìm kiếm lõi ma pháp...'
+    case 'materials':
+      return 'Tìm kiếm vật liệu lò rèn...'
+    default:
+      return 'Tìm kiếm...'
+  }
+})
+
+const getWeaponItemId = (weapon: any, tab: string) => {
+  if (tab === 'weapons') {
+    return `mace_${weapon.id}`
+  } else if (tab === 'spears') {
+    return weapon.id === 'sonic' ? 'warden_spear' : 'chronos_spear'
+  }
+  return weapon.id
+}
 const searchTerm = ref("")
 const selectedMobileItem = ref<string | null>(null) // Mobile details Drawer
 const activeCoreRecipe = ref<string | null>(null) // Core ID recipe view
@@ -208,25 +279,25 @@ const filteredMaterials = computed(() => {
     <!-- Header & Search -->
     <div class="flex flex-col lg:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 mb-8 pt-4">
       <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-4 md:gap-6">
-        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-sm animate-float">
-          🔮
+        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-sm animate-float">
+          <PixelIcon :itemId="headerInfo.icon" :size="48" />
         </div>
         <div>
           <h2 class="font-outfit font-black text-3xl sm:text-4xl text-white tracking-tight uppercase">
-            Mace Exclusive Wiki
+            {{ headerInfo.title }}
           </h2>
           <p class="text-xs sm:text-sm text-[#b7a9ca] tracking-wide uppercase mt-2 font-medium">
-            Tra cứu công thức rèn đúc và sức mạnh cổ vật
+            {{ headerInfo.subtitle }}
           </p>
         </div>
       </div>
 
       <!-- Search Box -->
-      <div class="relative w-full lg:w-96">
+      <div v-if="activeTab !== 'forge' && activeTab !== 'guide'" class="relative w-full lg:w-96">
         <input
           type="text"
           class="w-full bg-[#120b1a] border border-white/10 rounded-2xl px-5 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all font-sans shadow-sm"
-          placeholder="Tìm kiếm búa, lõi, nguyên liệu..."
+          :placeholder="searchPlaceholder"
           v-model="searchTerm"
         />
         <button 
@@ -237,22 +308,6 @@ const filteredMaterials = computed(() => {
           ✕
         </button>
       </div>
-    </div>
-
-    <!-- Tabs Navigation -->
-    <div class="flex flex-wrap gap-2 md:gap-3 mb-10">
-      <button
-        v-for="tab in maceTabs"
-        :key="tab.id"
-        @click="switchTab(tab.id)"
-        class="flex-1 min-w-[140px] px-5 py-3.5 rounded-xl font-outfit font-bold text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all cursor-pointer outline-none border"
-        :class="activeTab === tab.id
-          ? 'bg-white/10 border-white/20 text-white shadow-md'
-          : 'bg-transparent border-white/5 text-[#b7a9ca] hover:bg-white/5 hover:text-white hover:border-white/10'
-        "
-      >
-        {{ tab.label }}
-      </button>
     </div>
 
     <!-- ================= WEAPONS SECTION ================= -->
@@ -269,8 +324,8 @@ const filteredMaterials = computed(() => {
         <!-- Info left side -->
         <div class="flex-1 flex flex-col gap-5">
           <div class="flex flex-wrap items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300">
-              {{ w.badge }}
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 animate-float">
+              <PixelIcon :itemId="getWeaponItemId(w, activeTab)" :size="48" />
             </div>
             <div class="flex-1">
               <h3 class="text-2xl lg:text-3xl font-black font-outfit text-white tracking-tight">
@@ -353,8 +408,8 @@ const filteredMaterials = computed(() => {
         <!-- Info left side -->
         <div class="flex-1 flex flex-col gap-5">
           <div class="flex flex-wrap items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300">
-              {{ w.badge }}
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 animate-float">
+              <PixelIcon :itemId="getWeaponItemId(w, activeTab)" :size="48" />
             </div>
             <div class="flex-1">
               <h3 class="text-2xl lg:text-3xl font-black font-outfit text-white tracking-tight">

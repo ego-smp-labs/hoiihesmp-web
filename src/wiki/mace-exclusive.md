@@ -1,10 +1,10 @@
 ---
-title: Mace Exclusive Wiki
-description: Bản đồ lò rèn Lodestone và 9 loại búa cổ vật độc quyền.
+title: Búa Exclusive
+description: Tra cứu công thức rèn đúc và sức mạnh búa cổ vật độc quyền.
 ---
 
 <script setup>
 import WikiMace from '../components/WikiMace.vue'
 </script>
 
-<WikiMace />
+<WikiMace defaultTab="weapons" />

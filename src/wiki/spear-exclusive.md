@@ -1,5 +1,5 @@
 ---
-title: Cổ Vật Spear Exclusive
+title: Giáo Exclusive
 description: Danh sách và hướng dẫn công thức chế tạo các giáo Spear cổ vật độc quyền.
 ---
 

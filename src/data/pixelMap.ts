@@ -31,8 +31,8 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   redstone_block: { cdnName: "redstone_block", type: "block", displayName: "Khối Đá Đỏ" },
   potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ" },
   wither_skeleton_skull: { cdnName: "https://minotar.net/avatar/MHF_WSkeleton/64.png", type: "item", displayName: "Đầu Khô Lâu Wither" },
-  glitch_clock: { cdnName: "clock", type: "item", displayName: "Đồng hồ Glitch", glowColor: "rgba(255, 170, 0, 0.45)" },
-  netherite_spear: { cdnName: "https://api.minecraftitems.xyz/api/item/netherite_spear", type: "item", displayName: "Giáo Netherite" },
+  glitch_clock: { cdnName: "clock_00", type: "item", displayName: "Đồng hồ Glitch", glowColor: "rgba(255, 170, 0, 0.45)" },
+  netherite_spear: { cdnName: "trident", type: "item", displayName: "Giáo Netherite" },
   any_head: { cdnName: "https://minotar.net/avatar/MHF_Skeleton/64.png", type: "item", displayName: "Đầu Bất Kỳ (Any Head)" },
   any_poison_potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ (Any Poison Potion)" },
 
@@ -43,8 +43,8 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   mace_vampiric: { cdnName: "mace", type: "item", displayName: "Búa Huyết Ma", glowColor: "rgba(230, 57, 70, 0.45)" },
   mace_gravity: { cdnName: "mace", type: "item", displayName: "Búa Trọng Lực Kỳ Dị", glowColor: "rgba(0, 216, 180, 0.45)" },
   mace_soulfire: { cdnName: "mace", type: "item", displayName: "Búa Hỏa Thiêu Hồn", glowColor: "rgba(0, 245, 212, 0.45)" },
-  warden_spear: { cdnName: "https://api.minecraftitems.xyz/api/item/netherite_spear", type: "item", displayName: "Giáo Tiếng Vọng Warden", glowColor: "rgba(0, 180, 216, 0.4)" },
-  chronos_spear: { cdnName: "https://api.minecraftitems.xyz/api/item/netherite_spear", type: "item", displayName: "Giáo Thời Gian Chronos", glowColor: "rgba(226, 149, 120, 0.4)" },
+  warden_spear: { cdnName: "trident", type: "item", displayName: "Giáo Tiếng Vọng Warden", glowColor: "rgba(0, 180, 216, 0.4)" },
+  chronos_spear: { cdnName: "trident", type: "item", displayName: "Giáo Thời Gian Chronos", glowColor: "rgba(226, 149, 120, 0.4)" },
   cursed_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Cổ Nguyền", glowColor: "rgba(114, 9, 183, 0.45)" },
 
   // Custom Cores
@@ -79,6 +79,7 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   iron_ingot: { cdnName: "iron_ingot", type: "item", displayName: "Thỏi Sắt" },
   gold_ingot: { cdnName: "gold_ingot", type: "item", displayName: "Thỏi Vàng" },
   diamond: { cdnName: "diamond", type: "item", displayName: "Kim Cương" },
+  diamond_block: { cdnName: "diamond_block", type: "block", displayName: "Khối Kim Cương" },
   leather: { cdnName: "leather", type: "item", displayName: "Da Thuộc" },
   paper: { cdnName: "paper", type: "item", displayName: "Giấy" },
   chest: { cdnName: "https://api.minecraftitems.xyz/api/item/chest", type: "item", displayName: "Rương" },
