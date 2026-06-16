@@ -226,17 +226,17 @@ export const spearWeapons: Weapon[] = [
     tooltip: "&9&lWarden Spear|&7A deep-dark spear resonating with Warden pressure waves.||&6⚡ Active — Sonic Boom:|&fNgồi + Đánh hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu đầu tiên nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Trả giá người dùng mất 4 HP (không tự tử). Hồi chiêu 35s.||&a⭐ Passive — Quiet step:|&fĐi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP).||&c☠ Curse — Quá tải phản âm:|&fSau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm (không nguyền rủa lộ vị trí).",
     recipe: {
       shape: [
-        ["S", "C", "B"],
-        ["G", "D", "S"],
-        ["D", "E", "G"]
+        ["G", "B", "G"],
+        ["S", "C", "D"],
+        ["G", "E", "G"]
       ],
       ingredients: {
-        S: { name: "Sculk Catalyst", itemId: "sculk_catalyst", tooltip: "&fSculk Catalyst x16|&7Spreads sculk blocks from souls.", amount: 16 },
-        C: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Blindness/Darkness curse ticker." },
         B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
-        G: { name: "Enchanted Golden Apple", itemId: "enchanted_golden_apple", tooltip: "&dEnchanted Golden Apple|&7Super notch apple." },
-        D: { name: "Kim Cương", itemId: "diamond", tooltip: "&bDiamond x16|&7Kim cương bảo an.", amount: 16 },
-        E: { name: "Echo Shard", itemId: "echo_shard", tooltip: "&fEcho Shard|&7Ancient recovery material." }
+        C: { name: "Sculk Core", itemId: "sculk_core", tooltip: "&3Sculk Core|&8Bất ổn: &7Blindness/Darkness curse ticker." },
+        E: { name: "Echo Shard", itemId: "echo_shard", tooltip: "&fEcho Shard x16|&7Ancient recovery material.", amount: 16 },
+        D: { name: "Khối Kim Cương", itemId: "diamond_block", tooltip: "&bDiamond Block|&7Khối kim cương đặc khít." },
+        S: { name: "Sculk Catalyst", itemId: "sculk_catalyst", tooltip: "&fSculk Catalyst x16|&7Spreads sculk blocks from souls.", amount: 16 },
+        G: { name: "Enchanted Golden Apple", itemId: "enchanted_golden_apple", tooltip: "&dEnchanted Golden Apple|&7Super notch apple." }
       }
     }
   },
@@ -252,12 +252,12 @@ export const spearWeapons: Weapon[] = [
     tooltip: "&6&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian trong 2.25 giây. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong 1.25 giây.",
     recipe: {
       shape: [
-        ["G", "T", "G"],
+        ["G", "B", "G"],
         ["D", "S", "D"],
-        ["S", "S", "S"]
+        ["G", "S", "G"]
       ],
       ingredients: {
-        T: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
+        B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
         G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian." },
         D: { name: "Kim Cương", itemId: "diamond", tooltip: "&bDiamond x16|&7Kim cương bảo an.", amount: 16 },
         S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball|&7Viên slime đàn hồi." }
