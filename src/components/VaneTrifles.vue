@@ -148,10 +148,19 @@ const filteredItems = computed(() => {
           </div>
         </div>
 
-        <!-- Recipe right side -->
+        <!-- Recipe & Illustration right side -->
         <div class="xl:w-[320px] flex flex-col items-center justify-center border-t xl:border-t-0 xl:border-l border-white/10 pt-8 xl:pt-0 xl:pl-8 gap-4 shrink-0">
-          <span class="text-[10px] uppercase font-black text-[#b7a9ca] tracking-widest select-none bg-white/5 px-4 py-1.5 rounded-full">Công Thức</span>
-          <div class="transform scale-95 sm:scale-100 hover:scale-[1.02] transition-transform duration-300">
+          <span class="text-[10px] uppercase font-black text-[#b7a9ca] tracking-widest select-none bg-white/5 px-4 py-1.5 rounded-full">
+            {{ item.recipe ? 'Công Thức & Minh Họa' : 'Minh Họa Tính Năng' }}
+          </span>
+
+          <!-- Demonstration GIF -->
+          <div v-if="item.gifUrl" class="w-full max-w-[240px] aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg relative bg-[#0c0712] flex items-center justify-center">
+            <img :src="item.gifUrl" class="w-full h-full object-cover pixelated" alt="Vane item demonstration" />
+          </div>
+
+          <!-- Crafting Grid -->
+          <div v-if="item.recipe" class="transform scale-95 sm:scale-100 hover:scale-[1.02] transition-transform duration-300 w-full flex justify-center">
             <CraftingGrid
               :recipe="item.recipe"
               :resultName="item.name"
@@ -160,7 +169,11 @@ const filteredItems = computed(() => {
               @select-item="handleSelectItem"
             />
           </div>
-          <span class="text-[10px] text-[#7b6299] text-center max-w-[240px] font-medium leading-relaxed">
+          <div v-else-if="!item.gifUrl" class="bg-[#120b1a] border border-[#4a3b5c] rounded-xl p-6 text-center text-xs text-[#7b6299] italic max-w-[240px]">
+            Vật phẩm này không có công thức rèn trực tiếp (nhập từ hoạt động đặc biệt).
+          </div>
+          
+          <span v-if="item.recipe" class="text-[10px] text-[#7b6299] text-center max-w-[240px] font-medium leading-relaxed">
             Nhấp vào nguyên liệu trên bảng để hiển thị tên và chi tiết.
           </span>
         </div>

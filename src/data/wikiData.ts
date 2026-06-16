@@ -21,6 +21,7 @@ export interface Weapon {
   desc: string;
   tooltip: string;
   recipe: Recipe | null;
+  gifUrl?: string;
 }
 
 export interface Core {
@@ -442,6 +443,7 @@ export const vaneTriflesItems: Weapon[] = [
     singleton: false,
     desc: "Dụng cụ nông nghiệp chuyên dụng giúp thu hoạch lúa chín và tự gieo hạt trong bán kính cực rộng (5x5).",
     tooltip: "&e&lGolden Sickle|&7Dụng cụ thu hoạch diện rộng.||&6⚡ Active — Area Harvest:|&fChuột phải vào ruộng chín để thu hoạch và tự động trồng lại. Phạm vi 5x5. (Bản liềm vàng cho hiệu quả tốt nhất) ||&a⭐ Passive:|&fThời gian sử dụng cực lâu, hỗ trợ làm nông năng suất cao.",
+    gifUrl: "https://oddlama.github.io/vane/assets/gifs/sickle.gif",
     recipe: {
       shape: [
         ["", "G", "G"],
@@ -486,6 +488,7 @@ export const vaneTriflesItems: Weapon[] = [
     singleton: false,
     desc: "Tự động đặt một khối xây dựng ngẫu nhiên từ Hotbar hoặc hàng rương chỉ định khi nhấp chuột phải.",
     tooltip: "&b&lArchitect Trowel|&7Xây dựng vân khối ngẫu nhiên.||&6⚡ Active — Random Block Placement:|&fChuột phải để đặt một khối ngẫu nhiên có trong Hotbar.||&a⭐ Passive — Source Selection:|&fChuột phải trong túi đồ để thay đổi dòng kho đồ cấp vật liệu xây dựng (Hotbar hoặc các dòng kho đồ khác).",
+    gifUrl: "https://oddlama.github.io/vane/assets/gifs/trowel.gif",
     recipe: {
       shape: [
         ["", "", "S"],
@@ -530,6 +533,7 @@ export const vaneTriflesItems: Weapon[] = [
     singleton: false,
     desc: "Chứa một slime nhỏ. Slime sẽ nhảy liên tục trong xô khi người chơi đang đứng trong một Slime Chunk.",
     tooltip: "&a&lSlime Bucket|&7Slime chunk detector.||&a⭐ Passive — Chunk Finder:|&fSlime trong xô nhảy tưng tưng nếu bạn đứng trong Slime Chunk.||&6⚡ Active — Deploy Slime:|&fChuột phải vào đất để thả slime nhỏ ra ngoài. Có thể thay thế cho slimeball khi chế tạo.",
+    gifUrl: "https://oddlama.github.io/vane/assets/gifs/slime_bucket.gif",
     recipe: null
   },
   {

@@ -19,8 +19,12 @@ import CraftingGrid from './CraftingGrid.vue'
 import ThreeDModelViewer from './ThreeDModelViewer.vue'
 import { playClickSound, playChestSound } from '../utils/audio'
 
+const props = defineProps<{
+  defaultTab?: string
+}>()
+
+const activeTab = ref(props.defaultTab || "weapons") // weapons, cores, materials, forge, guide
 const searchTerm = ref("")
-const activeTab = ref("weapons") // weapons, cores, materials, forge, guide
 const selectedMobileItem = ref<string | null>(null) // Mobile details Drawer
 const activeCoreRecipe = ref<string | null>(null) // Core ID recipe view
 

@@ -35,17 +35,20 @@ export default defineConfig({
     },
     nav: [
       { text: 'Trang Chủ', link: '/' },
-      { text: 'Cổ Vật & Vũ Khí', items: [
-        { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
-        { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
-      ]},
-      { text: 'Hướng Dẫn', items: [
-        { text: 'Plugin Vane', link: '/guide/vane' },
-        { text: 'ValhallaMMO', link: '/guide/valhallammo' },
+      { text: 'Hướng Dẫn Cơ Bản', items: [
         { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
         { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
       ]},
-      { text: 'Hỗ Trợ', link: '/support' }
+      { text: 'Cổ Vật & Vũ Khí', items: [
+        { text: 'Cổ vật Mace', link: '/wiki/mace-exclusive' },
+        { text: 'Cổ vật Spear', link: '/wiki/spear-exclusive' },
+        { text: 'Vũ khí cổ đại', link: '/wiki/custom-weapons' }
+      ]},
+      { text: 'Plugin Gameplay', items: [
+        { text: 'Plugin Vane', link: '/guide/vane' },
+        { text: 'ValhallaMMO', link: '/guide/valhallammo' }
+      ]},
+      { text: 'Hỗ Trợ & Luật Lệ', link: '/support' }
     ],
     sidebar: [
       {
@@ -56,10 +59,18 @@ export default defineConfig({
         ]
       },
       {
+        text: '🩸 Hướng Dẫn Cơ Bản',
+        items: [
+          { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
+          { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
+        ]
+      },
+      {
         text: '⚔️ Cổ Vật & Vũ Khí',
         items: [
-          { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
-          { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
+          { text: 'Cổ vật Mace', link: '/wiki/mace-exclusive' },
+          { text: 'Cổ vật Spear', link: '/wiki/spear-exclusive' },
+          { text: 'Vũ khí cổ đại', link: '/wiki/custom-weapons' }
         ]
       },
       {
@@ -67,13 +78,6 @@ export default defineConfig({
         items: [
           { text: 'Plugin Vane', link: '/guide/vane' },
           { text: 'ValhallaMMO', link: '/guide/valhallammo' }
-        ]
-      },
-      {
-        text: '🩸 Sinh Tồn & Lệnh',
-        items: [
-          { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' },
-          { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' }
         ]
       }
     ],

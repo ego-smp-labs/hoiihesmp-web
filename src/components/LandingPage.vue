@@ -53,6 +53,7 @@ const cards = [
 ]
 
 const commonCommands = [
+  { label: '/macee info', desc: 'Tra cứu thông tin, chỉ số và công thức rèn toàn bộ các vũ khí Mace Exclusive in-game.' },
   { label: '/trade', desc: 'Giao dịch từ xa an toàn với người chơi khác.' },
   { label: '/grave', desc: 'Xem lại toạ độ các bia mộ khi bị chết.' },
   { label: '/skills', desc: 'Mở bảng kỹ năng nhập vai RPG ValhallaMMO.' },
