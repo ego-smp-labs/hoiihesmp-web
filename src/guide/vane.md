@@ -1,52 +1,24 @@
-# Hướng Dẫn Plugin Vane & Vật Phẩm QoL
+# Hướng Dẫn Plugin Vane Trifles
 
-**Vane** là một hệ thống plugin cải tiến trải nghiệm sinh tồn Minecraft (Vanilla-like) vô cùng mạnh mẽ. Plugin này bổ sung nhiều tính năng hữu ích mà không làm mất đi tính chất nguyên bản của trò chơi, đặc biệt là các công cụ hỗ trợ chất lượng cuộc sống (Trifles).
+**Vane Trifles** là một phần của bộ plugin Vane, tập trung vào việc cải thiện trải nghiệm chơi game (Quality of Life - QoL) bằng cách thêm các tiện ích thông minh và vật phẩm hữu ích mà không làm mất đi cảm giác nguyên bản (vanilla-friendly) của Minecraft.
 
 ---
 
-## 🌾 1. Công Cụ & Tiện Ích Mới (Vane Trifles)
+## 🧩 Cơ Chế Gameplay Nổi Bật
 
-Dưới đây là cẩm nang tra cứu và tìm kiếm nhanh các vật phẩm tùy biến của **Vane Trifles** đang hoạt động trên máy chủ. Bạn có thể sử dụng ô tìm kiếm để tra nhanh công năng hoặc công thức rèn lưới 3x3 tương ứng:
+* **🚪 Cửa Đôi Đồng Bộ (Double Doors)**: Tự động đồng bộ hóa việc đóng/mở của cửa đôi khi người chơi hoặc dòng đá đỏ kích hoạt một bên cửa.
+* **🌾 Thu Hoạch Thông Minh (Better Harvesting)**: Nhấp chuột phải bằng tay hoặc công cụ vào cây trồng đã chín để thu hoạch và tự động trồng lại hạt giống ngay lập tức.
+* **🔨 Giới Hạn Chi Phí Đe (Anvil Cost Limiter)**: Loại bỏ dòng chữ khó chịu *"Too Expensive!"* bằng cách giới hạn chi phí sửa chữa hoặc ghép phù phép tối đa ở mức 39 cấp độ kinh nghiệm.
+* **🔍 Tìm Kiếm Vật Phẩm (Item Finder)**: Tìm kiếm nhanh vị trí các vật phẩm trong các rương lân cận bằng lệnh `/finditem <id_vật_phẩm>` hoặc nhấn `Shift + Chuột phải` vào vật phẩm trong kho đồ cá nhân.
+* **📦 Sắp Xếp Rương Tự Động (Chest Sorting)**: Đặt một nút bấm (button) cạnh rương và nhấp chuột phải để tự động sắp xếp gọn gàng toàn bộ rương trong phạm vi 3x3x3 khối xung quanh nút.
+* **🏃 Tăng Tốc Đường Đất (Grass Paths)**: Người chơi di chuyển nhanh hơn khi chạy trên các khối đường đất (Dirt Path).
+* **💀 Kho Đầu Trang Trí (Decorative Heads)**: Sử dụng lệnh `/heads` để truy cập menu hơn 32.000 đầu trang trí đẹp mắt, cho phép đổi một Xương (Bone) lấy một đầu trang trí bất kỳ.
+* **📖 Mở Khóa Công Thức (Unlock All Recipes)**: Tự động mở khóa toàn bộ công thức trong sổ chế tạo ngay lần đầu người chơi tham gia máy chủ.
+
+---
+
+## 🌾 Danh Sách Công Cụ & Vật Phẩm QoL
+
+Dưới đây là cẩm nang tra cứu chi tiết công năng và công thức chế tạo các vật phẩm tùy biến của **Vane Trifles**. Bạn có thể dùng ô tìm kiếm bên dưới để lọc nhanh vật phẩm mong muốn:
 
 <VaneTrifles />
-
----
-
-## 🌀 2. Cổng Dịch Chuyển Tự Chế (Vane Portals)
-
-Người chơi có thể tự xây dựng các cổng dịch chuyển cá nhân hoặc công cộng để liên kết các khu vực ở khoảng cách xa mà không cần lệnh admin.
-
-### Cách Xây Dựng Cổng
-1. Xây một khung hình chữ nhật đứng bằng **Hắc Diện Thạch (Obsidian)** (kích thước tối thiểu 2x3 khoảng trống bên trong, tương tự cổng Nether).
-2. Đặt một **Khối Đá Đỏ (Redstone Block)** làm nền ở ngay dưới lòng cổng.
-3. Cầm **Bột Đá Đỏ (Redstone Dust)** chuột phải vào khung Obsidian. Khung cổng sẽ được kích hoạt và xuất hiện làn sương ma thuật.
-
-### Cách Liên Kết Cổng
-- Sử dụng **Ngọc Ender (Ender Pearl)**: Chuột phải vào cổng thứ nhất để lấy tọa độ liên kết, sau đó mang viên ngọc đó chuột phải vào cổng thứ hai để kết nối chúng lại với nhau.
-- Đi vào cổng này sẽ dịch chuyển bạn tức thời sang cổng kia.
-
----
-
-## 📬 3. Hòm Thư Chuyển Phát (Vane Mailboxes)
-
-Không cần phải đi bộ hàng ngàn khối để trao đổi vật phẩm, bạn có thể gửi thư và hàng hóa thông qua hòm thư chuyển phát nhanh.
-
-### Cách Chế Tạo & Đặt Hòm Thư
-- Chế tạo một **Hòm Thư (Mailbox)** bằng rương gỗ kết hợp với một thỏi đồng/sắt.
-- Đặt hòm thư ngoài đất và sử dụng lệnh `/mailbox register <Tên_Hòm_Thư>` để đăng ký nó vào mạng lưới bưu chính của server.
-
-### Cách Gửi Đồ
-- Chuột phải vào hòm thư bất kỳ, giao diện bưu điện sẽ mở ra.
-- Nhập tên người nhận hoặc chọn hòm thư công cộng trong danh sách.
-- Đặt vật phẩm muốn gửi vào các ô trống và nhấn **Gửi**. Người nhận sẽ nhận được thông báo bưu phẩm và chỉ cần ra hòm thư của mình để lấy đồ.
-
----
-
-## 🛡 4. Hệ Thống Bảo Vệ Đất Đai (Vane Regions)
-
-Mỗi member đều có quyền bảo vệ nhà cửa và công trình của mình tránh khỏi việc bị phá hoại hoặc ăn trộm (griefing).
-
-### Lệnh Claim Đất
-- `/region create <Tên_Khu_Vực>`: Tạo một vùng claim bảo vệ xung quanh vị trí bạn đang đứng (bán kính claim mặc định sẽ tiêu tốn ngọc lục bảo hoặc vàng tùy cấu hình server).
-- `/region addmember <Khu_Vực> <Tên_Người_Chơi>`: Cho phép bạn bè cùng xây dựng trong vùng đất của bạn.
-- `/region list`: Hiển thị tất cả các vùng đất bạn đang sở hữu.

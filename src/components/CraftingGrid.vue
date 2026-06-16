@@ -55,6 +55,14 @@ const handleSlotClick = (tooltipText: string) => {
               :size="28"
             />
             
+            <!-- Item Quantity Overlay (Minecraft style) -->
+            <span
+              v-if="symbol && recipe!.ingredients[symbol] && recipe!.ingredients[symbol].amount && recipe!.ingredients[symbol].amount > 1"
+              class="absolute bottom-0.5 right-1 text-[12px] font-vt text-white drop-shadow-[1px_1px_0_#373737] z-10 select-none pointer-events-none"
+            >
+              {{ recipe!.ingredients[symbol].amount }}
+            </span>
+            
             <!-- Legend Overlay for symbol letter -->
             <span v-if="symbol" class="absolute top-0.5 left-1 text-[9px] font-vt text-[#ffffff] opacity-70 select-none">
               {{ symbol }}

@@ -90,7 +90,8 @@ const handleLoad = () => {
       interaction-prompt="none"
       auto-rotate-delay="0"
       rotation-per-second="10deg"
-      touch-action="pan-y"
+      touch-action="none"
+      disable-zoom
       class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing rounded-xl overflow-hidden"
       style="--poster-color: transparent;"
       @load="handleLoad"

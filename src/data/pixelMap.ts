@@ -56,15 +56,22 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   ruined_core: { cdnName: "https://api.minecraftitems.xyz/api/item/heavy_core", type: "item", displayName: "💀 Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
 
   // Vane Trifles Custom Items
-  sickle: { cdnName: "iron_hoe", type: "item", displayName: "Liềm Thu Hoạch" },
-  file_tool: { cdnName: "shears", type: "item", displayName: "Giũa Thiết Kế" },
-  trowel: { cdnName: "brick", type: "item", displayName: "Bay Xây Dựng" },
-  north_compass: { cdnName: "compass", type: "item", displayName: "La Bàn Hướng Bắc" },
-  slime_bucket: { cdnName: "slime_ball", type: "item", displayName: "Xô Slime Dò Chunk" },
-  backpack: { cdnName: "bundle", type: "item", displayName: "Balo Leo Núi" },
-  pouch: { cdnName: "bundle", type: "item", displayName: "Túi Đồ Cá Nhân" },
-  portal_scroll: { cdnName: "map", type: "item", displayName: "Cuộn Giấy Dịch Chuyển" },
-  xp_bottle: { cdnName: "experience_bottle", type: "item", displayName: "Chai Đựng EXP" },
+  golden_sickle: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/golden_sickle.png", type: "item", displayName: "Liềm Hoạt Thạch (Vàng)" },
+  file_tool: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/file.png", type: "item", displayName: "Giũa Kiến Trúc" },
+  trowel: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/trowel.png", type: "item", displayName: "Bay Xây Dựng" },
+  north_compass: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/north_compass_16.png", type: "item", displayName: "La Bàn Hướng Bắc" },
+  slime_bucket: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/slime_bucket.png", type: "item", displayName: "Xô Bắt Slime" },
+  pouch: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/pouch.png", type: "item", displayName: "Túi Da Pouch" },
+  backpack: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/backpack.png", type: "item", displayName: "Balo Leo Núi" },
+  papyrus_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/papyrus_scroll.png", type: "item", displayName: "Cuộn Giấy Papyrus" },
+  home_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/home_scroll.png", type: "item", displayName: "Cuộn Giấy Về Nhà" },
+  unstable_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/unstable_scroll.png", type: "item", displayName: "Cuộn Giấy Bất Ổn" },
+  spawn_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/spawn_scroll.png", type: "item", displayName: "Cuộn Giấy Về Spawn" },
+  death_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/death_scroll.png", type: "item", displayName: "Cuộn Giấy Điểm Chết" },
+  lodestone_scroll: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/lodestone_scroll.png", type: "item", displayName: "Cuộn Giấy Định Vị" },
+  empty_xp_bottle: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/empty_xp_bottle.png", type: "item", displayName: "Chai Kinh Nghiệm Rỗng" },
+  medium_xp_bottle: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/medium_xp_bottle.png", type: "item", displayName: "Chai Kinh Nghiệm" },
+  reinforced_elytra: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/reinforced_elytra.png", type: "item", displayName: "Cánh Cứng Netherite" },
 
   // Common Crafting Ingredients
   copper_ingot: { cdnName: "copper_ingot", type: "item", displayName: "Thỏi Đồng" },
@@ -79,7 +86,24 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   iron_bars: { cdnName: "iron_bars", type: "block", displayName: "Hàng Rào Sắt" },
   compass: { cdnName: "compass", type: "item", displayName: "La Bàn" },
   glass_bottle: { cdnName: "glass_bottle", type: "item", displayName: "Chai Thủy Tinh Rỗng" },
-  bucket: { cdnName: "bucket", type: "item", displayName: "Xô Rỗng" }
+  bucket: { cdnName: "bucket", type: "item", displayName: "Xô Rỗng" },
+  string: { cdnName: "string", type: "item", displayName: "Sợi Chỉ" },
+  rabbit_hide: { cdnName: "rabbit_hide", type: "item", displayName: "Da Thỏ" },
+  goat_horn: { cdnName: "goat_horn", type: "item", displayName: "Sừng Dê" },
+  campfire: { cdnName: "campfire", type: "item", displayName: "Lửa Trại" },
+  experience_bottle: { cdnName: "experience_bottle", type: "item", displayName: "Chai Kinh Nghiệm" },
+  elytra: { cdnName: "elytra", type: "item", displayName: "Cánh Cứng" },
+  chorus_fruit: { cdnName: "chorus_fruit", type: "item", displayName: "Quả Điệp Vy" },
+  recovery_compass: { cdnName: "recovery_compass_16", type: "item", displayName: "La Bàn Hồi Phục" },
+  bone: { cdnName: "bone", type: "item", displayName: "Xương" },
+  gold_nugget: { cdnName: "gold_nugget", type: "item", displayName: "Hạt Vàng" },
+  redstone: { cdnName: "redstone", type: "item", displayName: "Bột Đá Đỏ" },
+  bed: { cdnName: "red_bed", type: "item", displayName: "Giường Ngủ" },
+  netherite_upgrade_smithing_template: { cdnName: "netherite_upgrade_smithing_template", type: "item", displayName: "Phôi Nâng Cấp Netherite" },
+  shulker_box: { cdnName: "shulker_box", type: "block", displayName: "Hộp Shulker" },
+  leather_chestplate: { cdnName: "leather_chestplate", type: "item", displayName: "Giáp Ngực Da" },
+  wheat_seeds: { cdnName: "wheat_seeds", type: "item", displayName: "Hạt Giống Lúa" },
+  sapling: { cdnName: "oak_sapling", type: "item", displayName: "Mầm Cây Sồi" }
 };
 
 export const getCdnUrl = (itemId: string): string => {

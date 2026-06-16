@@ -44,6 +44,7 @@ Bạn có thể dịch chuyển các động vật, quái vật nhỏ hoặc cá
 
 | Câu Lệnh | Mô Tả Chức Năng | Cách Sử Dụng |
 | :--- | :--- | :--- |
+| **`/macee info`** | Tra cứu thông tin và công thức rèn toàn bộ vũ khí Exclusive. | Gõ `/macee info` (hoặc `/me info`) để mở giao diện GUI, hoặc `/macee info <tên>` để xem người sở hữu. |
 | **`/trade <tên>`** | Giao dịch an toàn từ xa với người chơi khác. | Gõ lệnh để mở khung giao diện trao đổi vật phẩm tránh bị lừa đảo. |
 | **`/grave`** | Hiển thị tọa độ bia mộ của bạn lần chết gần nhất. | Giúp bạn dễ dàng quay lại nơi đã hi sinh để nhặt lại vật phẩm. |
 | **`/skills`** | Mở bảng kỹ năng cá nhân của ValhallaMMO. | Xem chi tiết tại [hướng dẫn ValhallaMMO](/guide/valhallammo). |

@@ -45,3 +45,6 @@ next-env.d.ts
 .vitepress/cache/
 src/.vitepress/dist/
 src/.vitepress/cache/
+
+# local cloned repos
+/vane-git/

@@ -47,33 +47,36 @@ export default defineConfig({
       ]},
       { text: 'Hỗ Trợ', link: '/support' }
     ],
-    sidebar: {
-      '/wiki/': [
-        {
-          text: 'Tra Cứu Wiki',
-          items: [
-            { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
-            { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
-          ]
-        }
-      ],
-      '/guide/': [
-        {
-          text: 'Plugin Gameplay',
-          items: [
-            { text: 'Plugin Vane', link: '/guide/vane' },
-            { text: 'ValhallaMMO', link: '/guide/valhallammo' }
-          ]
-        },
-        {
-          text: 'Sinh Tồn & Lệnh',
-          items: [
-            { text: 'Tổng quan', link: '/guide/' },
-            { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' }
-          ]
-        }
-      ]
-    },
+    sidebar: [
+      {
+        text: '🏠 Tổng Quan',
+        items: [
+          { text: 'Quay Về Trang Chủ', link: '/' },
+          { text: 'Hỗ Trợ & Luật Lệ', link: '/support' }
+        ]
+      },
+      {
+        text: '⚔️ Cổ Vật & Vũ Khí',
+        items: [
+          { text: 'Mace Exclusive', link: '/wiki/mace-exclusive' },
+          { text: 'Vũ Khí Custom', link: '/wiki/custom-weapons' }
+        ]
+      },
+      {
+        text: '🧩 Plugin Gameplay',
+        items: [
+          { text: 'Plugin Vane', link: '/guide/vane' },
+          { text: 'ValhallaMMO', link: '/guide/valhallammo' }
+        ]
+      },
+      {
+        text: '🩸 Sinh Tồn & Lệnh',
+        items: [
+          { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' },
+          { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' }
+        ]
+      }
+    ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/nhatthang/hoiihesmp-web' },
       { icon: 'discord', link: 'https://discord.gg/As4h3xMDnR' }

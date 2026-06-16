@@ -33,8 +33,8 @@ const cards = [
   {
     id: "vane",
     title: "Plugin Vane",
-    subtitle: "QoL, Portal & Trifles",
-    desc: "Hướng dẫn các tiện ích sinh tồn vanilla-like: vật phẩm Vane Trifles, cổng dịch chuyển tự chế, hòm thư chuyển phát và claim vùng đất.",
+    subtitle: "Vật Phẩm & Tiện Ích QoL",
+    desc: "Hướng dẫn các tiện ích chất lượng cuộc sống (Vane Trifles): Liềm thu hoạch lúa chín, bay xây dựng, balo leo núi, la bàn hướng Bắc và các loại cuộn giấy dịch chuyển ma thuật.",
     link: "/guide/vane",
     itemId: "slime_bucket",
     badgeColor: "bg-[#55ffff]/10 border-[#55ffff]/30 text-[#55ffff]",
@@ -80,7 +80,7 @@ const handleNav = (link: string) => {
 </script>
 
 <template>
-  <div class="landing-page min-h-screen bg-[#0c0712] text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans overflow-x-hidden">
+  <div class="landing-page min-h-screen bg-transparent text-[#e0d7ec] relative bg-grid-pattern pb-16 flex flex-col font-sans overflow-x-hidden">
 
     <!-- Refined Ambient Glow Effects -->
     <div class="absolute top-[15%] left-[10%] w-[500px] h-[500px] bg-[#ff55ff]/10 rounded-full blur-[150px] -z-10 pointer-events-none animate-pulse-slow"></div>
