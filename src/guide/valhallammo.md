@@ -1,104 +1,87 @@
-# Hướng Dẫn ValhallaMMO: Gói Nội Dung Cổ Điển (Classic)
+# Hướng Dẫn Kỹ Nghệ ValhallaMMO: Gói Cổ Điển (Classic Content Package)
 
-**ValhallaMMO** biến Minecraft sinh tồn truyền thống thành một tựa game nhập vai sinh động (RPG). Trong Season 4, máy chủ sử dụng **Gói nội dung Cổ điển (Classic Content Package)** làm cốt lõi để duy trì tính cân bằng nguyên bản của game trong khi bổ sung các cơ chế rèn đúc chuyên sâu.
-
----
-
-## 🧭 Tổng Quan Nhanh
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-  <div class="mc-dark-panel p-4 border-l-4 border-l-[#ffaa00]">
-    <strong class="text-white">/skills</strong>
-    <p class="text-sm text-[#b7a9ca] mt-2">Mở bảng kỹ năng RPG để xem cấp nghề, EXP và nâng perk.</p>
-  </div>
-  <div class="mc-dark-panel p-4 border-l-4 border-l-[#55ffff]">
-    <strong class="text-white">Smithing</strong>
-    <p class="text-sm text-[#b7a9ca] mt-2">Nghề quan trọng nhất khi chế tạo giáp, vũ khí và dụng cụ chất lượng cao.</p>
-  </div>
-  <div class="mc-dark-panel p-4 border-l-4 border-l-[#ff55ff]">
-    <strong class="text-white">Item Quality</strong>
-    <p class="text-sm text-[#b7a9ca] mt-2">Cấp nghề ảnh hưởng trực tiếp tới độ bền, sát thương và chỉ số trang bị.</p>
-  </div>
-</div>
-
-> [!TIP]
-> Trước khi rèn đồ kim cương hoặc Netherite, hãy kiểm tra cấp **Smithing** trong `/skills`. Rèn vượt cấp có thể khiến trang bị bị phạt độ bền rất nặng.
+Chào mừng bạn đến với hướng dẫn sinh tồn nâng cao của **ValhallaMMO**! Trong Season 4, cụm máy chủ sử dụng **Gói nội dung Cổ điển (Classic)** làm cốt lõi. Gói này giữ nguyên lối chơi sinh tồn cơ bản của Minecraft nhưng bổ sung một chuỗi quy trình chế tạo, gia công cơ học cực kỳ chi tiết và hấp dẫn cho người mới bắt đầu.
 
 ---
 
-## 📈 1. Bảng Kỹ Năng Nhập Vai (/skills)
+## ⚒️ 1. Quy Trình Chế Tạo Cơ Bản (Crafting Rules)
 
-ValhallaMMO dùng lệnh `/skills` làm trung tâm phát triển nhân vật. Đây là nơi bạn xem cấp nghề, EXP, điểm kỹ năng và các perk đang mở khóa.
+Trong ValhallaMMO Classic, bạn **không thể** dùng các thỏi sắt, thỏi vàng hay kim cương thông thường để chế tạo dụng cụ và giáp ngay lập tức trên Bàn Chế Tạo (Crafting Table) truyền thống. Nguyên liệu cần được sơ chế nhiệt và gia công cơ học gần đe sắt.
 
-### Cách Sử Dụng
-1. Gõ `/skills` trong chat để mở giao diện kỹ năng.
-2. Chọn nhánh nghề tương ứng với hoạt động bạn muốn phát triển: Mining, Farming, Smithing, Archery, Acrobatics, Fishing, v.v.
-3. Khi đủ EXP, bạn sẽ nhận **Skill Points** hoặc **Gold Points** để mở các nút perk trong nhánh nghề.
+### Bước 1: Sơ chế nguyên liệu
+* **Sắt & Vàng**: Bạn phải nung nóng các thỏi sắt/thỏi vàng trước khi rèn. Đặt chúng vào **Lò nung (Furnace)**, **Lò luyện kim (Blast Furnace)** hoặc đặt lên **Lửa trại (Campfire)**. Bạn sẽ nhận được **Thỏi Sắt Nóng (Heated Iron Ingot)** hoặc **Thỏi Vàng Nóng (Heated Gold Ingot)**.
+* **Kim Cương**: Kim cương tự nhiên quá cứng và giòn để tạo hình trực tiếp. Bạn cần làm bất ổn định cấu trúc của chúng bằng cách ghép **1 Ngọc Ender (Ender Pearl) + 1 Kim Cương** trong lưới chế tạo để tạo ra **Kim Cương Bất Ổn (Unstable Diamond)**.
 
-### Nên Ưu Tiên Gì?
-- Nếu bạn muốn tự rèn trang bị mạnh: ưu tiên **Smithing**.
-- Nếu bạn thường đào tài nguyên: nâng **Mining** để cải thiện tốc độ và sản lượng.
-- Nếu bạn PvP hoặc đi dungeon nhiều: cân nhắc các nhánh tăng sát thương, né tránh hoặc chống chịu.
+### Bước 2: Vị trí đặt Đe Sắt (Anvil)
+* Để chế tạo các dụng cụ/giáp sắt, vàng và kim cương, bạn phải đặt một **Đe Sắt (Anvil)** (công thức chế tạo đe sắt giữ nguyên như Vanilla) trong phạm vi tối đa là **5 khối (blocks)** xung quanh Bàn Chế Tạo của bạn.
+* Nếu không có đe sắt ở gần, khi bạn cố gắng chế tạo, hệ thống sẽ hiện cảnh báo yêu cầu đặt đe sắt.
 
----
-
-## ⚒️ 2. Cơ Chế Rèn Đúc Cổ Điển (Smithing Progression)
-
-Trong gói nội dung Classic, người chơi không thể ngay lập tức chế tạo các vũ khí/dụng cụ kim cương hay Netherite chất lượng cao. Hệ thống yêu cầu tích lũy cấp độ nghề Rèn để mở khóa và duy trì độ bền tối đa của trang bị.
-
-### Bảng Phân Cấp Trình Độ Rèn (Smithing Levels)
-
-Để rèn thành công trang bị đạt độ bền và chất lượng tốt, bạn cần đạt cấp độ Smithing tương ứng:
-
-| Cấp Độ Rèn | Loại Trang Bị Mở Khóa | Ghi Chú |
-| :--- | :--- | :--- |
-| **0 – 20** | **Gỗ & Da Thuộc** (Wood & Leather) | Giai đoạn nhập môn, học cách đập búa đe. |
-| **20 – 40** | **Đá & Giáp Xích** (Stone & Chainmail) | Rèn giáp xích bằng các vòng sắt lẻ. |
-| **40 – 60** | **Sắt & Vàng** (Iron & Gold) | Đạt ngưỡng thợ rèn trung cấp. |
-| **60+** | **Kim Cương & Netherite** (Diamond & Netherite) | Ngưỡng rèn bậc thầy, tối đa hóa chất lượng. |
-
-> [!WARNING]
-> **Hình phạt rèn vượt cấp (Under-leveled Penalty):**
-> Nếu bạn cố tình chế tạo trang bị có cấp bậc cao hơn cấp độ Rèn hiện tại của mình (ví dụ: chế tạo kiếm Kim Cương khi chỉ mới đạt Level 10 Rèn), trang bị rèn ra sẽ bị **phạt độ bền cực nặng (chỉ còn tối đa 20% độ bền gốc)**, dễ dàng gãy vụn sau vài lần sử dụng.
+### Bước 3: Đồng đỏ (Copper Gear) - Sự thay thế tuyệt vời
+* Trong giai đoạn đầu khi sắt khó kiếm, bạn có thể chế tạo **Dụng cụ Đồng (Copper Tools)**.
+* Đồng có độ bền và sức mạnh nằm giữa Đá và Sắt, đặc biệt là dụng cụ đồng **có thể khai thác được các khối tương tự như dụng cụ sắt** (như quặng sắt, quặng vàng, đá đỏ...).
 
 ---
 
-## ⭐ 3. Phẩm Chất Trang Bị & Perk Smithing
+## 🛡️ 2. Các Trạng Thái Trang Bị Khi Mới Chế Tạo
 
-### Chỉ Số Phẩm Chất (Item Quality)
-- Khi chế tạo dụng cụ, vũ khí hoặc giáp, hệ thống tự động tính toán cấp độ Rèn để cho ra **Chỉ số Phẩm chất (Quality)** từ 1% đến 100% (hiển thị bằng số sao từ 1⭐ đến 5⭐ trên lore trang bị).
-- **Trang bị phẩm chất cao** sẽ được cộng thêm:
-  - Chỉ số Giáp & Độ dẻo dai giáp (Armor & Armor Toughness) cao hơn đồ thường.
-  - Sát thương cơ bản lớn hơn và tốc độ đánh nhanh hơn.
-  - Độ bền tăng gấp 1.5x - 3x lần trang bị gốc.
+Tất cả trang bị kim loại khi mới rèn xong đều có các thuộc tính đặc trưng và cần được gia công thêm để đạt sức mạnh tối đa:
 
-### Mở Khóa Công Thức Rèn Kim Cương Sớm
-Mặc dù công thức rèn Kim Cương thường yêu cầu level Rèn cao, bạn có thể mở khóa sớm bằng cách:
-- Đạt khoảng **Level 40 Smithing**.
-- Vào `/skills`, chọn nhánh **Smithing** và nâng perk liên quan tới **Blacksmith/Thợ Rèn Chuyên Nghiệp** nếu server đang bật perk này.
-- Kiểm tra lore hoặc thông báo craft sau khi rèn để chắc chắn trang bị không bị phạt chất lượng.
+### 👚 Giáp không vừa (Unfit Armor)
+* Khi bạn rèn bất kỳ món giáp nào, nó sẽ có thuộc tính **Unfit** (Chưa vừa vặn) hiển thị trên thông tin trang bị. Chỉ số phòng thủ của giáp Unfit sẽ rất thấp.
+* **Cách khắc phục**: Đặt món giáp đó vào Bàn chế tạo ghép chung với **1 nguyên liệu gốc tương ứng** (ví dụ: giáp ngực sắt + 1 thỏi sắt, nón da + 1 da thuộc).
+* **Kết quả**: Món giáp sẽ trở thành **Fitted (Vừa vặn)**, **nhân đôi (x2)** chỉ số giáp gốc và tặng bạn một lượng lớn EXP Smithing!
 
----
+### 💧 Kim loại chưa tôi (Untempered Metallic Gear)
+* Dụng cụ và vũ khí làm từ Sắt, Vàng, Kim cương hoặc Đồng khi mới chế tạo sẽ ở trạng thái **Untempered** (Chưa được tôi luyện), khiến chúng rất mềm và nhanh hỏng.
+* **Cách khắc phục (Tôi Thép)**:
+  1. Cho dụng cụ chưa tôi vào **Lò nung** hoặc **Lò luyện kim** để nung nóng (nhận Heated Tool).
+  2. Cầm dụng cụ nóng nhấp chuột phải (hoặc ném) vào một **Vạc nước (Cauldron chứa đầy nước)** để làm nguội nhanh.
+* **Kết quả**: Dụng cụ được tôi luyện thành công, **nhân đôi (x2)** độ bền tối đa, tăng tốc độ khai thác block và cộng thêm rất nhiều EXP Smithing!
 
-## 📈 4. Cách Tăng Cấp Rèn Nhanh (Levelling Strategy)
-
-1. **Luyện cấp theo bậc**: Đừng vội rèn đồ đắt tiền. Hãy tập trung chế tạo số lượng lớn công cụ gỗ/da thuộc ở level thấp, sau đó chuyển dần sang sắt khi đạt level 40.
-2. **Cơ chế Cộng dồn Sát thương (EXP Multiplier)**:
-   - Hệ thống của ValhallaMMO theo dõi độ bền bị tiêu hao của các trang bị bạn sử dụng.
-   - Khi bạn làm hỏng hoặc dùng mòn một trang bị nào đó, lượng kinh nghiệm tích lũy từ hao mòn đó sẽ được cộng dồn thành **Hệ số nhân kinh nghiệm (EXP Multiplier)** cho lần chế tạo tiếp theo của loại trang bị đó.
-   - *Mẹo*: Hãy dùng hỏng các dụng cụ sắt trước khi rèn đồ sắt mới để nhận lượng EXP khổng lồ!
+### 🪓 Vũ khí cùn (Blunt Weapon)
+* Mọi loại vũ khí (kiếm, rìu...) mới chế tạo (trừ đồ gỗ và đá) đều ở trạng thái **Blunt** (Cùn), làm giảm đáng kể lượng sát thương gây ra.
+* **Cách khắc phục**: Cầm vũ khí trên tay và **nhấp giữ chuột phải vào Máy mài (Grindstone)** cho đến khi tia lửa bắn ra.
+* **Kết quả**: Vũ khí của bạn đã được mài sắc, gây sát thương lớn hơn rất nhiều và cộng thêm EXP Smithing.
 
 ---
 
-## 💻 Các Lệnh Rèn & Kỹ Năng Hữu Ích
-- `/skills`: Mở giao diện cây kỹ năng nghề Rèn để nâng điểm nhánh *Smithing*.
-- `/valhalla recipes`: Tra cứu chi tiết toàn bộ điều kiện cấp độ và nguyên liệu cho từng công thức rèn trong plugin.
+## ⚡ 3. Hệ Thống Nâng Cấp Trang Bị (Upgrades System)
+
+Mỗi trang bị rèn ra mặc định sẽ có **3 ô nâng cấp (Upgrade Slots)**. Bạn có thể chèn các nâng cấp mạnh mẽ vào các ô này.
+
+### Tăng ô nâng cấp (Lên tối đa 6 ô)
+Bạn có thể tăng số lượng ô nâng cấp từ 3 lên tối đa là **6 ô** bằng các công thức ghép đặc biệt trong Bàn Chế Tạo (ví dụ ghép trang bị với các lõi nâng cấp).
+
+### Danh sách các loại nâng cấp (Stack tối đa 5 lần)
+Các nâng cấp có thể cộng dồn lên đến 5 cấp độ để tối đa hóa hiệu quả:
+
+| Loại Nâng Cấp | Trang Bị Áp Dụng | Hiệu Ứng | Ghi Chú |
+| :--- | :--- | :--- | :--- |
+| **Durable** (Bền bỉ) | Tất cả | +5% độ bền hiệu dụng cho trang bị. | Tăng khả năng chịu hao mòn. |
+| **Energized** (Năng lượng) | Dụng cụ | +1 Sức mạnh khai thác (Mining Power). | Tăng tốc độ đào block. |
+| **Extractor** (Khai quật) | Dụng cụ | +10% sản lượng tài nguyên rơi ra. | Tương tự hiệu ứng Fortune nhẹ. |
+| **Prospector** (Thăm dò) | Dụng cụ | +1 May mắn khai thác (Mining Luck). | Tăng tỉ lệ rơi đồ hiếm (nếu admin bật). |
+| **Depth Affinity** (Thích nghi sâu)| Cúp (Pickaxe) | Đào đá phiến sâu (Deepslate) nhanh như đá thường.| Chỉ áp dụng cho Cúp. |
+| **Bleeding** (Chảy máu) | Vũ khí | +5% tỉ lệ gây hiệu ứng chảy máu lên mục tiêu. | Gây sát thương theo thời gian. |
+| **Penetrating** (Xuyên giáp) | Vũ khí | +5% tỉ lệ xuyên giáp của đối thủ. | Bỏ qua giáp vật lý. |
+| **Vulnerability** (Điểm yếu) | Vũ khí | +10% giảm thời gian bất tử của kẻ địch sau khi trúng đòn.| Giúp combo nhanh hơn. |
+| **Ejecting** (Hất văng) | Vũ khí | +100% tỉ lệ cưỡng chế kẻ địch xuống thú cưỡi. | Khóa chân kỵ binh. |
+| **Poaching** (Săn bắt) | Vũ khí | +20% lượng tài nguyên rơi ra từ quái vật. | Tăng sản phẩm rơi ra từ mob. |
+| **Sharper** (Sắc bén) | Vũ khí | +5% sát thương gốc gây ra. | Tăng sát thương thuần. |
+| **Critical** (Chí mạng) | Vũ khí | +5% tỉ lệ gây đòn đánh chí mạng. | Gây sát thương chí mạng lớn. |
+| **Vampiric** (Hút máu) | Vũ khí | +3% tỉ lệ hút máu (chuyển sát thương thành máu). | Hồi phục khi cận chiến. |
+| **Disarming** (Tước vũ khí) | Vũ khí | +1 giây vô hiệu hóa khiên của đối thủ. | Khắc chế giáp khiên. |
+| **Concussive** (Chấn động) | Vũ khí | +5% tỉ lệ gây choáng (stun) kẻ địch trong vài giây. | Kẻ bị choáng sẽ miễn nhiễm choáng trong 3s sau đó. |
+| **Elongated** (Tầm xa) | Cận chiến | +0.25 khối tầm đánh cận chiến (Attack Reach). | Tấn công từ khoảng cách xa hơn. |
+| **Utilized** (Tiết kiệm) | Cung / Nỏ | -10% tỉ lệ tiêu hao mũi tên khi bắn. | Tiết kiệm đạn dược. |
+| **Immunized** (Kháng cự) | Giáp | +1 độ kháng cự (+0.05s thời gian bất tử khi nhận damage).| Giúp hồi phục nhịp thở nhanh. |
+| **Rejuvenating** (Hồi xuân) | Giáp | +5% hiệu quả hồi máu từ mọi nguồn. | Tăng tốc độ hồi HP. |
+| **Ambition** (Khát vọng) | Giáp | +5% giảm thời gian hồi chiêu của các kỹ năng đặc biệt.| Đỡ đòn, cuồng nộ, đốn cây... |
+| **Dodging** (Né tránh) | Giáp | +2% tỉ lệ né hoàn toàn sát thương nhận vào. | Tránh đòn chí mạng bất ngờ. |
+| **Apprentice** (Học việc) | Giáp | +5% EXP kỹ năng nhận được nhưng **nhận thêm +10% sát thương**. | Đánh đổi phòng thủ lấy cấp độ nhanh. |
+| **Sapping** (Hút ngọc) | Giáp | +5% ngọc cường hóa nhận được nhưng **nhận thêm +5% sát thương**. | Tăng ngọc cường hóa thu hoạch. |
 
 ---
 
-## ✅ Checklist Trước Khi Rèn Đồ Đắt Tiền
-
-- Mở `/skills` và kiểm tra cấp **Smithing** hiện tại.
-- Đọc kỹ cảnh báo craft/lore sau khi chế tạo thử một món rẻ hơn.
-- Không dùng kim cương/Netherite để luyện cấp khi chưa hiểu cơ chế phạt độ bền.
-- Nếu cần đồ chiến đấu ngay, cân nhắc giao dịch với người chơi có Smithing cao hơn.
+## 🔗 Tài Liệu Chi Tiết
+Để tra cứu các công thức chế tạo chi tiết khác và thông tin kỹ thuật nâng cao của hệ thống, bạn có thể tham khảo [Tài liệu Gói Cổ Điển chính thức tại GitHub Wiki](https://github.com/Athlaeos/ValhallaMMO/wiki/Content-Package:-Classic).
