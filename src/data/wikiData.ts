@@ -74,14 +74,15 @@ export const maceWeapons: Weapon[] = [
     tooltip: "&b&lMace of Power|&7A heavy storm-forged mace that turns clean hits into upward force.||&6⚡ Active — Power Strike:|&fNgồi + Đánh trúng kẻ địch. 10% cơ hội nổ đẩy tung toàn bộ sinh vật bán kính 10 khối lên trời. (Hồi chiêu 8 giây)||&a⭐ Passive — Momentum:|&fĐòn trúng tăng +5% tốc chạy trong 10s. Đòn Smash đập từ trên cao nhân x1.10 sát thương và +0.35 đẩy lùi.||&c☠ Curse — Vung búa hụt:|&fNếu đánh air/block hụt, chịu Slowness trong 60 giây. Cầm búa trên tay bị trừ 10% tốc chạy.",
     recipe: {
       shape: [
-        ["", "H", ""],
+        ["C", "H", "C"],
         ["", "B", ""],
-        ["", "N", ""]
+        ["C", "N", "C"]
       ],
       ingredients: {
         H: { name: "Heavy Core", itemId: "heavy_core", tooltip: "&fHeavy Core|&7The core of physical impact." },
-        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x16|&7A swirling elemental rod.", amount: 16 },
-        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard nether metal alloy." }
+        B: { name: "Breeze Rod", itemId: "breeze_rod", tooltip: "&fBreeze Rod x32|&7A swirling elemental rod.", amount: 32 },
+        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Standard nether metal alloy." },
+        C: { name: "Khối Đồng", itemId: "copper_block", tooltip: "&6Block of Copper|&7Solid copper block." }
       }
     }
   },
@@ -136,31 +137,6 @@ export const maceWeapons: Weapon[] = [
     }
   },
   {
-    id: "vampiric",
-    name: "Búa Huyết Ma",
-    enName: "Mace of Vampirism",
-    badge: "🩸",
-    colorClass: "border-[#e63946]",
-    cmd: 10002,
-    singleton: true,
-    desc: "Cổ vật ký sinh đói khát, hút cạn từng giọt huyết mạch của kẻ thù để bồi đắp vào máu người sở hữu.",
-    tooltip: "&c&lMace of Vampirism|&7A blood-bound mace that feeds through wounds but gnaws at its wielder.||&6⚡ Active — Blood Siphon:|&fNgồi + Đánh trúng kẻ địch. Hồi lập tức 6 HP. Đối với player địch, rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa caster (tối đa +4 HP). Hồi chiêu 75s.||&a⭐ Passive — Lifesteal:|&fMelee thường hồi máu bằng 12% sát thương gây ra (tối đa 2 HP/hit). Dưới 30% HP tăng sát thương gây ra.||&c☠ Curse — Suy kiệt linh hồn:|&fKhi mang búa bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.",
-    recipe: {
-      shape: [
-        ["N", "H", "N"],
-        ["B", "S", "B"],
-        ["N", "W", "N"]
-      ],
-      ingredients: {
-        N: { name: "Magma Block", itemId: "magma_block", tooltip: "&fMagma Block|&7Volcanic heat element.", amount: 64 },
-        H: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Every 10s triggers 2 HP self-damage." },
-        B: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot|&7Premium hell forging alloy." },
-        S: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Lost player soul." },
-        W: { name: "Nether Wart", itemId: "nether_wart", tooltip: "&fNether Wart x16|&7Alchemical red fungus.", amount: 16 }
-      }
-    }
-  },
-  {
     id: "gravity",
     name: "Búa Trọng Lực Kỳ Dị",
     enName: "Singularity Gravity Mace",
@@ -193,7 +169,7 @@ export const maceWeapons: Weapon[] = [
     cmd: 10011,
     singleton: true,
     desc: "Lò nung di động tích tụ hỏa nhiệt xanh của địa ngục Nether, thiêu rụi sinh mạng kẻ địch.",
-    tooltip: "&b&lSoulfire Pyre Mace|&7A soul-forged mace wreathed in blue flame and rising spirits.||&6⚡ Active — Soulfire Storm:|&fNgồi + Đánh. Triệu hồi bão lửa xanh lan tỏa bán kính 5 khối trong 5 giây. Kẻ thù trong bão nhận 3 HP sát thương mỗi giây. Trả giá người dùng mất 4 HP. Hồi chiêu 40s.||&a⭐ Passive — Fire Guard & Soul Blaze:|&fKháng hoàn toàn sát thương từ lửa và dung nham. Đòn cận chiến thiêu cháy kẻ địch bằng lửa xanh linh hồn.||&c☠ Curse — Áp lực lửa linh hồn:|&fTăng x2 tốc độ cạn thanh đói (Hunger).",
+    tooltip: "&b&lSoulfire Pyre Mace|&7A soul-forged mace wreathed in blue flame and rising spirits.||&6⚡ Active — Soulfire Aura:|&fNgồi + Click trái để tạo Vòng Lửa Xanh (Soulfire Aura) bán kính 10 khối tồn tại trong 20s đi theo bản thân. Kẻ địch trong tầm nhận 3 HP sát thương mỗi giây. Hồi chiêu 40s.||&a⭐ Passive — Fire Guard & Lava Heal:|&fKháng sát thương lửa/dung nham. Khi Vòng Lửa Xanh đang hoạt động, đứng trong dung nham sẽ hồi máu cho bạn mỗi chu kỳ.||&c☠ Curse — Độc nước contact:|&fMang búa chạm nước bị dính hiệu ứng Độc II (Poison II) trong 3 giây. Tăng x2 tốc độ cạn thanh đói (Hunger).",
     recipe: {
       shape: [
         ["F", "C", "F"],
@@ -223,7 +199,7 @@ export const spearWeapons: Weapon[] = [
     cmd: 10005,
     singleton: true,
     desc: "Cổ vật dạng giáo mang dư chấn lòng đất, bắn sóng âm nén phá tan mọi rào cản phòng ngự.",
-    tooltip: "&9&lWarden Spear|&7A deep-dark spear resonating with Warden pressure waves.||&6⚡ Active — Sonic Boom:|&fNgồi + Đánh hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu đầu tiên nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Trả giá người dùng mất 4 HP (không tự tử). Hồi chiêu 35s.||&a⭐ Passive — Quiet step:|&fĐi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP).||&c☠ Curse — Quá tải phản âm:|&fSau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm (không nguyền rủa lộ vị trí).",
+    tooltip: "&9&lWarden Spear|&7A deep-dark spear resonating with Warden pressure waves.||&6⚡ Active — Sonic Boom:|&fNgồi + Click trái hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Không tốn máu khi sử dụng. Hồi chiêu 35s.||&a⭐ Passive — Quiet step & Shrine:|&fĐi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP). Tiêu diệt mục tiêu có 10% cơ hội tạo ra một khu vực đền thờ Sculk (Sculk Shrine).||&c☠ Curse — Quá tải phản âm:|&fSau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm (không nguyền rủa lộ vị trí).",
     recipe: {
       shape: [
         ["G", "B", "G"],
@@ -252,15 +228,40 @@ export const spearWeapons: Weapon[] = [
     tooltip: "&6&lChronos Anchor Spear|&7A time-anchored spear that binds motion and space.||&6⚡ Active — Time Pin:|&fNgồi + Đánh hướng nhìn. Kích hoạt Time Pin đóng băng chuyển động mục tiêu trong dòng thời gian trong 2.25 giây. (Hồi chiêu 55 giây)||&c☠ Curse — Phản phệ ném trượt:|&fNém trượt hoặc kích hoạt hụt sẽ tự đóng băng bản thân trong 1.25 giây.",
     recipe: {
       shape: [
-        ["S", "B", "S"],
-        ["D", "G", "D"],
-        ["S", "G", "S"]
+        ["G", "B", "G"],
+        ["D", "S", "D"],
+        ["G", "S", "G"]
       ],
       ingredients: {
         B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
-        S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball x64|&7Viên slime đàn hồi.", amount: 64 },
+        S: { name: "Slime Ball", itemId: "slime_ball", tooltip: "&fSlime Ball x64|&7Viên slime đóng góp.", amount: 64 },
         D: { name: "Kim Cương", itemId: "diamond", tooltip: "&bDiamond x16|&7Kim cương bảo an.", amount: 16 },
         G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eĐồng hồ Glitch|&7Đồng hồ lỗi vòng lặp thời gian.", amount: 1 }
+      }
+    }
+  },
+  {
+    id: "vampiric_spear",
+    name: "Giáo Huyết Ma",
+    enName: "Vampiric Spear",
+    badge: "🩸",
+    colorClass: "border-[#e63946]",
+    cmd: 10002,
+    singleton: true,
+    desc: "Cổ vật ký sinh đói khát, lướt tới đâm xuyên và rút cạn sức sống của kẻ thù để bồi đắp vào máu bản thân.",
+    tooltip: "&c&lVampiric Spear|&7A blood-bound spear that feeds through wounds but gnaws at its wielder.||&6⚡ Active — Blood Siphon:|&fNgồi + Click trái. Lướt tới phía trước 4 khối, đâm trúng mục tiêu đầu tiên trên đường đi: hồi lập tức 6 HP và rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa bản thân (tối đa +4 HP). Hồi chiêu 75s.||&c☠ Curse — Suy kiệt linh hồn:|&fKhi mang giáo bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.",
+    recipe: {
+      shape: [
+        ["N", "H", "N"],
+        ["B", "S", "B"],
+        ["N", "W", "N"]
+      ],
+      ingredients: {
+        N: { name: "Khối Magma Block", itemId: "magma_block", tooltip: "&fMagma Block x64|&7Khối dung nham đông cứng.", amount: 64 },
+        H: { name: "Blood Core", itemId: "blood_core", tooltip: "&cBlood Core|&4Bất ổn: &7Rút máu ngẫu nhiên." },
+        B: { name: "Giáo Netherite", itemId: "netherite_spear", tooltip: "&7Netherite Spear|&7Cây giáo Netherite cơ bản." },
+        S: { name: "Cursed Player Head", itemId: "cursed_player_head", tooltip: "&cCursed Player Head|&7Đầu người chơi vấy bẩn từ cái chết." },
+        W: { name: "Nether Wart", itemId: "nether_wart", tooltip: "&fNether Wart x16|&7Bướu địa ngục làm thuốc.", amount: 16 }
       }
     }
   }
@@ -288,6 +289,54 @@ export const customWeapons: Weapon[] = [
         W: { name: "Đầu Bất Kỳ", itemId: "any_head", tooltip: "&fAny Head|&7Bất kỳ đầu sinh vật hoặc đầu người chơi nào." },
         P: { name: "Thuốc Độc Bất Kỳ", itemId: "any_poison_potion", tooltip: "&5Poison Potion|&7Yêu cầu thuốc độc (Splash, Lingering hoặc Potion thường)." },
         S: { name: "Gậy", itemId: "stick", tooltip: "&fStick|&7Gậy gỗ." }
+      }
+    }
+  },
+  {
+    id: "warden_blade",
+    name: "Kiếm Tiếng Vọng Warden",
+    enName: "Warden Blade",
+    badge: "⚔",
+    colorClass: "border-[#00b4d8]",
+    cmd: 5002,
+    singleton: true,
+    desc: "Thanh kiếm tối thượng ngưng tụ vụ nổ sóng âm chấn động sâu thẳm trong Sculk.",
+    tooltip: "&9&lWarden Blade|&7An ultimate deep-dark blade that focuses Warden sonic vibrations.||&6⚡ Active — Sonic Cleave:|&fNgồi + Click trái. Quét kiếm tạo sóng âm 180 độ trong bán kính 3 khối, gây sát thương diện rộng cho toàn bộ mục tiêu. (Hồi chiêu 8 giây)||&a⭐ Passive — Sculk Resonance:|&fTăng +20% sát thương đòn đánh khi đứng trên khối Sculk.||&c☠ Curse — Lời nguyền bóng tối:|&fLuôn dính hiệu ứng Phát Sáng (Glowing) khi cầm trên tay. Sau khi dùng Active, chịu hiệu ứng Bóng Tối (Darkness) trong 5 giây.",
+    recipe: {
+      shape: [
+        ["E", "C", "E"],
+        ["E", "R", "E"],
+        ["E", "S", "E"]
+      ],
+      ingredients: {
+        S: { name: "Kiếm Netherite", itemId: "netherite_sword", tooltip: "&7Netherite Sword|&7Thanh kiếm Netherite cơ bản." },
+        R: { name: "Reaper Core", itemId: "reaper_core", tooltip: "&aReaper Core|&2Bất ổn: &7Lõi âm hồn nguyền rủa." },
+        E: { name: "Mảnh Tiếng Vọng", itemId: "echo_shard", tooltip: "&3Echo Shard x8|&7Mảnh tiếng vọng sculk.", amount: 8 },
+        C: { name: "La Bàn Hồi Phục", itemId: "recovery_compass", tooltip: "&3Recovery Compass|&7La bàn định vị điểm chết." }
+      }
+    }
+  },
+  {
+    id: "void_edge",
+    name: "Kiếm Hư Vô Void Edge",
+    enName: "Void Edge",
+    badge: "⚔",
+    colorClass: "border-[#ff55ff]",
+    cmd: 5003,
+    singleton: true,
+    desc: "Thanh kiếm rách không gian, dịch chuyển chớp nhoáng và hạ gục đối thủ từ phía sau.",
+    tooltip: "&d&lVoid Edge|&7A space-tearing sword that blinks through the void to strike from behind.||&6⚡ Active — Void Blink:|&fNgồi + Click trái. Dịch chuyển chớp nhoáng 8 khối qua hướng nhìn, xuất hiện phía sau lưng mục tiêu và gây x2 sát thương đâm lén. (Hồi chiêu 15 giây)||&c☠ Curse — Hư không cô độc:|&fKhông thể sử dụng Khiên (Shield) khi đang cầm kiếm. Bị trừ vĩnh viễn 2 HP máu tối đa.",
+    recipe: {
+      shape: [
+        ["C", "E", "C"],
+        ["", "V", ""],
+        ["", "S", ""]
+      ],
+      ingredients: {
+        S: { name: "Kiếm Netherite", itemId: "netherite_sword", tooltip: "&7Netherite Sword|&7Thanh kiếm Netherite cơ bản." },
+        V: { name: "Void Core", itemId: "void_core", tooltip: "&dVoid Core|&7Lõi hư vô ngưng tụ." },
+        E: { name: "End Core", itemId: "end_core", tooltip: "&dEnd Core|&5Bất ổn: &7Teleport ngẫu nhiên." },
+        C: { name: "Mắt Thách Đấu", itemId: "challenger_eye", tooltip: "&dChallenger's Eye|&7Mắt thách đấu Enderman." }
       }
     }
   }
@@ -334,28 +383,86 @@ export const cores: Core[] = [
     id: "blood_core",
     name: "Blood Core",
     instability: "Mỗi 10 giây khi ở trong túi đồ người sở hữu, có 10% cơ hội gây 2 HP (1 tim) sát thương trực tiếp xuyên giáp.",
-    method: "Nghi thức Hiến tế Nether:\n1. Thả Đầu Player Bị Vấy Bẩn (Cursed Player Head) trên cỏ địa ngục đỏ Crimson Nylium ở Nether.\n2. Cầm Kiếm Netherite chuột phải vào đối tượng hiến tế (Piglin/Piglin Brute/Người chơi) gần khối (bán kính 6).\n3. Sét đánh xuống mục tiêu chịu sát thương, biến đổi Đầu Player thành Blood Core (80% tỉ lệ thành công).\n4. Có 20% tỉ lệ thất bại: rơi ra Ruined Core và người thực hiện bị dính Trạng thái Nguyền rủa (Craft Lockout 15 phút).",
+    method: "Nghi thức Hiến tế Nether:\nCầm Ritual Core trong túi đồ và tiêu diệt quái vật ở Nether. Mỗi mạng tiêu diệt có 5% cơ hội chuyển hóa thành Blood Core (không cộng dồn).",
     recipe: null
   },
   {
     id: "sculk_core",
     name: "Sculk Core",
     instability: "Chỉ cần để trong túi đồ, cứ mỗi 10s có 19% cơ hội nhận bóng tối Darkness/Blindness trong 29 giây.",
-    method: "Nghi thức Sóng Âm Trầm Tích:\nThả một vật phẩm Heavy Core được đặt trên một khối Sculk Catalyst.\nTiêu diệt một Warden gần đó (bán kính 5.0 khối) để Lõi hấp thụ chấn động và biến thành Sculk Core.",
+    method: "Nghi thức Sóng Âm Trầm Tích:\nThả một vật phẩm Ritual Core được đặt trên một khối Sculk Catalyst. Tiêu diệt một Warden gần đó (bán kính 5 khối) để Lõi hấp thụ chấn động và biến thành Sculk Core.",
     recipe: null
   },
   {
     id: "end_core",
     name: "End Core",
     instability: "Mỗi 60 giây có 10% cơ hội tự động dịch chuyển người sở hữu ngẫu nhiên đến vùng an toàn lân cận.",
-    method: "Nghi thức Khe Nứt Không Gian:\nNém một vật phẩm Heavy Core bay trực tiếp xuyên qua luồng cổng End Portal đang hoạt động.\nCó 20% cơ hội biến đổi thành End Core và 80% cơ hội hỏng thành Ruined Core đồng thời người ném bị dính Trạng thái Nguyền rủa (Craft Lockout 15 phút).",
+    method: "Nghi thức Khe Nứt Không Gian:\nNém một vật phẩm Heavy Core bay trực tiếp xuyên qua luồng cổng End Portal đang hoạt động. Có 20% cơ hội biến đổi thành End Core và 80% cơ hội hỏng thành Ruined Core đồng thời người ném bị dính Trạng thái Nguyền rủa (Craft Lockout 15 phút).",
     recipe: null
   },
   {
     id: "ruined_core",
     name: "Ruined Core",
-    instability: "Lõi phế tích sụp đổ từ nghi thức rèn thất bại. Không thể dùng chế tạo các loại búa Mace, nhưng là vật liệu chính để rèn Kiếm Cổ Nguyền (Cursed Sword).",
-    method: "Có 80% cơ hội nhận được khi rèn thất bại/nghi thức thất bại lõi End Core hoặc Blood Core.",
+    instability: "Lõi phế tích sụp đổ từ nghi thức rèn thất bại. Không thể dùng chế tạo các loại búa Mace, nhưng là nguyên liệu rèn Kiếm Cổ Nguyền.",
+    method: "Nhận được khi rèn thất bại lõi (End Core, Void Core) hoặc rèn thất bại vũ khí tối thượng tại Altar (tỉ lệ 40%). Có thể tái chế tại Ritual Altar để phục hồi thành Ritual Core.",
+    recipe: {
+      shape: [
+        ["O", "O", "O"],
+        ["O", "R", "O"],
+        ["O", "O", "O"]
+      ],
+      ingredients: {
+        O: { name: "Obsidian", itemId: "obsidian", tooltip: "&fObsidian" },
+        R: { name: "Ruined Core", itemId: "ruined_core", tooltip: "&8Ruined Core" }
+      }
+    }
+  },
+  {
+    id: "ritual_core",
+    name: "Ritual Core",
+    instability: "Lõi nghi lễ ma thuật cơ bản. Không gây bất ổn khi mang theo.",
+    method: "Rèn tại Ritual Altar (1 thỏi Netherite Ingot ở giữa, 8 khối Obsidian xung quanh). Cũng có thể tìm thấy trong rương loot thế giới (2%) hoặc rớt từ Evoker/Pillager.",
+    recipe: {
+      shape: [
+        ["O", "O", "O"],
+        ["O", "N", "O"],
+        ["O", "O", "O"]
+      ],
+      ingredients: {
+        O: { name: "Obsidian", itemId: "obsidian", tooltip: "&fObsidian" },
+        N: { name: "Netherite Ingot", itemId: "netherite_ingot", tooltip: "&fNetherite Ingot" }
+      }
+    }
+  },
+  {
+    id: "echo_core",
+    name: "Echo Core",
+    instability: "Lõi thời gian tiếng vọng bất ổn định.",
+    method: "Chế tạo qua Ritual Altar (Ritual Core ở center, Glitch Clock đặt phía trên). Dùng để rèn Giáo Thời Gian Chronos.",
+    recipe: {
+      shape: [
+        ["", "G", ""],
+        ["", "R", ""],
+        ["", "", ""]
+      ],
+      ingredients: {
+        G: { name: "Đồng hồ Glitch", itemId: "glitch_clock", tooltip: "&eGlitch Clock" },
+        R: { name: "Ritual Core", itemId: "ritual_core", tooltip: "&fRitual Core" }
+      }
+    }
+  },
+  {
+    id: "reaper_core",
+    name: "Reaper Core",
+    instability: "Lõi âm hồn oán hận thu hoạch sinh mệnh.",
+    method: "Cầm Ritual Core trên tay và bị tiêu diệt bởi Wither Skeleton ở Nether (tỉ lệ thành công 20%). Dùng rèn Kiếm Warden Blade.",
+    recipe: null
+  },
+  {
+    id: "void_core",
+    name: "Void Core",
+    instability: "Lõi hư không phiêu diệt bóp méo thực tại.",
+    method: "Cầm Ritual Core + Challenger's Eye ném qua cổng End Portal (50% cơ hội nhận Void Core, 50% nhận Ruined Core). Dùng rèn Kiếm Void Edge.",
     recipe: null
   }
 ];
@@ -409,6 +516,11 @@ export const guideSections: GuideSection[] = [
     id: "carry-limit",
     title: "⚠️ Giới Hạn Mang Vũ Khí Đặc Biệt (Carry Limits)",
     content: "Người chơi **không thể mang đồng thời nhiều hơn một vũ khí cổ vật đặc biệt** trong túi đồ (bao gồm các loại búa Mace, giáo Spear/Trident và kiếm Cursed Sword). Nếu đang giữ một vũ khí đặc biệt, hệ thống sẽ ngăn chặn việc nhặt, di chuyển, kéo thả hoặc bắt đầu đúc lò rèn cho vũ khí thứ hai."
+  },
+  {
+    id: "ritual-altar",
+    title: "🔮 Nghi Thức Bàn Thờ Tế Lễ (Ritual Altar)",
+    content: "Bàn Thờ Tế Lễ (Ritual Altar) là bàn chế tạo ma thuật chuyên dụng dùng để rèn lõi và phôi ma pháp.\n\n1. **Chuyển hóa:** Đặt Bàn Chế Tạo thông thường, cầm **Ritual Core** trên tay rồi nhấn **Sneak + Chuột Phải** để chuyển hóa thành Ritual Altar (tiêu thụ 1 Ritual Core).\n2. **Chế tạo:** Chuột phải vào Altar để mở giao diện 3x3. **Lõi (Core) bắt buộc phải ở vị trí trung tâm (ô số 4)**.\n3. **Tỉ lệ thất bại (40%):** Chế tạo vũ khí cuối có 40% tỉ lệ thất bại, gây nổ và chỉ trả lại **Ruined Core**.\n4. **Phá hủy:** Đập block sẽ gây nổ nhẹ (lực nổ 1.5) và chỉ rơi ra Bàn Chế Tạo thường (mất Ritual Core ban đầu)."
   },
   {
     id: "lodestone-forge",

@@ -120,6 +120,33 @@
       box-shadow: 0 0 8px rgba(255, 85, 255, 0.3);
     }
 
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .info-card {
+      background: rgba(18, 11, 26, 0.72);
+      border: 2px solid var(--border-mc);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.22);
+    }
+
+    .info-card h3 {
+      color: var(--color-rare);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
     .nav-group {
       display: flex;
       flex-direction: column;
@@ -610,11 +637,13 @@
       <div class="nav-group">
         <span class="nav-label">Cơ bản</span>
         <a href="#about" class="nav-link active" onclick="activateLink(this)">📖 Hướng Dẫn Kích Hoạt</a>
+        <a href="#ritual-altar" class="nav-link" onclick="activateLink(this)">🔮 Bàn Thờ Tế Lễ</a>
         <a href="#lodestone-forge" class="nav-link" onclick="activateLink(this)">⚡ Lò Rèn Cổ Vật</a>
         <a href="#netherite-forge-guide" class="nav-link" onclick="activateLink(this)">🛡️ Rèn Trang Bị Netherite</a>
         <a href="#curse-state" class="nav-link" onclick="activateLink(this)">☠ Trạng Thái Nguyền Rủa</a>
         <a href="#cores" class="nav-link" onclick="activateLink(this)">💎 Lõi Cổ Vật (Cores)</a>
         <a href="#materials" class="nav-link" onclick="activateLink(this)">🔮 Vật Liệu Dị Biệt</a>
+        <a href="#stability-notes" class="nav-link" onclick="activateLink(this)">🛡️ Cập Nhật Ổn Định</a>
       </div>
 
       <div class="nav-group">
@@ -622,13 +651,13 @@
         <a href="#w-power" class="nav-link" onclick="activateLink(this)">⚡ Búa Quyền Năng</a>
         <a href="#w-void" class="nav-link" onclick="activateLink(this)">🌀 Búa Vực Thẳm</a>
         <a href="#w-chaos" class="nav-link" onclick="activateLink(this)">🎲 Búa Hỗn Loạn</a>
-        <a href="#w-vampiric" class="nav-link" onclick="activateLink(this)">🩸 Búa Huyết Ma</a>
         <a href="#w-gravity" class="nav-link" onclick="activateLink(this)">🌌 Búa Trọng Lực</a>
         <a href="#w-soulfire" class="nav-link" onclick="activateLink(this)">🔥 Búa Hỏa Thiêu Hồn</a>
       </div>
 
       <div class="nav-group">
         <span class="nav-label">🔱 Cổ Vật Giáo Spear</span>
+        <a href="#w-vampiric" class="nav-link" onclick="activateLink(this)">🩸 Giáo Huyết Ma</a>
         <a href="#w-sonic" class="nav-link" onclick="activateLink(this)">🔊 Giáo Tiếng Vọng Warden</a>
         <a href="#w-chronos" class="nav-link" onclick="activateLink(this)">⏳ Giáo Thời Gian Chronos</a>
       </div>
@@ -636,6 +665,8 @@
       <div class="nav-group">
         <span class="nav-label">⚔ Vũ khí cổ đại</span>
         <a href="#w-cursed-sword" class="nav-link" onclick="activateLink(this)">☠ Kiếm Cổ Nguyền</a>
+        <a href="#w-warden-blade" class="nav-link" onclick="activateLink(this)">🔊 Kiếm Tiếng Vọng Warden</a>
+        <a href="#w-void-edge" class="nav-link" onclick="activateLink(this)">🌀 Kiếm Hư Vô Void Edge</a>
       </div>
     </aside>
 
@@ -681,6 +712,33 @@
           <span style="font-size: 0.85rem; color: #b7a9ca; display: block; margin-top: 4px;">
             Hệ thống áp dụng chính sách cường hóa riêng biệt. Các búa (Mace) mặc định chỉ nhận <strong>Mending</strong> và <strong>Unbreaking</strong>. Các vũ khí giáo (Spear) nhận thêm <strong>Sharpness</strong>. Việc ép sách/cường hóa các loại phù phép bị cấm sẽ bị chặn. Tuy nhiên, việc sửa chữa vũ khí bằng Anvil (không thêm phù phép) vẫn được phép diễn ra bình thường.
           </span>
+        </div>
+      </section>
+
+      <!-- Ritual Altar Section -->
+      <section class="card-panel" id="ritual-altar">
+        <h2 class="section-title">🔮 NGHI THỨC BÀN THỜ TẾ LỄ (RITUAL ALTAR)</h2>
+        <p>Bàn Thờ Tế Lễ (Ritual Altar) là bàn chế tạo ma thuật chuyên dụng dùng để chế tạo các lõi ma pháp cơ bản cho Kiếm và Giáo, cùng nghi thức đúc các phôi ma thuật sơ cấp.</p>
+        <div class="card-panel" style="background: var(--panel-dark); margin: 0 0 15px 0; padding: 16px;">
+          <strong style="color: var(--color-rare);">🛠️ Nghi thức Chuyển Hóa:</strong>
+          <p style="font-size: 0.95rem; color: #b7a9ca; margin: 5px 0 0 0;">
+            Đặt một <strong>Bàn Chế Tạo (Crafting Table)</strong> thông thường xuống đất. Cầm <strong>Ritual Core</strong> trên tay, nhấn <strong>Sneak + Chuột Phải</strong> vào Bàn Chế Tạo. Block sẽ chuyển hóa thành <strong>Ritual Altar</strong> kèm theo dòng chữ hiển thị nổi ở phía trên và luồng ánh sáng ma thuật phát ra (tiêu tốn 1 Ritual Core).
+          </p>
+        </div>
+        <div class="card-panel" style="background: var(--panel-dark); margin: 0 0 15px 0; padding: 16px;">
+          <strong style="color: var(--color-epic);">🌀 Quy trình Chế Tạo Ma Thuật:</strong>
+          <p style="font-size: 0.95rem; color: #b7a9ca; margin: 5px 0 0 0;">
+            Nhấp chuột phải vào Ritual Altar để mở giao diện 3x3 đặc biệt. <strong>Lõi ma thuật (Core) bắt buộc phải đặt ở ô chính giữa (slot số 4 trong lưới 3x3)</strong>. Các nguyên liệu khác xếp xung quanh theo đúng công thức.
+          </p>
+        </div>
+        <div class="card-panel" style="background: var(--panel-dark); margin: 0 0 15px 0; padding: 16px;">
+          <strong style="color: var(--color-curse);">⚡ Tỉ lệ thất bại 40% & Nổ lò:</strong>
+          <p style="font-size: 0.95rem; color: #b7a9ca; margin: 5px 0 0 0;">
+            Khi rèn các vũ khí tối thượng, nghi thức có <strong>40% cơ hội thất bại</strong>. Nếu thất bại, lò rèn sẽ phát nổ, toàn bộ nguyên liệu phụ bị thiêu rụi và <strong>chỉ hoàn trả lại một Lõi Bị Hỏng (Ruined Core)</strong>.
+          </p>
+          <p style="font-size: 0.95rem; color: #b7a9ca; margin: 5px 0 0 0;">
+            Nếu bạn <strong>đập vỡ (Break)</strong> Ritual Altar, block sẽ phát nổ giải phóng ma năng (Lực nổ 1.5) và rơi ra một <strong>Bàn Chế Tạo thông thường</strong> (Ritual Core dùng để chuyển hóa ban đầu sẽ bị mất vĩnh viễn).
+          </p>
         </div>
       </section>
 
@@ -780,7 +838,7 @@
       <!-- Artifact Cores -->
       <section class="card-panel" id="cores">
         <h2 class="section-title">💎 LÕI CỔ VẬT MA PHÁP (ARTIFACT CORES)</h2>
-        <p>Cầm các lõi ma thuật này trong người sẽ gây ra những tác động tiêu cực (Instability) lên người sở hữu. Các lõi ma pháp (trừ Heavy Core gốc) <strong>không thể đặt ra ngoài đất</strong> làm khối block trang trí. <strong>Lưu ý:</strong> Khi thực hiện chế tạo bất kỳ Lõi ma pháp nào tại Bàn chế tạo, người chơi sẽ chịu sát thương phản phệ ngẫu nhiên từ <strong>5 đến 9 tim</strong> (10 - 18 HP), đồng thời bị <strong>đóng băng bất động trong 5 giây</strong> (100 ticks). Nghi thức chế tạo tại Bàn chế tạo có <strong>30% cơ hội thất bại</strong>, làm lõi vỡ thành <strong>Ruined Core</strong> và khóa chế tạo core trong 15 phút (Core Craft Lockout).</p>
+        <p>Cầm các lõi ma thuật này trong người sẽ gây ra những tác động tiêu cực (Instability) lên người sở hữu. Các lõi ma pháp (trừ Heavy Core gốc) <strong>không thể đặt ra ngoài đất</strong> làm khối block trang trí. <strong>Lưu ý:</strong> Khi thực hiện chế tạo bất kỳ Lõi ma pháp nào tại Bàn thờ Tế lễ (Ritual Altar), người chế tạo sẽ chịu sát thương phản phệ ngẫu nhiên 5-9 tim và bị đóng băng 5 giây. Nghi thức chế tạo có 40% cơ hội thất bại, làm lõi/vật phẩm vỡ thành <strong>Ruined Core</strong>.</p>
         
         <table class="mc-table">
           <thead>
@@ -797,15 +855,15 @@
               <td>
                 <div class="mc-crafting-table-ui" style="scale: 0.85; margin: -10px 0;">
                   <div class="mc-grid-3x3">
-                    <div class="mc-slot" class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
                     <div class="mc-slot" data-mc-tooltip="&fWither Rose">R</div>
-                    <div class="mc-slot" class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
                     <div class="mc-slot" data-mc-tooltip="&fWither Rose">R</div>
                     <div class="mc-slot" data-mc-tooltip="&fHeavy Core">H</div>
                     <div class="mc-slot" data-mc-tooltip="&fWither Rose">R</div>
-                    <div class="mc-slot" class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
                     <div class="mc-slot" data-mc-tooltip="&fWither Rose">R</div>
-                    <div class="mc-slot" class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
                   </div>
                 </div>
               </td>
@@ -833,12 +891,9 @@
               <td class="c-blood" style="font-weight: bold;">🩸 Blood Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">blood_core</span></td>
               <td><strong>Bất ổn (Rút máu):</strong> Mỗi 10 giây khi ở trong túi đồ người sở hữu, có 10% cơ hội gây <strong>2 HP (1 tim) sát thương trực tiếp</strong> xuyên giáp.</td>
               <td>
-                <strong style="color: var(--color-gold);">Nghi thức Hiến tế Nether:</strong><br>
+                <strong style="color: var(--color-gold);">Nghi thức Săn Địa Ngục:</strong><br>
                 <span style="font-size: 0.75rem; line-height: 1.4; display: block; color: #b7a9ca;">
-                  1. Thả <strong>Đầu Player Bị Vấy Bẩn (Cursed Player Head)</strong> trên cỏ địa ngục đỏ <strong>Crimson Nylium</strong> ở Nether.<br>
-                  2. Cầm <strong>Kiếm Netherite</strong> chuột phải vào đối tượng hiến tế (Piglin/Piglin Brute/Người chơi) gần khối (bán kính 6).<br>
-                  3. Sét đánh xuống mục tiêu chịu sát thương, biến đổi Đầu Player thành <strong>Blood Core</strong> (80% tỉ lệ thành công).<br>
-                  4. Có <strong>20% tỉ lệ thất bại</strong>: rơi ra <strong>Ruined Core</strong> và người thực hiện bị dính <strong>Trạng thái Nguyền rủa</strong> (Craft Lockout 15 phút).
+                  Cầm <strong>Ritual Core</strong> trong túi đồ và săn tiêu diệt quái vật (mobs) ở Nether. Mỗi mạng có <strong>5% cơ hội</strong> chuyển hóa Ritual Core thành **Blood Core** (không cần khối Heavy Core hay đầu người chơi).
                 </span>
               </td>
             </tr>
@@ -847,8 +902,8 @@
               <td><strong>Bất ổn (Bóng tối):</strong> Chỉ cần để trong túi đồ, cứ mỗi 10s có 19% cơ hội nhận bóng tối <strong>Darkness/Blindness trong 29 giây</strong>.</td>
               <td>
                 <strong>Nghi thức Sóng Âm Trầm Tích:</strong><br>
-                Thả một vật phẩm <strong>Heavy Core</strong> được đặt trên một khối <strong>Sculk Catalyst</strong>.<br>
-                Tiêu diệt một <strong>Warden</strong> gần đó (bán kính 5.0 khối) để Lõi hấp thụ chấn động và biến thành **Sculk Core**.
+                Thả một vật phẩm <strong>Ritual Core</strong> được đặt trên một khối <strong>Sculk Catalyst</strong>.<br>
+                Tiêu diệt một <strong>Warden</strong> gần đó (bán kính 5 khối) để Lõi hấp thụ chấn động và biến thành **Sculk Core**.
               </td>
             </tr>
             <tr>
@@ -862,16 +917,94 @@
             </tr>
             <tr>
               <td class="c-sculk" style="font-weight: bold; color: var(--color-gray) !important;">💀 Ruined Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">ruined_core</span></td>
-              <td><strong>Bất ổn:</strong> Lõi phế tích sụp đổ từ nghi thức rèn thất bại. Không thể dùng chế tạo các loại búa Mace, nhưng là vật liệu chính để rèn <strong>Kiếm Cổ Nguyền (Cursed Sword)</strong>.</td>
+              <td><strong>Bất ổn:</strong> Lõi phế tích sụp đổ từ nghi thức rèn thất bại. Dùng làm nguyên liệu chế tạo <strong>Kiếm Cổ Nguyền</strong>.</td>
               <td>
-                Có <strong>80% cơ hội</strong> nhận được khi rèn thất bại/nghi thức thất bại lõi <strong>End Core</strong> hoặc <strong>Blood Core</strong>.
+                <span style="font-size: 0.75rem; line-height: 1.4; display: block; color: #b7a9ca;">
+                  - Nhận được khi rèn thất bại lõi (End Core, Void Core) hoặc rèn thất bại vũ khí tối thượng tại Altar (tỉ lệ 40%).<br>
+                  - <strong>Tái chế:</strong> Rèn 8 Obsidian xung quanh + Ruined Core ở giữa tại Ritual Altar -> Ritual Core (100% thành công).
+                </span>
+                <div class="mc-crafting-table-ui" style="scale: 0.75; margin: 5px 0;">
+                  <div class="mc-grid-3x3">
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&8Ruined Core">R</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="c-epic" style="font-weight: bold; color: #aaaaaa !important;">🔮 Ritual Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">ritual_core</span></td>
+              <td><strong>Bất ổn:</strong> Lõi nghi lễ ma thuật cơ bản. Không gây bất ổn khi mang theo.</td>
+              <td>
+                <span style="font-size: 0.75rem; display: block; color: #b7a9ca; margin-bottom: 5px;">
+                  - Rèn tại Ritual Altar (1 thỏi Netherite Ingot ở giữa, 8 Obsidian xung quanh).<br>
+                  - Tìm thấy trong rương loot thế giới (2%) hoặc rớt từ Evoker/Pillager.
+                </span>
+                <div class="mc-crafting-table-ui" style="scale: 0.75; margin: 0;">
+                  <div class="mc-grid-3x3">
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                    <div class="mc-slot" data-mc-tooltip="&fObsidian">O</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="c-rare" style="font-weight: bold; color: #00b4d8 !important;">⏳ Echo Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">echo_core</span></td>
+              <td><strong>Bất ổn:</strong> Lõi thời gian tiếng vọng bất ổn định dùng rèn Giáo Thời Gian Chronos.</td>
+              <td>
+                <span style="font-size: 0.75rem; display: block; color: #b7a9ca; margin-bottom: 5px;">
+                  Chế tạo qua Ritual Altar (Ritual Core ở center, Glitch Clock đặt phía trên).
+                </span>
+                <div class="mc-crafting-table-ui" style="scale: 0.75; margin: 0;">
+                  <div class="mc-grid-3x3">
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&eĐồng hồ Glitch">G</div>
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot" data-mc-tooltip="&fRitual Core">R</div>
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot empty"></div>
+                    <div class="mc-slot empty"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="c-epic" style="font-weight: bold; color: #a855f7 !important;">💀 Reaper Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">reaper_core</span></td>
+              <td><strong>Bất ổn:</strong> Lõi âm hồn oán hận dùng rèn Kiếm Tiếng Vọng Warden.</td>
+              <td>
+                <span style="font-size: 0.75rem; line-height: 1.4; display: block; color: #b7a9ca;">
+                  Cầm <strong>Ritual Core</strong> trên tay và bị tiêu diệt bởi Wither Skeleton ở địa ngục Nether (tỉ lệ thành công <strong>20%</strong>).
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="c-epic" style="font-weight: bold; color: #ff55ff !important;">🌀 Void Core<br><span style="font-size: 0.75rem; color: var(--color-gray);">void_core</span></td>
+              <td><strong>Bất ổn:</strong> Lõi hư không phiêu diệt dùng rèn Kiếm Hư Vô Void Edge.</td>
+              <td>
+                <span style="font-size: 0.75rem; line-height: 1.4; display: block; color: #b7a9ca;">
+                  Cầm <strong>Ritual Core + Challenger's Eye</strong> ném trực tiếp qua End Portal (<strong>50%</strong> nhận được Void Core / 50% biến thành Ruined Core).
+                </span>
               </td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <!-- Materials -->
       <section class="card-panel" id="materials">
         <h2 class="section-title">🔮 VẬT LIỆU DỊ BIỆT ĐẶC BIỆT</h2>
         <div class="grid-container">
@@ -940,18 +1073,31 @@
             <div class="weapon-visuals-right">
               <div class="mc-crafting-table-ui">
                 <div class="mc-grid-3x3">
-                  <div class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&6Khối Đồng">C</div>
                   <div class="mc-slot" data-mc-tooltip="&fHeavy Core">H</div>
-                  <div class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&6Khối Đồng">C</div>
                   
                   <div class="mc-slot empty"></div>
-                  <div class="mc-slot" data-mc-tooltip="&fBreeze Rod x16">B<span class="mc-amount">16</span></div>
+                  <div class="mc-slot" data-mc-tooltip="&fBreeze Rod x32">B<span class="mc-amount">32</span></div>
                   <div class="mc-slot empty"></div>
                   
-                  <div class="mc-slot empty"></div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
-                  <div class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&6Khối Đồng">C</div>
+                  <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
+                  <div class="mc-slot" data-mc-tooltip="&6Khối Đồng">C</div>
                 </div>
+                <div class="mc-arrow-icon">➔</div>
+                <div class="mc-result-wrap">
+                  <div class="mc-slot mc-result enchanted" data-mc-tooltip="&b&lMace of Power">⚒</div>
+                </div>
+              </div>
+              <div class="ingredient-key-list">
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">H</span> Heavy Core</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">B</span> Breeze Rod x32</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">N</span> Netherite Ingot</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">C</span> Khối Đồng x4</span>
+              </div>
+            </div>
+          </div>
                 <div class="mc-arrow-icon">➔</div>
                 <div class="mc-result-wrap">
                   <div class="mc-slot mc-result enchanted" data-mc-tooltip="&b&lMace of Power">⚒</div>
@@ -995,7 +1141,7 @@
               <div class="mc-crafting-table-ui">
                 <div class="mc-grid-3x3">
                   <div class="mc-slot" data-mc-tooltip="&fEnchanted Golden Apple">A</div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&dEnd Core">E</div>
                   <div class="mc-slot" data-mc-tooltip="&fEnchanted Golden Apple">A</div>
                   
                   <div class="mc-slot" data-mc-tooltip="&c&lĐầu Player Bị Vấy Bẩn">H</div>
@@ -1077,62 +1223,6 @@
             </div>
           </div>
 
-          <!-- 4. Vampiric Mace -->
-          <div class="weapon-row vampiric" id="w-vampiric">
-            <div class="weapon-info-left">
-              <div class="weapon-header">
-                <span style="font-size: 1.8rem;">🩸</span>
-                <h3 class="weapon-name" style="color: #e63946;">Búa Huyết Ma (Mace of Vampirism)</h3>
-              </div>
-              <p class="weapon-desc">Cổ vật ký sinh đói khát, hút cạn từng giọt huyết mạch của kẻ thù để bồi đắp vào máu người sở hữu.</p>
-              
-              <div class="mc-tooltip-box">
-                <span class="mcc-title" style="color: #ff2a2a;">Mace of Vampirism</span>
-                <span class="mcc-text" style="color: var(--color-gray);">A blood-bound mace that feeds through wounds but gnaws at its wielder.</span>
-                <br>
-                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Blood Siphon:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Đánh trúng kẻ địch. Hồi lập tức 6 HP. Đối với player địch, rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa caster (tối đa +4 HP). Hồi chiêu 75s.</span>
-                <br>
-                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Lifesteal:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Melee thường hồi máu bằng 12% sát thương gây ra (tối đa 2 HP/hit). Dưới 30% HP tăng sát thương gây ra.</span>
-                <br>
-                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Suy kiệt linh hồn:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Khi mang búa bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.</span>
-              </div>
-              
-              <div class="weapon-meta-specs">Custom Model Data: 10002 | singleton: true</div>
-            </div>
-            
-            <div class="weapon-visuals-right">
-              <div class="mc-crafting-table-ui">
-                <div class="mc-grid-3x3">
-                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">M<span class="mc-amount">64</span></div>
-                  <div class="mc-slot" data-mc-tooltip="&cBlood Core">B</div>
-                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">M<span class="mc-amount">64</span></div>
-                  
-                  <div class="mc-slot" class="mc-slot empty"></div>
-                  <div class="mc-slot" data-mc-tooltip="&c&lĐầu Player Bị Vấy Bẩn">S</div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
-                  
-                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">M<span class="mc-amount">64</span></div>
-                  <div class="mc-slot" data-mc-tooltip="&fNether Wart">W</div>
-                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">M<span class="mc-amount">64</span></div>
-                </div>
-                <div class="mc-arrow-icon">➔</div>
-                <div class="mc-result-wrap">
-                  <div class="mc-slot mc-result enchanted" data-mc-tooltip="&c&lMace of Vampirism">⚒</div>
-                </div>
-              </div>
-              <div class="ingredient-key-list">
-                <span class="ingredient-badge"><span class="ingredient-key-symbol">B</span> Blood Core</span>
-                <span class="ingredient-badge"><span class="ingredient-key-symbol">N</span> Netherite Ingot</span>
-                <span class="ingredient-badge"><span class="ingredient-key-symbol">W</span> Nether Wart</span>
-                <span class="ingredient-badge"><span class="ingredient-key-symbol">S</span> Cursed Player Head</span>
-                <span class="ingredient-badge"><span class="ingredient-key-symbol">M</span> Magma Block x64 (mỗi ô)</span>
-              </div>
-            </div>
-          </div>
-
           <!-- 5. Gravity Mace -->
           <div class="weapon-row gravity" id="w-gravity">
             <div class="weapon-info-left">
@@ -1166,13 +1256,13 @@
                   <div class="mc-slot" data-mc-tooltip="&fNetherite Block">B</div>
                   <div class="mc-slot" data-mc-tooltip="&fObsidian x64">A<span class="mc-amount">64</span></div>
                   
+                  <div class="mc-slot empty"></div>
                   <div class="mc-slot" data-mc-tooltip="&3Sculk Core">C</div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
-                  <div class="mc-slot" data-mc-tooltip="&3Sculk Core">C</div>
+                  <div class="mc-slot empty"></div>
                   
-                  <div class="mc-slot" class="mc-slot empty"></div>
+                  <div class="mc-slot empty"></div>
                   <div class="mc-slot" data-mc-tooltip="&fBreeze Rod x16">D<span class="mc-amount">16</span></div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
+                  <div class="mc-slot empty"></div>
                 </div>
                 <div class="mc-arrow-icon">➔</div>
                 <div class="mc-result-wrap">
@@ -1201,14 +1291,14 @@
                 <span class="mcc-title" style="color: #00f5d4;">Soulfire Pyre Mace</span>
                 <span class="mcc-text" style="color: var(--color-gray);">A soul-forged mace wreathed in blue flame and rising spirits.</span>
                 <br>
-                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Soulfire Storm:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Đánh. Triệu hồi bão lửa xanh lan tỏa bán kính 5 khối trong 5 giây. Kẻ thù trong bão nhận 3 HP sát thương mỗi giây. Trả giá người dùng mất 4 HP. Hồi chiêu 40s.</span>
+                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Soulfire Aura:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Click trái để tạo Vòng Lửa Xanh (Soulfire Aura) bán kính 10 khối tồn tại trong 20s đi theo bản thân. Kẻ địch trong tầm nhận 3 HP sát thương mỗi giây. Hồi chiêu 40s.</span>
                 <br>
-                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Fire Guard & Soul Blaze:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Kháng hoàn toàn sát thương từ lửa và dung nham. Đòn cận chiến thiêu cháy kẻ địch bằng lửa xanh linh hồn.</span>
+                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Fire Guard & Lava Heal:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Kháng sát thương lửa/dung nham. Khi Vòng Lửa Xanh đang hoạt động, đứng trong dung nham sẽ hồi máu cho bạn mỗi chu kỳ.</span>
                 <br>
-                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Áp lực lửa linh hồn:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Tăng x2 tốc độ cạn thanh đói (Hunger).</span>
+                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Độc nước contact:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Mang búa chạm nước bị dính hiệu ứng Độc II (Poison II) trong 3 giây. Tăng x2 tốc độ cạn thanh đói (Hunger).</span>
               </div>
               
               <div class="weapon-meta-specs">Custom Model Data: 10011 | singleton: true</div>
@@ -1221,12 +1311,12 @@
                   <div class="mc-slot" data-mc-tooltip="&bSoulfire Core">C</div>
                   <div class="mc-slot" data-mc-tooltip="&bSoul Campfire x64">F<span class="mc-amount">64</span></div>
                   
-                  <div class="mc-slot" data-mc-tooltip="&fGhast Tear">G</div>
+                  <div class="mc-slot" data-mc-tooltip="&fGhast Tear x16">G<span class="mc-amount">16</span></div>
                   <div class="mc-slot" data-mc-tooltip="&fBreeze Rod x16">B<span class="mc-amount">16</span></div>
                   <div class="mc-slot" data-mc-tooltip="&fZombie Head">S</div>
                   
                   <div class="mc-slot" data-mc-tooltip="&bSoul Campfire x64">F<span class="mc-amount">64</span></div>
-                  <div class="mc-slot" class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&fNetherite Ingot">N</div>
                   <div class="mc-slot" data-mc-tooltip="&bSoul Campfire x64">F<span class="mc-amount">64</span></div>
                 </div>
                 <div class="mc-arrow-icon">➔</div>
@@ -1251,6 +1341,59 @@
       <section class="card-panel" id="spear-weapons">
         <h2 class="section-title">🔱 CÁC CỔ VẬT GIÁO SPEAR (SPEAR WEAPONS)</h2>
         <div class="weapon-list-container">
+          
+          <!-- 4. Vampiric Spear -->
+          <div class="weapon-row vampiric" id="w-vampiric">
+            <div class="weapon-info-left">
+              <div class="weapon-header">
+                <span style="font-size: 1.8rem;">🩸</span>
+                <h3 class="weapon-name" style="color: #e63946;">Giáo Huyết Ma (Vampiric Spear)</h3>
+              </div>
+              <p class="weapon-desc">Cổ vật ký sinh đói khát, lướt tới đâm xuyên và rút cạn sức sống của kẻ thù để bồi đắp vào máu bản thân.</p>
+              
+              <div class="mc-tooltip-box">
+                <span class="mcc-title" style="color: #ff2a2a;">Vampiric Spear</span>
+                <span class="mcc-text" style="color: var(--color-gray);">A blood-bound spear that feeds through wounds but gnaws at its wielder.</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Blood Siphon:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Click trái. Lướt tới phía trước 4 khối, đâm trúng mục tiêu đầu tiên trên đường đi: hồi lập tức 6 HP và rút tạm thời 1 tim tối đa (2 HP) của địch trong 90s để cộng vào máu tối đa bản thân (tối đa +4 HP). Hồi chiêu 75s.</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Suy kiệt linh hồn:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Khi mang giáo bị trừ vĩnh viễn 4 HP máu tối đa. Click active hụt tự gánh 6 sát thương thẳng lên bản thân. Nhận thêm +10% sát thương từ lửa, fall, và projectile.</span>
+              </div>
+              
+              <div class="weapon-meta-specs">Custom Model Data: 10002 | singleton: true</div>
+            </div>
+            
+            <div class="weapon-visuals-right">
+              <div class="mc-crafting-table-ui">
+                <div class="mc-grid-3x3">
+                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">N<span class="mc-amount">64</span></div>
+                  <div class="mc-slot" data-mc-tooltip="&cBlood Core">H</div>
+                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">N<span class="mc-amount">64</span></div>
+                  
+                  <div class="mc-slot" data-mc-tooltip="&7Netherite Spear">B</div>
+                  <div class="mc-slot" data-mc-tooltip="&c&lĐầu Player Bị Vấy Bẩn">S</div>
+                  <div class="mc-slot" data-mc-tooltip="&7Netherite Spear">B</div>
+                  
+                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">N<span class="mc-amount">64</span></div>
+                  <div class="mc-slot" data-mc-tooltip="&fNether Wart x16">W<span class="mc-amount">16</span></div>
+                  <div class="mc-slot" data-mc-tooltip="&fMagma Block x64">N<span class="mc-amount">64</span></div>
+                </div>
+                <div class="mc-arrow-icon">➔</div>
+                <div class="mc-result-wrap">
+                  <div class="mc-slot mc-result enchanted" data-mc-tooltip="&c&lVampiric Spear">⚒</div>
+                </div>
+              </div>
+              <div class="ingredient-key-list">
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">H</span> Blood Core</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">B</span> Netherite Spear</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">W</span> Nether Wart x16</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">S</span> Cursed Player Head</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">N</span> Magma Block x64 (mỗi ô)</span>
+              </div>
+            </div>
+          </div>
 
           <!-- 7. Warden Spear -->
           <div class="weapon-row sonic" id="w-sonic">
@@ -1266,10 +1409,10 @@
                 <span class="mcc-text" style="color: var(--color-gray);">A deep-dark spear resonating with Warden pressure waves.</span>
                 <br>
                 <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Sonic Boom:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Đánh hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu đầu tiên nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Trả giá người dùng mất 4 HP (không tự tử). Hồi chiêu 35s.</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Click trái hướng nhìn. Bắn sóng âm nén xa 12 khối, mục tiêu nhận 14 sát thương chuẩn và đẩy lùi mạnh 2.0. Không tốn máu khi sử dụng. Hồi chiêu 35s.</span>
                 <br>
-                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Quiet step:</span>
-                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Đi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP).</span>
+                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Quiet step & Shrine:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Đi trên/gần Sculk giảm âm thanh. Đòn đập rơi tự do (Smash) được +1.5 sát thương mỗi 4 khối độ cao (cộng tối đa +6 HP). Tiêu diệt mục tiêu có 10% cơ hội tạo ra một khu vực đền thờ Sculk (Sculk Shrine).</span>
                 <br>
                 <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Quá tải phản âm:</span>
                 <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Sau active người dùng bị Mù lòa (Blindness) 1.5 giây và Slowness II 2 giây. Mang giáo này không phát sáng khi cầm (không nguyền rủa lộ vị trí).</span>
@@ -1364,6 +1507,28 @@
         </div>
       </section>
 
+      <section class="card-panel" id="stability-notes">
+        <h2 class="section-title">🛡️ CẬP NHẬT ỔN ĐỊNH & LƯU Ý KỸ THUẬT</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>✅ Đã sửa: Skill Sneak + Left Click ổn định hơn</h3>
+            <p>Khi người chơi <strong>Shift + Left Click</strong> vào block nhưng đang nhìn trúng mục tiêu, plugin vẫn ray-trace mục tiêu và kích hoạt kỹ năng. Nếu không có mục tiêu hợp lệ, lời nguyền đánh hụt vẫn hoạt động như thiết kế.</p>
+          </div>
+          <div class="info-card">
+            <h3>✅ Đã sửa: Particle không làm crash task</h3>
+            <p>Các hiệu ứng hạt của Gravity, Chaos, Soulfire, Sonic, Vampiric, Forge, Ritual và projectile đã được bọc qua bộ spawn an toàn. Nếu một loại particle không tương thích Paper/Leaf 1.21.x, plugin sẽ bỏ qua hoặc fallback thay vì làm lỗi scheduler.</p>
+          </div>
+          <div class="info-card">
+            <h3>✅ Đã sửa: Tương thích plugin Grave</h3>
+            <p>Vũ khí độc quyền có thể nằm trong grave/custom container mà không bị loop kẹt. Hopper/dropper vẫn bị chặn không được tự động kéo/đẩy vũ khí độc quyền.</p>
+          </div>
+          <div class="info-card">
+            <h3>🔮 Đã cập nhật: Bàn Thờ Tế Lễ & Vũ khí tối thượng</h3>
+            <p>Hệ thống chế tạo Phase 4 hiện đã hoạt động đầy đủ bao gồm Bàn thờ tế lễ (Ritual Altar), các loại Lõi ma pháp mới (Ritual, Echo, Reaper, Void Core) và vũ khí tối thượng (Giáo Huyết Ma, Kiếm Tiếng Vọng Warden, Kiếm Hư Vô Void Edge).</p>
+          </div>
+        </div>
+      </section>
+
       <!-- The Other Weapons Section -->
       <section class="card-panel" id="other-weapons">
         <h2 class="section-title">⚔ CÁC VŨ KHÍ CỔ ĐẠI</h2>
@@ -1398,17 +1563,17 @@
             <div class="weapon-visuals-right">
               <div class="mc-crafting-table-ui">
                 <div class="mc-grid-3x3">
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                   <div class="mc-slot" data-mc-tooltip="&fĐầu bất kì (Any Head)">W</div>
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                   
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                   <div class="mc-slot" data-mc-tooltip="&7Thuốc độc bất kì (Poison Potion)">P</div>
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                   
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                   <div class="mc-slot" data-mc-tooltip="&fStick">S</div>
-                  <div class="mc-slot" data-mc-tooltip="Không có"></div>
+                  <div class="mc-slot empty"></div>
                 </div>
                 <div class="mc-arrow-icon">➔</div>
                 <div class="mc-result-wrap">
@@ -1419,6 +1584,113 @@
                 <span class="ingredient-badge"><span class="ingredient-key-symbol">W</span> Đầu bất kì (Any Head)</span>
                 <span class="ingredient-badge"><span class="ingredient-key-symbol">P</span> Thuốc độc bất kì (Poison Potion)</span>
                 <span class="ingredient-badge"><span class="ingredient-key-symbol">S</span> Stick</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Warden Blade -->
+          <div class="weapon-row sonic" id="w-warden-blade">
+            <div class="weapon-info-left">
+              <div class="weapon-header">
+                <span style="font-size: 1.8rem;">🔊</span>
+                <h3 class="weapon-name" style="color: #00b4d8;">Kiếm Tiếng Vọng Warden (Warden Blade)</h3>
+              </div>
+              <p class="weapon-desc">Thanh kiếm tối thượng ngưng tụ vụ nổ sóng âm chấn động sâu thẳm trong Sculk.</p>
+              
+              <div class="mc-tooltip-box">
+                <span class="mcc-title" style="color: #00b4d8;">Warden Blade</span>
+                <span class="mcc-text" style="color: var(--color-gray);">An ultimate deep-dark blade that focuses Warden sonic vibrations.</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Sonic Cleave:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Click trái. Quét kiếm tạo sóng âm 180 độ trong bán kính 3 khối, gây sát thương diện rộng cho toàn bộ mục tiêu. (Hồi chiêu 8 giây)</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-green);">⭐ Passive — Sculk Resonance:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Tăng +20% sát thương đòn đánh khi đứng trên khối Sculk.</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Lời nguyền bóng tối:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Luôn dính hiệu ứng Phát Sáng (Glowing) khi cầm trên tay. Sau khi dùng Active, chịu hiệu ứng Bóng Tối (Darkness) trong 5 giây.</span>
+              </div>
+              
+              <div class="weapon-meta-specs">Custom Model Data: 5002 | singleton: true</div>
+            </div>
+            
+            <div class="weapon-visuals-right">
+              <div class="mc-crafting-table-ui">
+                <div class="mc-grid-3x3">
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                  <div class="mc-slot" data-mc-tooltip="&3La Bàn Hồi Phục">C</div>
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                  
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                  <div class="mc-slot" data-mc-tooltip="&aReaper Core">R</div>
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                  
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                  <div class="mc-slot" data-mc-tooltip="&7Kiếm Netherite">S</div>
+                  <div class="mc-slot" data-mc-tooltip="&fMảnh Tiếng Vọng">E</div>
+                </div>
+                <div class="mc-arrow-icon">➔</div>
+                <div class="mc-result-wrap">
+                  <div class="mc-slot mc-result enchanted" data-mc-tooltip="&9&lWarden Blade">⚒</div>
+                </div>
+              </div>
+              <div class="ingredient-key-list">
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">S</span> Kiếm Netherite</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">R</span> Reaper Core</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">E</span> Mảnh Tiếng Vọng x8</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">C</span> La Bàn Hồi Phục</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Void Edge -->
+          <div class="weapon-row void" id="w-void-edge">
+            <div class="weapon-info-left">
+              <div class="weapon-header">
+                <span style="font-size: 1.8rem;">🌀</span>
+                <h3 class="weapon-name" style="color: #ff55ff;">Kiếm Hư Vô Void Edge (Void Edge)</h3>
+              </div>
+              <p class="weapon-desc">Thanh kiếm rách không gian, dịch chuyển chớp nhoáng và hạ gục đối thủ từ phía sau.</p>
+              
+              <div class="mc-tooltip-box">
+                <span class="mcc-title" style="color: #ff55ff;">Void Edge</span>
+                <span class="mcc-text" style="color: var(--color-gray);">A space-tearing sword that blinks through the void to strike from behind.</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-gold); font-weight: bold;">⚡ Active — Void Blink:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Ngồi + Click trái. Dịch chuyển chớp nhoáng 8 khối qua hướng nhìn, xuất hiện phía sau lưng mục tiêu và gây x2 sát thương đâm lén. (Hồi chiêu 15 giây)</span>
+                <br>
+                <span class="mcc-text" style="color: var(--color-curse);">☠ Curse — Hư không cô độc:</span>
+                <span class="mcc-text" style="color: #ffffff; padding-left: 10px;">Không thể sử dụng Khiên (Shield) khi đang cầm kiếm. Bị trừ vĩnh viễn 2 HP máu tối đa.</span>
+              </div>
+              
+              <div class="weapon-meta-specs">Custom Model Data: 5003 | singleton: true</div>
+            </div>
+            
+            <div class="weapon-visuals-right">
+              <div class="mc-crafting-table-ui">
+                <div class="mc-grid-3x3">
+                  <div class="mc-slot" data-mc-tooltip="&dMắt Thách Đấu">C</div>
+                  <div class="mc-slot" data-mc-tooltip="&dEnd Core">E</div>
+                  <div class="mc-slot" data-mc-tooltip="&dMắt Thách Đấu">C</div>
+                  
+                  <div class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&dVoid Core">V</div>
+                  <div class="mc-slot empty"></div>
+                  
+                  <div class="mc-slot empty"></div>
+                  <div class="mc-slot" data-mc-tooltip="&7Kiếm Netherite">S</div>
+                  <div class="mc-slot empty"></div>
+                </div>
+                <div class="mc-arrow-icon">➔</div>
+                <div class="mc-result-wrap">
+                  <div class="mc-slot mc-result enchanted" data-mc-tooltip="&d&lVoid Edge">⚒</div>
+                </div>
+              </div>
+              <div class="ingredient-key-list">
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">S</span> Kiếm Netherite</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">V</span> Void Core</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">E</span> End Core</span>
+                <span class="ingredient-badge"><span class="ingredient-key-symbol">C</span> Mắt Thách Đấu x2</span>
               </div>
             </div>
           </div>

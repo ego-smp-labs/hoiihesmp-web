@@ -91,7 +91,9 @@ const getWeaponItemId = (weapon: any, tab: string) => {
   if (tab === 'weapons') {
     return `mace_${weapon.id}`
   } else if (tab === 'spears') {
-    return weapon.id === 'sonic' ? 'warden_spear' : 'chronos_spear'
+    if (weapon.id === 'sonic') return 'warden_spear'
+    if (weapon.id === 'chronos') return 'chronos_spear'
+    return weapon.id
   }
   return weapon.id
 }

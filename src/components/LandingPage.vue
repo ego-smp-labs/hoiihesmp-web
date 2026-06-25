@@ -1,5 +1,6 @@
 <script lang="ts">
 const cards = [
+  /*
   {
     id: "lifesteal",
     title: "Cơ Chế Lifesteal",
@@ -10,6 +11,7 @@ const cards = [
     badgeColor: "bg-[#e63946]/10 border-[#e63946]/30 text-[#e63946]",
     hoverRing: "group-hover:ring-[#e63946]/50"
   },
+  */
   {
     id: "mace",
     title: "Mace Độc Quyền",
@@ -40,6 +42,7 @@ const cards = [
     badgeColor: "bg-[#55ffff]/10 border-[#55ffff]/30 text-[#55ffff]",
     hoverRing: "group-hover:ring-[#55ffff]/50"
   },
+  /*
   {
     id: "valhalla",
     title: "ValhallaMMO",
@@ -50,13 +53,14 @@ const cards = [
     badgeColor: "bg-[#ffaa00]/10 border-[#ffaa00]/30 text-[#ffaa00]",
     hoverRing: "group-hover:ring-[#ffaa00]/50"
   }
+  */
 ]
 
 const commonCommands = [
   { label: '/macee info', desc: 'Tra cứu thông tin, chỉ số và công thức rèn toàn bộ các vũ khí Mace Exclusive in-game.' },
   { label: '/trade', desc: 'Giao dịch từ xa an toàn với người chơi khác.' },
   { label: '/grave', desc: 'Xem lại toạ độ các bia mộ khi bị chết.' },
-  { label: '/skills', desc: 'Mở bảng kỹ năng nhập vai RPG ValhallaMMO.' },
+  // { label: '/skills', desc: 'Mở bảng kỹ năng nhập vai RPG ValhallaMMO.' },
   { label: '/help', desc: 'Trợ giúp toàn tập cơ chế tính năng của server.' },
   { label: '/teams', desc: 'Quản lý tổ đội đồng đội sinh tồn chung.' },
   { label: '/pvp', desc: 'Bật hoặc tắt trạng thái chiến đấu (PvP) của bản thân.' },
@@ -141,8 +145,8 @@ const handleNav = (link: string) => {
             <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] sm:text-xs font-semibold text-white/80 tracking-wide backdrop-blur-sm">
               ✨ Máy chủ sinh tồn Hội Hè SMP S4
             </span>
-            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#e63946]/10 border border-[#e63946]/20 text-[11px] sm:text-xs font-semibold text-[#ff6b7b] tracking-wide backdrop-blur-sm">
-              🩸 Tính năng Lifesteal cướp tim kịch tính!
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#a855f7]/10 border border-[#a855f7]/20 text-[11px] sm:text-xs font-semibold text-[#c084fc] tracking-wide backdrop-blur-sm">
+              ⚡ Nghi thức Lò rèn Lodestone & Altar!
             </span>
           </div>
 

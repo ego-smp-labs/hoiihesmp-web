@@ -36,7 +36,7 @@ export default defineConfig({
     nav: [
       { text: 'Trang Chủ', link: '/' },
       { text: 'Hướng Dẫn Cơ Bản', items: [
-        { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
+        { text: 'Bê Vác & Câu Lệnh', link: '/guide/mechanics' },
         { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
       ]},
       { text: 'Cổ Vật & Vũ Khí', items: [
@@ -50,7 +50,7 @@ export default defineConfig({
       ]},
       { text: 'Plugin Gameplay', items: [
         { text: 'Plugin Vane', link: '/guide/vane' },
-        { text: 'ValhallaMMO', link: '/guide/valhallammo' }
+        // { text: 'ValhallaMMO', link: '/guide/valhallammo' }
       ]},
       { text: 'Hỗ Trợ & Luật Lệ', link: '/support' }
     ],
@@ -65,7 +65,7 @@ export default defineConfig({
       {
         text: 'Hướng Dẫn Cơ Bản',
         items: [
-          { text: 'Lifesteal & Câu Lệnh', link: '/guide/mechanics' },
+          { text: 'Bê Vác & Câu Lệnh', link: '/guide/mechanics' },
           { text: 'Tổng Quan Hướng Dẫn', link: '/guide/' }
         ]
       },
@@ -86,7 +86,7 @@ export default defineConfig({
         text: 'Plugin Gameplay',
         items: [
           { text: 'Plugin Vane', link: '/guide/vane' },
-          { text: 'ValhallaMMO', link: '/guide/valhallammo' }
+          // { text: 'ValhallaMMO', link: '/guide/valhallammo' }
         ]
       }
     ],

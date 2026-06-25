@@ -33,6 +33,7 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   wither_skeleton_skull: { cdnName: "https://minotar.net/avatar/MHF_WSkeleton/64.png", type: "item", displayName: "Đầu Khô Lâu Wither" },
   glitch_clock: { cdnName: "clock_00", type: "item", displayName: "Đồng hồ Glitch", glowColor: "rgba(255, 170, 0, 0.45)" },
   netherite_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Netherite" },
+  netherite_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Netherite" },
   any_head: { cdnName: "https://minotar.net/avatar/MHF_Skeleton/64.png", type: "item", displayName: "Đầu Bất Kỳ (Any Head)" },
   any_poison_potion: { cdnName: "potion", type: "item", displayName: "Thuốc Độc Bất Kỳ (Any Poison Potion)" },
 
@@ -45,7 +46,10 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   mace_soulfire: { cdnName: "mace", type: "item", displayName: "Búa Hỏa Thiêu Hồn", glowColor: "rgba(0, 245, 212, 0.45)" },
   warden_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Tiếng Vọng Warden", glowColor: "rgba(0, 180, 216, 0.4)" },
   chronos_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Thời Gian Chronos", glowColor: "rgba(226, 149, 120, 0.4)" },
+  vampiric_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Huyết Ma", glowColor: "rgba(230, 57, 70, 0.45)" },
   cursed_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Cổ Nguyền", glowColor: "rgba(114, 9, 183, 0.45)" },
+  warden_blade: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Tiếng Vọng Warden", glowColor: "rgba(0, 180, 216, 0.4)" },
+  void_edge: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Hư Vô Void Edge", glowColor: "rgba(255, 85, 255, 0.45)" },
 
   // Custom Cores
   ego_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
@@ -54,6 +58,9 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   sculk_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
   end_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
   ruined_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
+  ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ritual Core", glowColor: "rgba(128, 128, 128, 0.4)" },
+  echo_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Echo Core", glowColor: "rgba(0, 180, 216, 0.4)" },
+  reaper_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Reaper Core", glowColor: "rgba(85, 255, 85, 0.4)" },
 
   // Vane Trifles Custom Items
   golden_sickle: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/golden_sickle.png", type: "item", displayName: "Liềm Hoạt Thạch (Vàng)" },
