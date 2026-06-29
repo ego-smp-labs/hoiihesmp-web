@@ -48,19 +48,21 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   chronos_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Thời Gian Chronos", glowColor: "rgba(226, 149, 120, 0.4)" },
   vampiric_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Huyết Ma", glowColor: "rgba(230, 57, 70, 0.45)" },
   cursed_sword: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Cổ Nguyền", glowColor: "rgba(114, 9, 183, 0.45)" },
-  warden_blade: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Tiếng Vọng Warden", glowColor: "rgba(0, 180, 216, 0.4)" },
+  soul_sever_spear: { cdnName: "/netherite_spear.png", displayName: "Giáo Tách Hồn", glowColor: "rgba(0, 180, 216, 0.4)" },
+  avarice_blade: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Tham Lam", glowColor: "rgba(85, 255, 85, 0.4)" },
   void_edge: { cdnName: "netherite_sword", type: "item", displayName: "Kiếm Hư Vô Void Edge", glowColor: "rgba(255, 85, 255, 0.45)" },
 
   // Custom Cores
-  ego_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ego Core", glowColor: "rgba(174, 79, 184, 0.4)" },
+  avarice_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Avarice Ritual Core", glowColor: "rgba(174, 79, 184, 0.4)" },
   soulfire_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Soulfire Core", glowColor: "rgba(30, 192, 217, 0.4)" },
-  blood_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Blood Core", glowColor: "rgba(217, 43, 43, 0.4)" },
-  sculk_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Sculk Core", glowColor: "rgba(0, 216, 180, 0.4)" },
+  blood_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Blood Ritual Core", glowColor: "rgba(217, 43, 43, 0.4)" },
+  sculk_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Sculk Ritual Core", glowColor: "rgba(0, 216, 180, 0.4)" },
   end_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "End Core", glowColor: "rgba(178, 60, 217, 0.4)" },
   ruined_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ruined Core", glowColor: "rgba(63, 8, 92, 0.2)" },
   ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Ritual Core", glowColor: "rgba(128, 128, 128, 0.4)" },
-  echo_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Echo Core", glowColor: "rgba(0, 180, 216, 0.4)" },
-  reaper_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Reaper Core", glowColor: "rgba(85, 255, 85, 0.4)" },
+  echo_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Echo Ritual Core", glowColor: "rgba(0, 180, 216, 0.4)" },
+  reaper_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Reaper Ritual Core", glowColor: "rgba(85, 255, 85, 0.4)" },
+  void_ritual_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Void Ritual Core", glowColor: "rgba(255, 85, 255, 0.5)" },
 
   // Vane Trifles Custom Items
   golden_sickle: { cdnName: "https://oddlama.github.io/vane/assets/vane-trifles/items/golden_sickle.png", type: "item", displayName: "Liềm Hoạt Thạch (Vàng)" },
@@ -92,7 +94,6 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   chest: { cdnName: "https://minecraft.wiki/images/Chest_JE4_BE2.png", displayName: "Rương" },
   slime_block: { cdnName: "https://minecraft.wiki/images/Slime_Block_JE2_BE3.png", displayName: "Khối Slime" },
   slime_ball: { cdnName: "slime_ball", type: "item", displayName: "Viên Slime" },
-  void_core: { cdnName: "https://minecraft.wiki/images/Heavy_Core_JE1_BE1.png", displayName: "Void Core", glowColor: "rgba(255, 85, 255, 0.5)" },
   iron_bars: { cdnName: "https://minecraft.wiki/images/Iron_Bars_%28EW%29_JE9.png", displayName: "Hàng Rào Sắt" },
   compass: { cdnName: "compass", type: "item", displayName: "La Bàn" },
   glass_bottle: { cdnName: "glass_bottle", type: "item", displayName: "Chai Thủy Tinh Rỗng" },
@@ -113,7 +114,18 @@ export const itemAssetMap: Record<string, ItemAsset> = {
   shulker_box: { cdnName: "https://minecraft.wiki/images/Shulker_Box_JE1_BE1.png", displayName: "Hộp Shulker" },
   leather_chestplate: { cdnName: "leather_chestplate", type: "item", displayName: "Giáp Ngực Da" },
   wheat_seeds: { cdnName: "wheat_seeds", type: "item", displayName: "Hạt Giống Lúa" },
-  sapling: { cdnName: "oak_sapling", type: "item", displayName: "Mầm Cây Sồi" }
+  sapling: { cdnName: "oak_sapling", type: "item", displayName: "Mầm Cây Sồi" },
+
+  // New materials & ingredients
+  warden_resonance_shard: { cdnName: "echo_shard", type: "item", displayName: "Warden Resonance Shard", glowColor: "rgba(0, 180, 216, 0.4)" },
+  plundered_heart: { cdnName: "https://minecraft.wiki/images/Heart_of_the_Sea_JE2_BE2.png", type: "item", displayName: "Plundered Heart", glowColor: "rgba(85, 255, 85, 0.4)" },
+  vile_ledger: { cdnName: "writable_book", type: "item", displayName: "Vile Ledger", glowColor: "rgba(85, 255, 85, 0.4)" },
+  totem_of_undying: { cdnName: "totem_of_undying", type: "item", displayName: "Totem of Undying", glowColor: "rgba(255, 220, 0, 0.4)" },
+  emerald_block: { cdnName: "https://minecraft.wiki/images/Block_of_Emerald_JE3_BE2.png", displayName: "Khối Ngọc Lục Bảo" },
+  gold_block: { cdnName: "https://minecraft.wiki/images/Block_of_Gold_JE3_BE2.png", displayName: "Khối Vàng" },
+  soul_sand: { cdnName: "https://minecraft.wiki/images/Soul_Sand_(texture)_JE1_BE1.png", displayName: "Cát Linh Hồn" },
+  sculk: { cdnName: "https://minecraft.wiki/images/Sculk_JE3_BE2.png", displayName: "Sculk Block" },
+  sculk_shrieker: { cdnName: "https://minecraft.wiki/images/Sculk_Shrieker_JE2_BE1.png", displayName: "Sculk Shrieker" },
 };
 
 export const getCdnUrl = (itemId: string): string => {
